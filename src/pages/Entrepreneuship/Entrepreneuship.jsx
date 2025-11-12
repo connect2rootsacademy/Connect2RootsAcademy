@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { enterpreneushipCategories } from '../../data/EnterpreneushipData';
+// import { enterpreneushipCategories } from '../../data/EnterpreneushipData';
+import { enterpreneushipCategories } from '../../data/enterpreneushipData';
 
 const Enterpreneuship = () => {
   const cardImages = [

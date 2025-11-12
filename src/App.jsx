@@ -7,10 +7,6 @@ import Footer from './components/Footer/Footer';
 import About from '../src/pages/About/About';
 import Home from '../src/pages/Home/Home';
 import Contact from '../src/pages/Contact/Contact';
-// import Courses from '../src/pages/Courses/Courses';
-// import FreeCourses from '../src/pages/Courses/FreeCourses';
-// import PaidCourses from '../src/pages/Courses/PaidCourses';
-// import CertificateCourses from '../src/pages/Courses/CertificateCourses';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import TermsAndCondition from './pages/TermsAndCondition/TermsAndCondition';
@@ -25,7 +21,6 @@ import Corporate from './pages/Partnership/Corporate';
 import OurTeam from './pages/About/OurTeam';
 import MainAboutUs from './pages/About/MainAboutUs';
 import ApplyAsTrainer from './pages/TrainingPrograms/ApplyAsTrainer';
-// import ProtectedRoute from './components/ProtectedRoute';
 import Workshops from './pages/TrainingPrograms/Workshops';
 import Webinar from './pages/TrainingPrograms/Webinar';
 import CorporateTraining from './pages/TrainingPrograms/CorporateTraining';
@@ -75,9 +70,6 @@ function App() {
           <Route path="/professional" element={<Professional />} />
           <Route path="/institutional" element={<Institutional />} />
           <Route path="/corporate" element={<Corporate />} />
-          {/* <Route path="/freecourses" element={<FreeCourses />} />
-          <Route path="/paidcourses" element={<PaidCourses />} />
-          <Route path="/certificatecourses" element={<CertificateCourses />} /> */}
           <Route path="/termsconditions" element={<TermsAndCondition />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/profile" element={<Profile />} />
