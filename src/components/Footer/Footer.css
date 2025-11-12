@@ -1,0 +1,41 @@
+/* footer{
+    background-image: url('../../assets/hero-education.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    color: #fff;
+    filter: blur(2px);  
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    overflow: hidden;
+
+} */
+
+
+/* footer {
+  background-image: url("../../assets/pattern.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+   background-blend-mode: multiply;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+} */
+

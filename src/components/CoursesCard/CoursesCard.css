@@ -1,0 +1,134 @@
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.course-card {
+    max-width: 350px;
+    min-width: 300px;
+    border-radius: 20px !important;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.course-card .MuiCardActions-root {
+    padding: 8px 16px 16px 16px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important;
+}
+
+.course-card:hover {
+    /* transform: translateY(-10px); */
+    transform: scale(1.03);
+}
+
+.card-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.card-description {
+    font-size: 0.9rem !important;
+    line-height: 1.3rem !important;
+    color: #5a6c7d;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.card-button {
+    background-color: #108e09 !important;
+    color: white !important;
+    font-weight: 400 !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px !important;
+    padding: 6px 12px !important;
+    text-transform: none !important;
+    margin: 0 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.3rem !important;
+    transition: all 0.3s ease !important;
+    min-width: auto !important;
+    flex: 1 !important;
+    max-width: 120px !important;
+}
+
+.card-button .MuiButton-startIcon,
+.card-button .MuiButton-endIcon {
+    margin: 0 !important;
+}
+
+.card-button span {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    white-space: nowrap !important;
+}
+
+.card-button .MuiButton-root {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.card-button .MuiButtonBase-root {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.card-button-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    flex: 1 !important;
+    display: flex !important;
+}
+
+.card-button:hover {
+    background-color: #16a34a !important;
+    transform: translateY(-2px) !important;
+}
+
+.card-button svg {
+    width: 16px !important;
+    height: 16px !important;
+    transition: transform 0.3s ease !important;
+}
+
+.enroll-button svg {
+    animation: bounceUpDown 2s ease-in-out infinite;
+}
+
+@keyframes bounceUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .course-card {
+        max-width: 100%;
+        min-width: 280px;
+    }
+} 

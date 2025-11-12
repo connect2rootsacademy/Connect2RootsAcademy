@@ -1,0 +1,221 @@
+
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(2px);
+    z-index: -5;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Override any RotatingText styles to ensure inline display */
+.title-container  .rotating-text,
+.title-container  [class*="text-"] {
+    display: inline-block !important;
+    vertical-align: baseline !important;
+    margin-bottom: 2rem !important;
+}
+
+
+
+.counter {
+     /* background: linear-gradient(rgba(45, 255, 3, 0.36), rgba(1, 255, 22, 0.465)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHRlYW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900');
+    background-position: center;
+    background-size: cover; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1.5rem, 5vw, 5rem);
+    margin-top: clamp(1.5rem, 4vw, 3rem);
+    flex-wrap: wrap;
+}
+
+.counter > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.counter p {
+    font-size: clamp(1rem, 2.8vw, 1.2rem);
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.counter-number {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.counter-prefix {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 700;
+    color: #1ba709;
+    margin-left: 0.2rem;
+}
+
+
+.second-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 2rem;
+    text-align: center;
+}
+
+.second-header {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1.3;
+    max-width: 68rem;
+    margin: 0 0 2rem 0;
+    letter-spacing: -2px;
+}
+
+
+.second-page p {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.6;
+    color: #5a6c7d;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0;
+    line-height: 1.4rem;
+}
+
+
+/* Typography Section for Courses */
+/* .courses-typography {
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+    padding: 0 2rem;
+}
+
+.courses-heading {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    letter-spacing: -1px;
+}
+
+.courses-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.6;
+    color: #5a6c7d;
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0 auto;
+} */
+.circle-shape{
+    height: 40vw;
+    width: 40vw;
+    position: absolute;
+    right: 0;
+    top:15%;
+}
+
+.circle1{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(159, 228, 21, 0.754);;
+    border-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+    animation-name: anime2;
+    animation-duration:2s ;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.circle2{
+    height: 40vw;
+    width: 40vw;
+    background-color: rgba(218, 255, 7, 0.459);
+    border-radius: 50%;
+    filter: blur(20px);
+    position: absolute;;
+    animation-name: anime1;
+    animation-duration:3s ;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes anime1 {
+    from{
+        transform: translate(-10% -20%);
+    }
+    to{
+        transform: translate(0% , -10%);
+    }
+} 
+
+@keyframes anime2 {
+    from{
+        transform: translate(0% , 20%);
+    }
+    to{
+        transform: translate(-20% , -10%);
+    }
+} 
+
+.fifth-page {
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+}
+
+/* Ensure the green underline sits behind the heading text in the second-page */
+.second-page .inline-flex {
+    position: relative; /* container for absolute underline */
+    display: inline-flex;
+}
+
+.second-page .inline-flex > span.absolute {
+    /* make sure the underline fills the width and stays at the bottom */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    border-bottom: 30px solid #4ADE80; /* enforce thickness/color */
+    z-index: 0; /* behind the text */
+    pointer-events: none;
+}
+
+.second-page .inline-flex > .relative {
+    position: relative;
+    z-index: 10; /* bring text above the underline */
+    display: inline-block;
+}
