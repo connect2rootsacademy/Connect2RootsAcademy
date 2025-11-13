@@ -122,7 +122,7 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 grid-rows-3 sm:grid-cols-4 sm:grid-rows-4 h-[300px] sm:aspect-square sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[650px] gap-1 sm:gap-2 md:gap-3 p-1 sm:p-2 max-w-[90vw] mx-auto">
+    <div className="grid grid-cols-3 grid-rows-3 sm:grid-cols-4 sm:grid-rows-4 h-[395px] sm:aspect-square sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[650px] gap-1 sm:gap-2 md:gap-3 sm:p-2 max-w-[90vw] mx-auto">
       {squares.map((sq) => sq)}{' '}
     </div>
   );
@@ -131,7 +131,7 @@ const ShuffleGrid = () => {
 // The main hero component structure
 const ShuffleHero = () => {
   return (
-    <div className="w-full max-w-[280px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px] 2xl:max-w-[900px] mx-auto px-2 sm:px-4">
+    <div className="w-full lg:-mt-10 sm:mt-10 max-w-[400px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px] 2xl:max-w-[900px] mx-auto px-2 sm:px-4">
       <ShuffleGrid />
     </div>
   );

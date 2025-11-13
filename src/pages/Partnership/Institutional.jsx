@@ -36,13 +36,13 @@ const Institutional = () => {
             />
           </svg>
         </div>
-        <h1 className="mt-10 text-4xl font-regular text-black sm:text-5xl lg:text-5xl">
+        <div className="mt-10 text-4xl text-center font-regular text-black sm:text-4xl lg:text-5xl">
           <span className="relative inline-block">
             <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 bg-[#4ADE80] -z-10 rounded-md"></span>
             Institutional Partnership
           </span>{' '}
-        </h1>
-        <p className="mt-5 mb-5 text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+        </div>
+        <p className="mt-5 mb-5 p-2 text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
           At Connect2Roots Academy, we foster partnerships with schools,
           colleges, and universities to bridge the gap between education and
           employability. Through our Institutional Partnership Program, we

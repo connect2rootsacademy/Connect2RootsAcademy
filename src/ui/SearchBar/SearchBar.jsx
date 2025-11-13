@@ -89,7 +89,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="relative w-75">
+    <div className="relative w-45 lg:w-75">
       <div className="flex items-center bg-gray-100 rounded-md px-3 py-2">
         <SearchIcon className="size-5 text-gray-400 mr-2 " />
         <input
@@ -104,9 +104,9 @@ const SearchBar = () => {
           onBlur={handleBlur}
           aria-label="Search courses"
         />
-        <div className="flex items-center ml-2 border-l border-gray-300 pl-2">
-          <CommandIcon className="size-4 text-gray-400 mr-2 " />
-          <div className="text-gray-400 font-light">
+        <div className="hidden lg:flex items-center ml-2 border-l border-gray-300 pl-2">
+          <CommandIcon className=" lg:size-4 text-gray-400 mr-2 " />
+          <div className=" text-gray-400 font-light">
             <span>K</span>
           </div>
         </div>

@@ -77,39 +77,7 @@ export const Footer = ({
 }) => {
   return (
     <section className="py-10 border-t border-gray-200 relative">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <svg
-          aria-hidden="true"
-          className="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200"
-        >
-          <defs>
-            <pattern
-              x="50%"
-              y={-1}
-              id="e813992c-7d03-4cc4-a2bd-151760b470a0"
-              width={200}
-              height={200}
-              patternUnits="userSpaceOnUse"
-            >
-              <path d="M100 200V.5M.5 .5H200" fill="none" />
-            </pattern>
-          </defs>
-          <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-            <path
-              d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-              strokeWidth={0}
-            />
-          </svg>
-
-          <rect
-            fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
-            width="100%"
-            height="100%"
-            strokeWidth={0}
-          />
-        </svg>
-      </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             {/* Logo */}
@@ -119,20 +87,20 @@ export const Footer = ({
                   src={logo.src}
                   alt={logo.alt}
                   title={logo.title}
-                  className="h-15"
+                  className="h-12 sm:h-15"
                 />
               </a>
-              <h1 className="text-xl font-bold text-black sm:text-lg lg:text-2xl">
+              <h1 className="text-lg font-bold text-black sm:text-xl lg:text-2xl">
                 <span className="relative inline-block">
                   <span className="absolute bottom-[-1px] left-0 w-full h-2 sm:h-3 bg-[#4ADE80] -z-10 rounded-full"></span>
                   {logo.title}
                 </span>{' '}
               </h1>
             </div>
-            <p className="max-w-[70%] text-sm text-muted-foreground">
+            <p className="max-w-full text-sm text-muted-foreground lg:max-w-[70%]">
               {description}
             </p>
-            <ul className="flex items-center space-x-6 text-muted-foreground">
+            <ul className="flex items-center space-x-4 text-muted-foreground">
               {socialLinks.map((social, idx) => (
                 <li key={idx} className="font-medium hover:text-green-600">
                   <a href={social.href} aria-label={social.label}>
@@ -142,7 +110,7 @@ export const Footer = ({
               ))}
             </ul>
           </div>
-          <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
+          <div className="grid w-full gap-8 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
                 {/* <h3 className="mb-4 font-bold">{section.title}</h3>h3 */}
@@ -166,9 +134,9 @@ export const Footer = ({
             ))}
           </div>
         </div>
-        <div className="mt-8 flex flex-col justify-between gap-4 border-t py-8 text-xs font-medium text-muted-foreground md:flex-row md:items-center md:text-left">
-          <p className="order-2 lg:order-1">{copyright}</p>
-          <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
+        <div className="mt-8 flex flex-col-reverse items-center justify-between gap-4 border-t pt-8 text-xs font-medium text-muted-foreground sm:flex-row sm:items-center sm:text-left">
+          <p className="text-center sm:text-left">{copyright}</p>
+          <ul className="flex flex-col gap-2 sm:flex-row sm:gap-4">
             {legalLinks.map((link, idx) => (
               <li key={idx} className="hover:text-primary">
                 <a href={link.href}> {link.name}</a>

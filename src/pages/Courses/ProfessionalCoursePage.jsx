@@ -62,13 +62,13 @@ export default function ProfessionalCoursePage() {
   return (
     <div className="min-h-screen">
       <section className="course-heading">
-        <div className="relative isolate overflow-hidden py-24 sm:py-32">
+        <div className="relative isolate overflow-hidden py-16 sm:py-24">
           {/* BREADCRUMBS */}
           <nav
-            className="absolute top-4 left-4 z-50 text-sm text-gray-500"
+            className="hidden lg:block absolute top-4 left-4 z-50 text-sm text-gray-500"
             aria-label="Breadcrumb"
           >
-            <ol className="flex items-center gap-2 ml-5">
+            <ol className="flex flex-wrap items-center gap-2 ml-5">
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -145,9 +145,9 @@ export default function ProfessionalCoursePage() {
               className="aspect-1097/845 w-274.25 bg-linear-to-tr from-[#ff7746] to-[#ff6f79] opacity-15"
             />
           </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div id="heading" className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto ">
-              <h2 className="-mt-5 text-5xl text-center capitalize font-extrabold tracking-tight text-black sm:text-8xl">
+              <h2 className="-mt-5 text-4xl text-center capitalize font-extrabold tracking-tight text-black sm:text-6xl md:text-7xl lg:text-8xl">
                 {courseName
                   .replace(/-/g, ' ')
                   .replace(/([A-Z])/g, ' $1')
@@ -163,46 +163,46 @@ export default function ProfessionalCoursePage() {
           </div>
 
           <section className="tags">
-            <div className="py-24 sm:py-10">
+            <div className="py-24 sm:py-10 -mt-10">
               <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-                  <div className="border-1 border-neutral-300 rounded-lg p-2 flex flex-col items-center justify-center">
-                    <h1 className="text-xl border-b border-neutral-300 text-neutral-400 font-bold capitalize tracking-tight mb-2">
+                <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 gap-x-4 gap-y-8 sm:max-w-xl sm:grid-cols-3 sm:gap-x-6 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+                  <div className="border-1 border-neutral-300 rounded-lg p-2 flex flex-col items-center justify-center text-center">
+                    <h1 className="text-base sm:text-lg md:text-xl border-b border-neutral-300 text-neutral-400 font-bold capitalize tracking-tight mb-2">
                       course duration
                     </h1>
-                    <h1 className="text-4xl capitalize font-bold text-neutral-700">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl capitalize font-bold text-neutral-700">
                       Self paced
                     </h1>
                   </div>
-                  <div className="border-1 border-neutral-300 rounded-lg p-2 flex flex-col items-center justify-center">
-                    <h1 className="text-xl border-b border-neutral-300 text-neutral-400 font-bold capitalize tracking-tight mb-2">
+                  <div className="border-1 border-neutral-300 rounded-lg p-2 flex flex-col items-center justify-center text-center">
+                    <h1 className="text-base sm:text-lg md:text-xl border-b border-neutral-300 text-neutral-400 font-bold capitalize tracking-tight mb-2">
                       batch starts from
                     </h1>
-                    <h1 className="text-4xl capitalize font-bold text-neutral-700">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl capitalize font-bold text-neutral-700">
                       Open Enroll
                     </h1>
                   </div>
-                  <div className="border-1 border-neutral-300 rounded-lg p-2 flex flex-col items-center justify-center">
-                    <h1 className="text-xl border-b border-neutral-300 text-neutral-400 font-bold capitalize tracking-tight mb-2">
+                  <div className="border-1 border-neutral-300 rounded-lg p-2 flex flex-col items-center justify-center text-center">
+                    <h1 className="text-base sm:text-lg md:text-xl border-b border-neutral-300 text-neutral-400 font-bold capitalize tracking-tight mb-2">
                       Course fees
                     </h1>
-                    <h1 className="text-4xl capitalize font-bold text-neutral-700">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl capitalize font-bold text-neutral-700">
                       ₹0
                     </h1>
                   </div>
-                  <div className="border-1 border-neutral-300 rounded-lg p-2 flex flex-col items-center justify-center">
-                    <h1 className="text-xl border-b border-neutral-300 text-neutral-400 font-bold capitalize tracking-tight mb-2">
+                  <div className="border-1 border-neutral-300 rounded-lg p-2 flex flex-col items-center justify-center text-center">
+                    <h1 className="text-base sm:text-lg md:text-xl border-b border-neutral-300 text-neutral-400 font-bold capitalize tracking-tight mb-2">
                       mode of learning
                     </h1>
-                    <h1 className="text-4xl capitalize font-bold text-neutral-700">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl capitalize font-bold text-neutral-700">
                       Online
                     </h1>
                   </div>
-                  <div className="border-1 border-neutral-300 rounded-lg p-2 flex flex-col items-center justify-center">
-                    <h1 className="text-xl border-b border-neutral-300 text-neutral-400 font-bold capitalize tracking-tight mb-2">
+                  <div className="border-1 border-neutral-300 rounded-lg p-2 flex flex-col items-center justify-center text-center">
+                    <h1 className="text-base sm:text-lg md:text-xl border-b border-neutral-300 text-neutral-400 font-bold capitalize tracking-tight mb-2">
                       Language
                     </h1>
-                    <h1 className="text-4xl capitalize font-bold text-neutral-700">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl capitalize font-bold text-neutral-700">
                       Bilingual
                     </h1>
                   </div>
@@ -216,7 +216,7 @@ export default function ProfessionalCoursePage() {
               <button
                 onClick={handleRegister}
                 disabled={currentUser}
-                className="relative group rounded-md bg-green-600 px-6 py-4 text-lg font-bold tracking-wide text-white shadow-sm focus-visible:outline-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed overflow-hidden"
+                className="relative group rounded-2xl bg-green-600 px-6 py-4 text-lg font-bold tracking-wide text-white shadow-sm focus-visible:outline-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed overflow-hidden"
               >
                 <span className="block transition-all duration-300 ease-in-out group-hover:translate-y-[-100%] group-hover:opacity-0">
                   Enroll Now to Begin Learning

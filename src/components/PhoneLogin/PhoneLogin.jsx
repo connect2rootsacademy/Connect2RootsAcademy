@@ -1,45 +1,39 @@
-// import { PhoneIcon } from 'lucide-react';
-// import React from 'react';
-
-// const PhoneLogin = () => {
-//   return (
-//     <div>
-//       <button
-//         type="button"
-//         className="animate-element animate-delay-800 w-full flex items-center justify-center gap-3 border border-border rounded-2xl py-4 hover:bg-neutral-200 transition-colors"
-//       >
-//         <PhoneIcon />
-//         Continue with Phone Number
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default PhoneLogin;
-
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Smartphone } from 'lucide-react';
+import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
+import { auth } from '../firebase';
+// import { send } from 'vite';
 
 const PhoneLogin = () => {
   const [open, setOpen] = useState(false);
   const [otpVisible, setOtpVisible] = useState(false);
   const [country, setCountry] = useState('+91');
-  const [phone, setPhone] = useState('');
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const otpRefs = useRef([...Array(6)].map(() => React.createRef()));
   const [timer, setTimer] = useState(60);
+  const [phone, setPhone] = useState('');
+
+  const sendOtp = async () => {
+    try {
+      const recaptcha = new RecaptchaVerifier(auth, 'recaptcha', {});
+      const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha);
+      console.log(confirmation);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   // Timer countdown (UI only)
-  useEffect(() => {
-    if (!otpVisible || timer === 0) return;
-    const id = setInterval(() => setTimer((t) => (t > 0 ? t - 1 : 0)), 1000);
-    return () => clearInterval(id);
-  }, [otpVisible, timer]);
+  // useEffect(() => {
+  //   if (!otpVisible || timer === 0) return;
+  //   const id = setInterval(() => setTimer((t) => (t > 0 ? t - 1 : 0)), 1000);
+  //   return () => clearInterval(id);
+  // }, [otpVisible, timer]);
 
-  const handleSubmit = () => {
-    setOtpVisible(true);
-    setTimer(60);
-  };
+  // const handleSubmit = () => {
+  //   setOtpVisible(true);
+  //   setTimer(60);
+  // };
 
   const handleReset = () => {
     setOtpVisible(false);
@@ -81,6 +75,7 @@ const PhoneLogin = () => {
     <div className="relative">
       {/* ---------- Trigger Button ---------- */}
       <button
+        disabled
         type="button"
         onClick={() => setOpen(true)}
         className="animate-element animate-delay-800 w-full flex items-center justify-center gap-3 border border-border rounded-2xl py-4 hover:bg-neutral-200 transition-colors"
@@ -137,9 +132,26 @@ const PhoneLogin = () => {
                   className="flex-1 rounded-xl border border-neutral-300 px-3 py-2 focus:ring-2 focus:ring-neutral-900"
                 />
               </div>
+              <div className="flex flex-col items-center gap-4 mt-4">
+                <div id="recaptcha" className="mx-auto"></div>
+                <div className="flex justify-end w-full gap-3">
+                  <button
+                    onClick={handleReset}
+                    className="rounded-xl border border-neutral-300 px-4 py-2 hover:bg-neutral-100"
+                  >
+                    Reset
+                  </button>
+                  <button
+                    onClick={sendOtp}
+                    className="rounded-xl bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
 
               {/* Buttons */}
-              {!otpVisible && (
+              {/* {!otpVisible && (
                 <div className="flex justify-end gap-3 mt-4">
                   <button
                     onClick={handleReset}
@@ -148,13 +160,13 @@ const PhoneLogin = () => {
                     Reset
                   </button>
                   <button
-                    onClick={handleSubmit}
+                    onClick={sendOtp}
                     className="rounded-xl bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
                   >
                     Submit
                   </button>
                 </div>
-              )}
+              )} */}
             </div>
 
             {/* ---------- OTP Section ---------- */}

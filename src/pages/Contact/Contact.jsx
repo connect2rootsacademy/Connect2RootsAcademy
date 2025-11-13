@@ -26,14 +26,14 @@ const Contact = () => {
         <div className="container mx-auto -mt-20">
           <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
             <div className="flex gap-4 flex-col">
-              <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
+              <h1 className="text-4xl mt-10 md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
                 Connect With Us For{' '}
                 <span className="relative inline-block">
                   <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
                   Guidance And Support
                 </span>{' '}
               </h1>
-              <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+              <p className="text-lg p-2 md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
                 At Connect2Roots Academy, we believe in the power of
                 collaboration to create meaningful change. We invite passionate
                 individuals, professionals, and partners to join us in our

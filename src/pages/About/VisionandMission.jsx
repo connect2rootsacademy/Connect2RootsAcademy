@@ -56,7 +56,7 @@ import React from 'react';
 
 const VisionandMission = () => {
   return (
-    <section className="relative">
+    <section className="relative p-5">
       <div>
         <h1 className="text-4xl text-center font-regular text-black sm:text-5xl lg:text-5xl">
           Guided by
@@ -76,31 +76,13 @@ const VisionandMission = () => {
       <div className="w-full py-20 lg:py-40">
         <div className="container mx-auto">
           <div className="flex flex-col-reverse lg:flex-row gap-10 lg:items-center">
-            {/* <div className="bg-muted rounded-md w-full aspect-video h-full flex-1">
-              <div>
-                <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-                  Platform
-                </div>
-              </div>
-              <div className="flex gap-2 flex-col">
-                <h2 className="text-xl sm:text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular text-left">
-                  This is the start of something new
-                </h2>
-                <p className="text-lg max-w-xl lg:max-w-sm leading-relaxed tracking-tight text-muted-foreground text-left">
-                  Managing a small business today is already tough. Avoid
-                  further complications by ditching outdated, tedious trade
-                  methods. Our goal is to streamline SMB trade, making it easier
-                  and faster than ever.
-                </p>
-              </div>
-            </div> */}
             <div className="bg-muted rounded-md py-5 px-2 flex gap-4 pl-0 lg:pl-10 flex-col flex-1">
               <div>
-                <div className="text-neutral-900 bg-neutral-100 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-regular">
+                <div className="text-neutral-900 bg-neutral-100 inline-flex items-center rounded-full px-2.5 py-0.5 m-2 text-xs font-regular">
                   Vision
                 </div>
               </div>
-              <div className="flex gap-2 flex-col">
+              <div className="flex gap-2 p-2 flex-col">
                 <h2 className="text-white text-xl sm:text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular text-left">
                   A World Where Learning Never Stops
                 </h2>

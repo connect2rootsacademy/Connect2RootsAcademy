@@ -16,12 +16,6 @@ const Register = () => {
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || '/profile';
 
-  const GlassInputWrapper = ({ children }) => (
-    <div className="rounded-2xl border border-border bg-foreground/5 backdrop-blur-sm transition-colors focus-within:border-green-400/70 focus-within:bg-green-500/10">
-      {children}
-    </div>
-  );
-
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
@@ -55,10 +49,10 @@ const Register = () => {
 
   return (
     <section>
-      <div className="h-[100dvh] flex flex-col md:flex-row  w-[100dvw]">
+      <div className="h-[100dvh] flex flex-col md:flex-row w-[100dvw]">
         <div className="w-full lg:w-1/2 flex-1 flex flex-col justify-center items-center p-8">
-          <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <h1 className="text-3xl font-light text-black sm:text-4xl lg:text-5xl mb-8">
+          <div className="sm:mx-auto sm:w-full sm:max-w-sm -mt-60 sm:mt-5">
+            <h1 className="text-4xl font-light text-black sm:text-4xl lg:text-5xl mb-8">
               <span className="relative inline-block">
                 <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 bg-green-400 -z-10 rounded-md"></span>
                 Create Account
@@ -66,7 +60,7 @@ const Register = () => {
             </h1>
           </div>
 
-          <div className="space-y-5 sm:mx-auto sm:w-full sm:max-w-sm">
+          <div className="space-y-5 w-full sm:mx-auto sm:w-full sm:max-w-sm">
             <form
               onSubmit={handleRegister}
               action="#"

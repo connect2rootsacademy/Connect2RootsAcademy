@@ -64,7 +64,7 @@ const Home = () => {
   return (
     <>
       {/* 1st SECTION - HERO SECTION */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative flex items-center">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg
             aria-hidden="true"
@@ -97,19 +97,19 @@ const Home = () => {
           </svg>
         </div>
 
-        <div className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-6 -mt-30">
+        <div className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-6">
           <div className="grid items-center grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2 pt-8 sm:pt-12 md:pt-16">
             <div className="text-center lg:text-left">
               <p className="mb-3 text-green-600 font-semibold tracking-tight leading-snug text-base sm:text-lg md:mb-4 md:text-lg">
                 Level Up Your Future
               </p>
 
-              <h1 className="text-3xl font-bold text-black sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black">
                 Building Strong Skills for a{' '}
-                <div className="relative inline-flex mt-2 sm:mt-0 sm:inline">
-                  <span className="absolute inset-x-0 bottom-0 border-b-[16px] border-[#4ADE80] sm:border-b-[20px] md:border-b-[24px] lg:border-b-[30px]"></span>
-                  <span className="relative text-3xl font-bold text-black sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                    Stronger Future.
+                <div className="relative inline-flex mt-2 sm:mt-0">
+                  <span className="absolute rounded-sm inset-x-0 bottom-0 border-b-[12px] border-[#4ADE80] sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px]"></span>
+                  <span className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black">
+                    Stronger Future
                   </span>
                 </div>
               </h1>
@@ -119,8 +119,8 @@ const Home = () => {
                 potential with world-class courses and practical learning
               </p>
 
-              <div className="mt-8 justify-center flex flex-col sm:flex-row sm:items-center sm:space-x-8 space-y-4 sm:space-y-0 sm:gap-5 sm:justify-start">
-                <div className="relative inline-flex items-center justify-center group mx-auto sm:mx-0 ">
+              <div className="mt-8 flex items-center justify-center lg:justify-start space-x-4">
+                <div className="relative inline-flex items-center justify-center group">
                   {/* Animated gradient background */}
                   <div className="absolute inset-0 opacity-60 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-lg blur-lg filter transition-all duration-1000 group-hover:opacity-100 group-hover:duration-300 animate-gradient-x"></div>
 
@@ -157,7 +157,7 @@ const Home = () => {
                   </Link>
                 </div>
 
-                <button className="text-sm font-semibold text-gray-900 hover:text-green-600 sm:text-sm/6 mx-auto sm:mx-0">
+                <button className="text-sm font-semibold text-gray-900 hover:text-green-600 sm:text-sm/6">
                   Learn more <span aria-hidden="true">→</span>
                 </button>
               </div>
@@ -223,8 +223,8 @@ const Home = () => {
       </section>
 
       {/* 3rd SECTION- RECOMMENDED COURSES & RECOMMENDED VIDEOS SECTION  */}
-      <section className="mt-30 mb-10">
-        <h1 className="text-6xl text-center font-semibold tracking-tight mb-10 text-black">
+      <section className="mb-10">
+        <h1 className="text-5xl sm:text-6xl p-2 text-center font-semibold tracking-tight mb-10 text-black">
           <span className="relative inline-block">
             <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
             Learn
@@ -298,22 +298,24 @@ const Home = () => {
       <RecommendedVideos />
 
       {/* 4th SECTION - FEATURES SECTION */}
-      <section className="first-page">
-        <div>
-          <h1 className=" text-center text-5xl sm:text-6xl font-bold tracking-tight text-pretty text-black">
-            <span className="relative inline-block">
-              <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
-              Why Choose
-            </span>{' '}
-            Connect2Roots Academy?
-          </h1>
+      <section>
+        <div className="first-page">
+          <div>
+            <h1 className=" text-center text-5xl sm:text-6xl font-bold tracking-tight text-pretty text-black">
+              <span className="relative inline-block">
+                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
+                Why Choose
+              </span>{' '}
+              Connect2Roots Academy?
+            </h1>
+          </div>
+        </div>
+        <div className="w-full p-10">
+          <div className="-mt-10 top-0 left-0 w-full">
+            <FeaturesCard />
+          </div>
         </div>
       </section>
-      <div className="w-full">
-        <div className="-mt-10 top-0 left-0 w-full">
-          <FeaturesCard />
-        </div>
-      </div>
 
       {/* 5TH SECTION - OUR MISSION SECTION */}
       <section className="flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4 -mt-10 mb-10 md:mb-20">
@@ -350,7 +352,7 @@ const Home = () => {
           </div>
         </div>
         <div className="text-sm text-slate-600 max-w-lg">
-          <h1 className="text-3xl font-bold text-black sm:text-4xl lg:text-5xl">
+          <h1 className="text-4xl font-bold text-black sm:text-4xl lg:text-5xl">
             Enspiring Growth
             <span className="relative inline-block">
               <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
@@ -454,9 +456,9 @@ const Home = () => {
         />
         <div className="relative flex items-center justify-center">
           <div className="max-md:py-20 px-6 md:px-10 text-center">
-            <h2 className="text-2xl sm:text-2xl font-bold tracking-tight text-pretty text-black">
+            <h2 className="text-4xl sm:text-2xl font-bold tracking-tight text-pretty text-black">
               <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-3 bg-[#4ADE80] -z-10 rounded-md"></span>
+                <span className="hidden md:block absolute bottom-0 left-0 w-full h-3 sm:h-3 bg-[#4ADE80] -z-10 rounded-md"></span>
                 Share your expertise with us
               </span>{' '}
             </h2>

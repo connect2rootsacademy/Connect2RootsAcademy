@@ -407,7 +407,11 @@ export default function Profile() {
     <section>
       {userDetails ? (
         <>
-          <motion.div initial="initial" animate="animate" className="w-full">
+          <motion.div
+            initial="initial"
+            animate="animate"
+            className="w-full p-5 -mt-15"
+          >
             <div className="w-full max-w-md border border-gray-300 rounded-xl mt-20 mx-auto overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100/30">
               <div className="fixed inset-0 -z-10 bg-white">
                 {/* Dots layer */}

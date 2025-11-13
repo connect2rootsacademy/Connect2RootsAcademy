@@ -38,14 +38,14 @@ const Workshops = () => {
         </div>
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
+            <h1 className="text-4xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
               Learn New Skills Through{' '}
               <span className="relative inline-block">
                 <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
                 Live Workshops
               </span>{' '}
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+            <p className="text-lg p-2 md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
               At Connect2Roots Academy, our workshops emphasize hands on,
               experiential learning that bridges theory and practice. Guided by
               industry experts, participants collaborate, solve real world
@@ -54,7 +54,7 @@ const Workshops = () => {
               environments.
             </p>
           </div>
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-row gap-3 p-5">
             <button
               size="lg"
               className="gap-4 px-4 py-2 border border-neutral-600 text-slate-600  rounded-xl inline-flex items-center justify-center hover:bg-neutral-100 sm:h-9 sm:px-3 lg:h-11 lg:px-8"

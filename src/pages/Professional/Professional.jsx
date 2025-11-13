@@ -68,11 +68,11 @@ const Professional = () => {
       <div className=" py-10 sm:py-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="mb-5 mt-3 text-base/5 font-semibold text-gray-600">
+            <h2 className="mb-5 mt-3 text-center text-base/5 font-semibold text-gray-600">
               “The roots of education are bitter, but the fruit is sweet –
               Aristotle"
             </h2>
-            <h1 className="text-4xl font-bold text-black sm:text-5xl lg:text-5xl">
+            <h1 className="text-4xl text-center font-bold text-black sm:text-5xl lg:text-5xl">
               Choose a Sector to Discover
               <span className="relative inline-block">
                 <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/c2r-course-thumbnail.png';
+
 import {
   BuildingIcon,
   GraduationCapIcon,
@@ -21,6 +22,7 @@ import {
 import './Navbar.css';
 import AuthProvider from '../../context/AuthContext';
 import SearchBar from '../../ui/SearchBar/SearchBar';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const { useAuth } = AuthProvider;
@@ -32,6 +34,17 @@ const Navbar = () => {
   const [trainingDropdownOpen, setTrainingDropdownOpen] = useState(false);
   const [timer, setTimer] = useState(null);
   const location = useLocation();
+
+  // useEffect(() => {
+  //   if (mobileMenuOpen) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'unset';
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = 'unset';
+  //   };
+  // }, [mobileMenuOpen]);
 
   const getNavLinkClass = (paths) => {
     return paths.some((path) => location.pathname.startsWith(path))
@@ -690,7 +703,7 @@ const Navbar = () => {
               className={`nav-link text-sm  ${getNavLinkClass(['/login'])}`}
             >
               <div className="flex gap-2 items-center justify-center">
-                <span className="text-center font-semibold tracking-wide text-neutral-100 bg-neutral-700 hover:bg-neutral-800 p-2 rounded-md">
+                <span className="text-center font-semibold tracking-wide text-neutral-100 bg-neutral-800 hover:bg-neutral-700 p-2 rounded-md">
                   Get Started
                 </span>
               </div>
@@ -699,266 +712,502 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Hamburger */}
-        <div className="flex lg:hidden order-2">
+        <div className="flex lg:hidden order-2 items-center gap-3">
+          <SearchBar />
+          <div className="flex flex-1 justify-end">
+            {currentUser ? (
+              <NavLink
+                to="/profile"
+                className={`nav-link text-sm font-semibold ${getNavLinkClass([
+                  '/profile',
+                ])}`}
+              >
+                <div className="flex items-center justify-center w-9 h-9 bg-neutral-600 rounded-full text-white text-lg font-regular hover:bg-neutral-800">
+                  <div>
+                    {currentUser.firstName
+                      ? currentUser.firstName.charAt(0).toUpperCase()
+                      : ''}
+                    <span className="absolute bottom-0 end-0 size-3 rounded-full border-2 border-white bg-emerald-500">
+                      <span className="sr-only">Online</span>
+                    </span>
+                  </div>
+                </div>
+              </NavLink>
+            ) : (
+              <NavLink
+                to="/login"
+                className={`nav-link text-sm  ${getNavLinkClass(['/login'])}`}
+              >
+                <div className="flex gap-2 items-center justify-center">
+                  <span className="text-center font-semibold tracking-wide text-neutral-100 bg-neutral-800 hover:bg-neutral-700 p-2 rounded-md">
+                    Get Started
+                  </span>
+                </div>
+              </NavLink>
+            )}
+          </div>
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="inline-flex items-center justify-center rounded-full p-2.5 text-gray-700 bg-white border border-gray-200 shadow-sm hover:bg-gray-50 active:scale-95 transition"
+            className="inline-flex items-center justify-center p-1 hover:scale-[0.98] active:scale-[0.96] transition"
+            aria-expanded={mobileMenuOpen}
+            aria-label="Open main menu"
           >
             <span className="sr-only">Open main menu</span>
-            {/* Hamburger icon */}
-            <svg
+            <motion.svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1.6"
               aria-hidden="true"
-              className="size-6"
+              className="h-6 w-6 text-gray-900"
+              initial={false}
+              animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 28 }}
             >
               <path
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-            </svg>
+            </motion.svg>
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white/95 backdrop-blur-md lg:hidden">
-          <div className="flex items-center justify-between p-4 border-b border-gray-200">
-            <Link
-              to="/"
-              className="-m-1.5 p-1.5 flex items-center"
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 lg:hidden"
+            role="dialog"
+            aria-modal="true"
+          >
+            {/* Backdrop with subtle blur */}
+            <motion.button
               onClick={() => setMobileMenuOpen(false)}
+              className="absolute inset-0 bg-black/9 backdrop-blur-[3px]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              aria-hidden="true"
+            />
+
+            {/* Panel: Clean top sheet */}
+            <motion.div
+              initial={{ y: '-100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '-100%' }}
+              transition={{
+                type: 'tween',
+                stiffness: 300,
+                damping: 30,
+              }}
+              className="absolute top-0 left-0 right-0 w-full bg-white backdrop-blur-xl rounded-b-2xl border-b border-gray-200/60 shadow-[0_20px_40px_rgba(0,0,0,0.08)] overflow-hidden"
             >
-              <img src={logo} alt="C2R Academy" className="h-14 w-auto" />
-            </Link>
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-            >
-              <span className="sr-only">Close menu</span>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                aria-hidden="true"
-                className="size-6"
-              >
-                <path
-                  d="M6 18L18 6M6 6l12 12"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <div className="overflow-y-auto max-h-[calc(100vh-4rem)] p-4">
-            {/* Explore Courses */}
-            <div className="mb-2 rounded-xl border border-gray-200 bg-white shadow-sm">
-              <button
-                type="button"
-                className="w-full flex items-center justify-between px-4 py-3 text-left"
-                onClick={() => setCoursesDropdownOpen(!coursesDropdownOpen)}
-              >
-                <span className="flex items-center gap-2 text-gray-900 font-semibold">
-                  <EarthIcon className="size-5 text-green-600" />
-                  Explore Courses
-                </span>
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className={`size-5 text-gray-500 transition-transform ${
-                    coursesDropdownOpen ? 'rotate-180' : ''
-                  }`}
-                >
-                  <path
-                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                    clipRule="evenodd"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </button>
-              {coursesDropdownOpen && (
-                <div className="px-4 pb-3">
-                  <NavLink
-                    to="/professional"
-                    className="flex items-center gap-3 rounded-lg py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <LandmarkIcon className="size-5 text-green-600" />
-                    Professional Courses
-                  </NavLink>
-                  <NavLink
-                    to="/entrepreneuship"
-                    className="flex items-center gap-3 rounded-lg py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <HandCoinsIcon className="size-5 text-green-600" />
-                    Entrepreneuship Courses
-                  </NavLink>
-                </div>
-              )}
-            </div>
-
-            {/* Training Programs */}
-            <div className="mb-2 rounded-xl border border-gray-200 bg-white shadow-sm">
-              <button
-                type="button"
-                className="w-full flex items-center justify-between px-4 py-3 text-left"
-                onClick={() => setTrainingDropdownOpen(!trainingDropdownOpen)}
-              >
-                <span className="flex items-center gap-2 text-gray-900 font-semibold">
-                  <AwardIcon className="size-5 text-green-600" />
-                  Training Programs
-                </span>
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className={`size-5 text-gray-500 transition-transform ${
-                    trainingDropdownOpen ? 'rotate-180' : ''
-                  }`}
-                >
-                  <path
-                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                    clipRule="evenodd"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </button>
-              {trainingDropdownOpen && (
-                <div className="px-4 pb-3">
-                  <NavLink
-                    to="/workshops"
-                    className="flex items-center gap-3 rounded-lg py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <ProjectorIcon className="size-5 text-green-600" />
-                    Workshops
-                  </NavLink>
-                  <NavLink
-                    to="/webinar"
-                    className="flex items-center gap-3 rounded-lg py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <VideoIcon className="size-5 text-green-600" />
-                    Webinar
-                  </NavLink>
-                  <NavLink
-                    to="/coptraining"
-                    className="flex items-center gap-3 rounded-lg py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <PencilRulerIcon className="size-5 text-green-600" />
-                    Corporate Training
-                  </NavLink>
-                </div>
-              )}
-            </div>
-
-            {/* Partnership */}
-            <div className="mb-2 rounded-xl border border-gray-200 bg-white shadow-sm">
-              <button
-                type="button"
-                className="w-full flex items-center justify-between px-4 py-3 text-left"
-                onClick={() =>
-                  setPartnershipDropdownOpen(!partnershipDropdownOpen)
-                }
-              >
-                <span className="flex items-center gap-2 text-gray-900 font-semibold">
-                  <HandshakeIcon className="size-5 text-green-600" />
-                  Partnership
-                </span>
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  className={`size-5 text-gray-500 transition-transform ${
-                    partnershipDropdownOpen ? 'rotate-180' : ''
-                  }`}
-                >
-                  <path
-                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                    clipRule="evenodd"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </button>
-              {partnershipDropdownOpen && (
-                <div className="px-4 pb-3">
-                  <NavLink
-                    to="/corporate"
-                    className="flex items-center gap-3 rounded-lg py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <BuildingIcon className="size-5 text-green-600" />
-                    Corporate Partnership
-                  </NavLink>
-                  <NavLink
-                    to="/institutional"
-                    className="flex items-center gap-3 rounded-lg py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <GraduationCapIcon className="size-5 text-green-600" />
-                    Institutional Partnership
-                  </NavLink>
-                </div>
-              )}
-            </div>
-
-            {/* About Us */}
-            <NavLink
-              to="/about"
-              className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50 mb-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <User className="size-5 text-green-600" />
-              About Us
-            </NavLink>
-
-            {/* Contact Us (single link) */}
-            <NavLink
-              to="/contact"
-              className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50 mb-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <HeadsetIcon className="size-5 text-green-600" />
-              Contact Us
-            </NavLink>
-
-            {/* Login / Profile */}
-            <div className="mt-4">
-              {currentUser ? (
-                <NavLink
-                  to="/profile"
-                  className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50"
+              {/* Header - Minimalist */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100/60 active:bg-neutral-100">
+                <Link
+                  to="/"
                   onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 p-2 -ml-2 rounded-2xl active:bg-gray-100/50 transition-colors"
                 >
-                  <CircleUserIcon className="size-5 text-green-600" />
-                  Profile
-                </NavLink>
-              ) : (
-                <NavLink
-                  to="/login"
-                  className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50"
-                  onClick={() => setMobileMenuOpen(false)}
+                  <div className="flex items-center lg:order-none mr-3">
+                    <Link to="/" className="-m-1.5 p-1.5 flex items-center ">
+                      <div className="h-10 w-auto flex items-center scale-280">
+                        {' '}
+                        <img
+                          src={logo}
+                          alt="Logo"
+                          className="h-full w-auto object-contain"
+                        />
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="flex flex-col leading-tight">
+                    <span className="text-sm font-bold text-neutral-700">
+                      Connect2Roots Academy
+                    </span>
+                    <span className="text-xs text-gray-500">
+                      Learn practical skills
+                    </span>
+                  </div>
+                </Link>
+
+                <div className="flex items-center gap-2">
+                  <Link
+                    to="/get-started"
+                    className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-gray-900 text-sm font-medium text-white hover:bg-gray-800 active:scale-95 transition-all"
+                  >
+                    Get Started
+                  </Link>
+
+                  <button
+                    type="button"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 rounded-2xl hover:bg-gray-100/80 active:scale-95 transition-all"
+                    aria-label="Close menu"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="h-6 w-6 text-gray-600"
+                    >
+                      <path
+                        d="M6 18L18 6M6 6l12 12"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* Content - Clean list style */}
+              <div className="px-4 py-3 max-h-[75vh] overflow-y-auto">
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  variants={{
+                    hidden: {},
+                    visible: {
+                      transition: {
+                        staggerChildren: 0.04,
+                        delayChildren: 0.08,
+                      },
+                    },
+                  }}
                 >
-                  <CircleUserIcon className="size-5 text-green-600" />
-                  Log in
-                </NavLink>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+                  {/* Courses */}
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 8 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    className="mb-1"
+                  >
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setCoursesDropdownOpen(!coursesDropdownOpen)
+                      }
+                      className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-2xl hover:bg-gray-50/80 active:bg-gray-100 transition-colors"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="flex-none p-2.5 rounded-xl bg-green-500/30">
+                          <EarthIcon className="h-5 w-5 text-gray-700" />
+                        </div>
+                        <div className="text-left">
+                          <div className="text-base font-medium text-gray-900">
+                            Explore Courses
+                          </div>
+                          <div className="text-sm text-gray-500 mt-0.5">
+                            Browse curated courses
+                          </div>
+                        </div>
+                      </div>
+
+                      <motion.span
+                        animate={{ rotate: coursesDropdownOpen ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex-none text-gray-400"
+                      >
+                        <svg
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          className="h-5 w-5"
+                        >
+                          <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                        </svg>
+                      </motion.span>
+                    </button>
+
+                    <AnimatePresence>
+                      {coursesDropdownOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="ml-16 mr-4 mt-1 space-y-1"
+                        >
+                          <NavLink
+                            to="/professional"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                          >
+                            <div className="text-sm font-medium text-gray-900">
+                              Professional Courses
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              In-depth career tracks
+                            </div>
+                          </NavLink>
+
+                          <NavLink
+                            to="/entrepreneuship"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                          >
+                            <div className="text-sm font-medium text-gray-900">
+                              Entrepreneurship
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              Start and grow a business
+                            </div>
+                          </NavLink>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+
+                  {/* Separator */}
+                  <div className="h-px bg-neutral-200 mx-4 my-3" />
+
+                  {/* Training Programs */}
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 8 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    className="mb-1"
+                  >
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setTrainingDropdownOpen(!trainingDropdownOpen)
+                      }
+                      className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-2xl hover:bg-gray-50/80 active:bg-gray-100 transition-colors"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="flex-none p-2.5 rounded-xl bg-green-500/30">
+                          <AwardIcon className="h-5 w-5 text-gray-700" />
+                        </div>
+                        <div className="text-left">
+                          <div className="text-base font-medium text-gray-900">
+                            Training Programs
+                          </div>
+                          <div className="text-sm text-gray-500 mt-0.5">
+                            Workshops and corporate training
+                          </div>
+                        </div>
+                      </div>
+
+                      <motion.span
+                        animate={{ rotate: trainingDropdownOpen ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex-none text-gray-400"
+                      >
+                        <svg
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          className="h-5 w-5"
+                        >
+                          <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                        </svg>
+                      </motion.span>
+                    </button>
+
+                    <AnimatePresence>
+                      {trainingDropdownOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="ml-16 mr-4 mt-1 space-y-1"
+                        >
+                          <NavLink
+                            to="/coptraining"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                          >
+                            <div className="text-sm font-medium text-gray-900">
+                              Corporate Training
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              Custom programs for teams
+                            </div>
+                          </NavLink>
+
+                          <NavLink
+                            to="/workshops"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                          >
+                            <div className="text-sm font-medium text-gray-900">
+                              Workshops
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              Hands-on project sessions
+                            </div>
+                          </NavLink>
+
+                          <NavLink
+                            to="/webinar"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                          >
+                            <div className="text-sm font-medium text-gray-900">
+                              Webinars
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              Live talks with experts
+                            </div>
+                          </NavLink>
+
+                          <NavLink
+                            to="/applyastrainer"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                          >
+                            <div className="text-sm font-medium text-gray-900">
+                              Apply as a trainer
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              Share expertise with our community
+                            </div>
+                          </NavLink>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+
+                  {/* Separator */}
+                  <div className="h-px bg-neutral-200 mx-4 my-3" />
+
+                  {/* Partnership */}
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 8 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    className="mb-1"
+                  >
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setPartnershipDropdownOpen(!partnershipDropdownOpen)
+                      }
+                      className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-2xl hover:bg-gray-50/80 active:bg-gray-100 transition-colors"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="flex-none p-2.5 rounded-xl bg-green-500/30">
+                          <HandshakeIcon className="h-5 w-5 text-gray-700" />
+                        </div>
+                        <div className="text-left">
+                          <div className="text-base font-medium text-gray-900">
+                            Partnership
+                          </div>
+                          <div className="text-sm text-gray-500 mt-0.5">
+                            Collaborate with us
+                          </div>
+                        </div>
+                      </div>
+
+                      <motion.span
+                        animate={{ rotate: partnershipDropdownOpen ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex-none text-gray-400"
+                      >
+                        <svg
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          className="h-5 w-5"
+                        >
+                          <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                        </svg>
+                      </motion.span>
+                    </button>
+
+                    <AnimatePresence>
+                      {partnershipDropdownOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="ml-16 mr-4 mt-1 space-y-1"
+                        >
+                          <NavLink
+                            to="/corporate"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                          >
+                            <div className="text-sm font-medium text-gray-900">
+                              Corporate Partnership
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              Enterprise skilling and hiring
+                            </div>
+                          </NavLink>
+
+                          <NavLink
+                            to="/institutional"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                          >
+                            <div className="text-sm font-medium text-gray-900">
+                              Institutional Partnership
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              Work with colleges and NGOs
+                            </div>
+                          </NavLink>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+
+                  {/* Separator */}
+                  <div className="h-px bg-neutral-200 mx-4 my-3" />
+
+                  {/* About Us & Contact Us */}
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 6 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    className="mt-2 flex gap-2 px-4"
+                  >
+                    <NavLink
+                      to="/about"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex-1 flex items-center justify-center gap-3 px-4 py-3 rounded-2xl hover:bg-gray-50/80 active:bg-gray-100 transition-colors border border-gray-200/60"
+                    >
+                      <div className="flex-none p-2 rounded-xl bg-neutral-200">
+                        <User className="h-4 w-4 text-gray-700" />
+                      </div>
+                      <div className="text-sm font-medium text-gray-900 whitespace-nowrap">
+                        About Us
+                      </div>
+                    </NavLink>
+
+                    <NavLink
+                      to="/contact"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex-1 flex items-center justify-center gap-3 px-4 py-3 rounded-2xl hover:bg-gray-50/80 active:bg-gray-100 transition-colors border border-gray-200/60"
+                    >
+                      <div className="flex-none p-2 rounded-xl bg-neutral-200">
+                        <HeadsetIcon className="h-4 w-4 text-neutral-700" />
+                      </div>
+                      <div className="text-sm font-medium text-gray-900 whitespace-nowrap">
+                        Contact Us
+                      </div>
+                    </NavLink>
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
