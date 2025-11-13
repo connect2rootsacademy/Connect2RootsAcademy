@@ -713,7 +713,6 @@ const Navbar = () => {
 
         {/* Mobile Hamburger */}
         <div className="flex lg:hidden order-2 items-center gap-3">
-          <SearchBar />
           <div className="flex flex-1 justify-end">
             {currentUser ? (
               <NavLink
