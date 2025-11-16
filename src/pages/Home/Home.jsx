@@ -79,6 +79,30 @@ const Home = () => {
       img: 'https://plus.unsplash.com/premium_photo-1661266819853-ac00dcaf21d2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2FyZWVyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900',
       alt: 'Career Development Course',
     },
+    {
+      href: '/cloudcomputing',
+      title: 'Cloud Computing and IT',
+      img: 'https://plus.unsplash.com/premium_photo-1661758351472-52ed02e99496?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGNsb3VkJTIwY29tcHV0aW5nfGVufDB8fDB8fHww',
+      alt: 'Cloud Computing and IT Course',
+    },
+    {
+      href: '/salesandmarketing',
+      title: 'Sales and Marketing',
+      img: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFya2V0aW5nfGVufDB8fDB8fHww',
+      alt: 'Sales and Marketing Course',
+    },
+    {
+      href: '/ruraldevelopment',
+      title: 'Rural Development and Entrepreneurship',
+      img: 'https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG9ydGljdWx0dXJlfGVufDB8fDB8fHww',
+      alt: 'Rural Development and Entrepreneurship Course',
+    },
+    {
+      href: '/design',
+      title: 'Design and Creative Arts',
+      img: 'https://images.unsplash.com/photo-1653647054667-c99dc7f914ef?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGVzaWduZXIlMjBmaWdtYXxlbnwwfHwwfHx8MA%3D%3D',
+      alt: 'Design and Creative Arts Course',
+    },
   ];
 
   return (
@@ -243,16 +267,15 @@ const Home = () => {
       </section>
 
       {/* 3rd SECTION- RECOMMENDED COURSES & RECOMMENDED VIDEOS SECTION  */}
-      <section className="py-12 px-4 sm:px-6 lg:px-0">
-        <h1 className="text-5xl sm:text-6xl p-2 text-center font-semibold tracking-tight mb-8 text-black max-w-3xl mx-auto">
+      <section className="relative py-12 mb-30 px-4 sm:px-6 lg:px-0">
+        <h1 className="text-5xl sm:text-6xl p-2 text-center font-semibold tracking-tight mb-20 text-black max-w-3xl mx-auto">
           <span className="relative inline-block">
             <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 bg-[#4ADE80] -z-10 rounded-md" />
-            Learn
+            Master the Skills
           </span>{' '}
-          What Truly Matters
+          That Matter
         </h1>
 
-        {/* grid: mobile & tablet = 2 columns; desktop expands */}
         <div
           id="recc-courses"
           className="max-w-5xl mx-auto grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4 items-stretch"
@@ -263,19 +286,17 @@ const Home = () => {
               to={c.href}
               className="group relative rounded-lg overflow-hidden block shadow-sm"
             >
-              {/* Image wrapper: fixed height on small screens (so cards have some padding from edges), square on large screens */}
               <div className="w-full h-40 sm:h-44 md:h-48 lg:aspect-square lg:h-auto">
                 <img
                   src={c.img}
                   alt={c.alt}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 
-              {/* Overlay: visible on mobile/tablet (default), hidden on desktop until hover */}
               <div
                 className="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 transition-all duration-300
-opacity-100 lg:opacity-0 group-hover:lg:opacity-100"
+"
               >
                 <h2 className="text-lg md:text-xl font-medium">{c.title}</h2>
                 <p className="flex items-center gap-2 text-sm text-white/90 mt-1">
@@ -311,12 +332,23 @@ opacity-100 lg:opacity-0 group-hover:lg:opacity-100"
               </div>
             </Link>
           ))}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          >
+            <div
+              style={{
+                clipPath:
+                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              }}
+              className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-10 bg-linear-to-tr from-[#efb16a] to-[#eb7c72] opacity-50 sm:left-[calc(50%-30rem)] sm:w-288.75"
+            />
+          </div>
         </div>
 
-        {/* spacing note for mobile: add bottom padding so cards don't touch screen edges */}
         <div className="h-6 md:hidden" />
       </section>
-      <RecommendedVideos />
+      {/* <RecommendedVideos /> */}
 
       {/* 4th SECTION - FEATURES SECTION */}
       <section>
@@ -337,7 +369,7 @@ opacity-100 lg:opacity-0 group-hover:lg:opacity-100"
       </section>
 
       {/* 5TH SECTION - OUR MISSION SECTION */}
-      <section className="flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4 -mt-10 mb-10 md:mb-20">
+      <section className="bg-[#046528] p-8 flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4 -mt-10 mb-10 md:mb-20">
         <div className="relative shadow-2xl shadow-green-600/40 rounded-2xl overflow-hidden shrink-0">
           <img
             className="max-w-md w-full object-cover rounded-2xl"
@@ -370,13 +402,9 @@ opacity-100 lg:opacity-0 group-hover:lg:opacity-100"
             </p>
           </div>
         </div>
-        <div className="text-sm text-slate-600 max-w-lg">
-          <h1 className="text-4xl font-bold text-black sm:text-4xl lg:text-5xl">
-            Enspiring Growth
-            <span className="relative inline-block">
-              <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
-              Building Tomorrow
-            </span>{' '}
+        <div className="text-sm  text-neutral-300 max-w-lg">
+          <h1 className="text-5xl font-bold text-neutral-100 sm:text-4xl lg:text-6xl tracking-tight">
+            Enspiring Growth Building Tomorrow
           </h1>
           <p className="mt-8">
             We are committed to empowering graduates through a journey of
@@ -399,7 +427,7 @@ opacity-100 lg:opacity-0 group-hover:lg:opacity-100"
           </p>
           <Link
             to="/about"
-            className="group inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-green-500 to-emerald-400 py-3.5 px-8 rounded-full text-white font-semibold transition-all duration-500 hover:from-green-400 hover:to-emerald-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-400/40"
+            className="group inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-green-500 to-green-400 py-3.5 px-8 rounded-full text-white font-semibold transition-all duration-500 hover:from-green-400 hover:to-green-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-400/40"
           >
             <span className="relative overflow-hidden">
               <span className="inline-block transition-transform duration-500 group-hover:-translate-y-6 group-hover:opacity-0">
@@ -435,39 +463,7 @@ opacity-100 lg:opacity-0 group-hover:lg:opacity-100"
       </section>
 
       {/* 7TH SECTION - APPLY AS A TARINER CTA  SECTION*/}
-      <section className=" relative md:grid md:grid-cols-2 max-w-4xl mx-4 md:mx-auto rounded-xl mt-10 mb-30">
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <svg
-            aria-hidden="true"
-            className="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-300"
-          >
-            <defs>
-              <pattern
-                x="50%"
-                y={-1}
-                id="e813992c-7d03-4cc4-a2bd-151760b470a0"
-                width={200}
-                height={200}
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M100 200V.5M.5 .5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-              <path
-                d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-                strokeWidth={0}
-              />
-            </svg>
-
-            <rect
-              fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
-              width="100%"
-              height="100%"
-              strokeWidth={0}
-            />
-          </svg>
-        </div>
+      <section className="bg-[#046528] p-8 md:grid md:grid-cols-2 max-w-5xl mx-4 md:mx-auto rounded-xl mt-10 mb-30">
         <img
           src={heroimg}
           alt="trainer"
@@ -475,13 +471,12 @@ opacity-100 lg:opacity-0 group-hover:lg:opacity-100"
         />
         <div className="relative flex items-center justify-center">
           <div className="max-md:py-20 px-6 md:px-10 text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-pretty text-black">
-              <span className="relative inline-block">
-                <span className="hidden md:block absolute bottom-0 left-0 w-full h-3 sm:h-3 bg-[#4ADE80] -z-10 rounded-md"></span>
-                Share your expertise with us
-              </span>{' '}
+            <h2 className="text-4xl sm:text-5xl font-regular tracking-tight text-pretty text-neutral-100">
+              Share your{' '}
+              <span className="text-neutral-100 font-bold">expertise</span> with
+              us
             </h2>
-            <p className="mt-4 text-gray-500">
+            <p className="mt-4 text-neutral-300">
               Your journey matters. When you join us, you’re not just learning,
               you’re shaping communities, inspiring change, and empowering
               others. <br />
@@ -489,11 +484,11 @@ opacity-100 lg:opacity-0 group-hover:lg:opacity-100"
             <div className="mt-10">
               <Link
                 to="/applyastrainer"
-                className="rounded-lg bg-green-600 hover:bg-green-700 text-sm px-14 py-3 text-white"
+                className="rounded-lg bg-green-500 hover:bg-green-600 text-sm px-14 py-3 text-white"
               >
                 Apply Now as a Trainer
               </Link>
-              <h2 className="px-8 py-3 mt-4 text-sm text-gray-800">
+              <h2 className="px-8 py-3 mt-4 text-sm text-neutral-300">
                 Send us your resume: <span>xyz@gmail.com</span>
               </h2>
             </div>
