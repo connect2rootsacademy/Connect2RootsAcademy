@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './RecommendedVideos.css';
-import { PlayIcon } from 'lucide-react';
 
 const RecommendedVideos = () => {
   const scrollRef = useRef(null);
@@ -83,8 +82,6 @@ const RecommendedVideos = () => {
       href: 'https://www.youtube.com/watch?v=0_I1z8f-wxo&t=35s',
       imageSrc:
         'https://media.istockphoto.com/id/610451052/photo/construction-site.webp?a=1&b=1&s=612x612&w=0&k=20&c=YFhqejJldfnhsCREw3QxyFgcW9HNlB6j8w_bOL3YK94=',
-      //   imageSrc:
-      //     'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-related-product-04.jpg',
       imageAlt: 'Entrepreneurship tips for rural youth.',
       duration: '3:45',
       title: 'गाँव में युवाओं के लिए उद्यमिता के टिप्स!',
@@ -94,38 +91,34 @@ const RecommendedVideos = () => {
   const scroll = (direction) => {
     if (scrollRef.current) {
       const container = scrollRef.current;
+      const scrollAmount = container.clientWidth;
 
       if (direction === 'right') {
-        // If near end, reset to start
-        if (
+        const atEnd =
           container.scrollLeft + container.clientWidth >=
-          container.scrollWidth - 10
-        ) {
-          container.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          container.scrollBy({ left: 300, behavior: 'smooth' });
-        }
+          container.scrollWidth - 10;
+        container.scrollTo({
+          left: atEnd ? 0 : container.scrollLeft + scrollAmount,
+          behavior: 'smooth',
+        });
       } else {
-        // If near start, jump to end
-        if (container.scrollLeft <= 0) {
-          container.scrollTo({
-            left: container.scrollWidth,
-            behavior: 'smooth',
-          });
-        } else {
-          container.scrollBy({ left: -300, behavior: 'smooth' });
-        }
+        const atStart = container.scrollLeft <= 0;
+        container.scrollTo({
+          left: atStart
+            ? container.scrollWidth
+            : container.scrollLeft - scrollAmount,
+          behavior: 'smooth',
+        });
       }
     }
   };
 
-  // Auto scroll effect
   useEffect(() => {
-    if (isPaused) return; // pause on hover
+    if (isPaused) return;
 
     const interval = setInterval(() => {
       scroll('right');
-    }, 3000); // every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -144,43 +137,29 @@ const RecommendedVideos = () => {
           className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-10 bg-linear-to-tr from-[#04ff00] to-[#00ff04] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
         />
       </div>
-      <div className="-mt-15 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <div>
-          {/* Buttons */}
-          <button
-            onClick={() => scroll('left')}
-            className="absolute left-10 top-1/2 -translate-y-1/2 bg-green-600 p-3 rounded-full shadow hover:bg-green-700 z-10"
-          >
-            <PlayIcon className="rotate-180 text-white" />
-          </button>
-          <button
-            onClick={() => scroll('right')}
-            className="absolute right-10 top-1/2 -translate-y-1/2 bg-green-600 p-3 rounded-full shadow hover:bg-green-700 z-10"
-          >
-            <PlayIcon className="text-white" />
-          </button>
-
-          {/* Scrollable container */}
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-5xl lg:px-8">
+        <div className="relative">
           <div
             ref={scrollRef}
-            className="flex space-x-6 overflow-x-auto scrollbar-hide scroll-smooth"
-            onMouseEnter={() => setIsPaused(true)} // pause on hover
-            onMouseLeave={() => setIsPaused(false)} // resume on leave
+            className="recommended-videos-container"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
             {products.map((product) => (
-              <div
-                key={product.id}
-                className="group relative w-64 flex-shrink-0"
-              >
+              <div key={product.id} className="recommended-video-card">
                 <div className="relative">
                   <img
                     alt={product.imageAlt}
                     src={product.imageSrc}
                     className="w-full h-44 rounded-lg object-cover group-hover:opacity-50 group-hover:scale-95 transition duration-300"
                   />
-                  {/* Play button overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                    <div className="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full bg-black bg-opacity-40">
+                    <a
+                      href={product.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center justify-center border-2 border-white rounded-full bg-black bg-opacity-40"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6 text-white"
@@ -189,7 +168,7 @@ const RecommendedVideos = () => {
                       >
                         <path d="M6.5 5.5l7 4.5-7 4.5v-9z" />
                       </svg>
-                    </div>
+                    </a>
                   </div>
                 </div>
                 <div className="mt-4 flex justify-between">
@@ -200,11 +179,8 @@ const RecommendedVideos = () => {
                         {product.category}
                       </a>
                     </h3>
-                    <p className="mt-1 text-sm text-gray-500">
-                      {product.title}
-                    </p>
                   </div>
-                  <p className="text-sm font-medium text-gray-700 underline">
+                  <p className="text-sm ml-2 font-medium text-gray-700 underline">
                     {product.duration}
                   </p>
                 </div>

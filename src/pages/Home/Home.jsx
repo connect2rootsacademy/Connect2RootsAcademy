@@ -1,12 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './Home.css';
 import RecommendedVideos from '../../ui/RecommendedVideos/RecommendedVideos';
 import { Link } from 'react-router-dom';
 import heroimg from '../../assets/hero-img.png';
 import FeaturesCard from '../../ui/FeaturesCard/FeaturesCard';
 import Testimonials from '../../ui/Testmonials/Testmonials';
-import Aos from 'aos';
 import 'aos/dist/aos.css';
 import ShuffleHero from '../../ui/ShuffleHero';
 import CoursesCard from '../../components/CoursesCard/CoursesCard';
@@ -55,11 +54,32 @@ const Home = () => {
         'Our courses focus on real-world skills, interview readiness, and industry exposure to boost your career.',
     },
   ];
-
-  //AOS ANIMATION INITIALIZATION
-  useEffect(() => {
-    Aos.init();
-  }, []);
+  const cards = [
+    {
+      href: '/aianddatascience',
+      title: 'AI and Data Science',
+      img: 'https://images.unsplash.com/photo-1677691820099-a6e8040aa077?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fGFydGlmaWNpYWwlMjBpbnRlbGxpZ2VuY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900',
+      alt: 'AI and Data Science Course',
+    },
+    {
+      href: '/webdev',
+      title: 'Web Development',
+      img: 'https://images.unsplash.com/photo-1732020743205-9a1da14e36fd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900',
+      alt: 'Web Development Course',
+    },
+    {
+      href: '/bankingandfinance',
+      title: 'Banking and Finance',
+      img: 'https://images.unsplash.com/photo-1614029655965-2464911905a4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJhbmtlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900',
+      alt: 'Banking and Finance Course',
+    },
+    {
+      href: '/careerdevelopment',
+      title: 'Career Development',
+      img: 'https://plus.unsplash.com/premium_photo-1661266819853-ac00dcaf21d2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2FyZWVyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900',
+      alt: 'Career Development Course',
+    },
+  ];
 
   return (
     <>
@@ -223,92 +243,91 @@ const Home = () => {
       </section>
 
       {/* 3rd SECTION- RECOMMENDED COURSES & RECOMMENDED VIDEOS SECTION  */}
-      <section className="mb-10">
-        <h1 className="text-5xl sm:text-6xl p-2 text-center font-semibold tracking-tight mb-10 text-black">
+      <section className="py-12 px-4 sm:px-6 lg:px-0">
+        <h1 className="text-5xl sm:text-6xl p-2 text-center font-semibold tracking-tight mb-8 text-black max-w-3xl mx-auto">
           <span className="relative inline-block">
-            <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
+            <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 bg-[#4ADE80] -z-10 rounded-md" />
             Learn
           </span>{' '}
           What Truly Matters
         </h1>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 pt-12">
-          <Link to="/aianddatascience" className="max-w-72 w-full block group">
-            <div className="overflow-hidden rounded-xl">
-              <img
-                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                src="https://images.unsplash.com/photo-1677691820099-a6e8040aa077?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fGFydGlmaWNpYWwlMjBpbnRlbGxpZ2VuY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900"
-                alt="AI and Data Science Course"
-              />
-            </div>
-            <h3 className="text-base text-slate-900 font-medium mt-3">
-              AI and Data Science
-            </h3>
-            <p className="text-xs text-green-600 font-medium mt-1 hover:underline">
-              Enroll Now
-            </p>
-          </Link>
-          <Link to="/webdev" className="max-w-72 w-full block group">
-            <div className="overflow-hidden rounded-xl">
-              <img
-                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                src="https://images.unsplash.com/photo-1732020743205-9a1da14e36fd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900"
-                alt="Web Development Course"
-              />
-            </div>
-            <h3 className="text-base text-slate-900 font-medium mt-3">
-              Web Development
-            </h3>
-            <p className="text-xs text-green-600 font-medium mt-1 hover:underline">
-              Enroll Now
-            </p>
-          </Link>
-          <Link to="/careerdevelopment" className="max-w-72 w-full block group">
-            <div className="overflow-hidden rounded-xl">
-              <img
-                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                src="https://images.unsplash.com/photo-1614029655965-2464911905a4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGJhbmtlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900"
-                alt="Banking and Finance Course"
-              />
-            </div>
-            <h3 className="text-base text-slate-900 font-medium mt-3">
-              Banking and Finance
-            </h3>
-            <p className="text-xs inline text-green-600 font-medium mt-1 hover:underline">
-              Enroll Now
-            </p>
-          </Link>
-          <Link to="/careerdevelopment" className="max-w-72 w-full block group">
-            <div className="overflow-hidden rounded-xl">
-              <img
-                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                src="https://plus.unsplash.com/premium_photo-1661266819853-ac00dcaf21d2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2FyZWVyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900"
-                alt="Career Development "
-              />
-            </div>
-            <h3 className="text-base text-slate-900 font-medium mt-3">
-              Career Development
-            </h3>
-            <p className="text-xs inline text-green-600 font-medium mt-1 hover:underline">
-              Enroll Now
-            </p>
-          </Link>
+        {/* grid: mobile & tablet = 2 columns; desktop expands */}
+        <div
+          id="recc-courses"
+          className="max-w-5xl mx-auto grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4 items-stretch"
+        >
+          {cards.map((c) => (
+            <Link
+              key={c.href}
+              to={c.href}
+              className="group relative rounded-lg overflow-hidden block shadow-sm"
+            >
+              {/* Image wrapper: fixed height on small screens (so cards have some padding from edges), square on large screens */}
+              <div className="w-full h-40 sm:h-44 md:h-48 lg:aspect-square lg:h-auto">
+                <img
+                  src={c.img}
+                  alt={c.alt}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+
+              {/* Overlay: visible on mobile/tablet (default), hidden on desktop until hover */}
+              <div
+                className="absolute inset-0 flex flex-col justify-end p-4 text-white bg-black/50 transition-all duration-300
+opacity-100 lg:opacity-0 group-hover:lg:opacity-100"
+              >
+                <h2 className="text-lg md:text-xl font-medium">{c.title}</h2>
+                <p className="flex items-center gap-2 text-sm text-white/90 mt-1">
+                  Enroll Now
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="inline-block"
+                  >
+                    <path
+                      d="M8.125 1.625H11.375V4.875"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M5.41602 7.58333L11.3743 1.625"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M9.75 7.04167V10.2917C9.75 10.579 9.63586 10.8545 9.4327 11.0577C9.22953 11.2609 8.95398 11.375 8.66667 11.375H2.70833C2.42102 11.375 2.14547 11.2609 1.9423 11.0577C1.73914 10.8545 1.625 10.579 1.625 10.2917V4.33333C1.625 4.04602 1.73914 3.77047 1.9423 3.5673C2.14547 3.36414 2.42102 3.25 2.70833 3.25H5.95833"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
+
+        {/* spacing note for mobile: add bottom padding so cards don't touch screen edges */}
+        <div className="h-6 md:hidden" />
       </section>
       <RecommendedVideos />
 
       {/* 4th SECTION - FEATURES SECTION */}
       <section>
-        <div className="first-page">
-          <div>
-            <h1 className=" text-center text-5xl sm:text-6xl font-bold tracking-tight text-pretty text-black">
-              <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
-                Why Choose
-              </span>{' '}
-              Connect2Roots Academy?
-            </h1>
-          </div>
+        <div className="first-page -mb-10">
+          <h1 className="text-center text-5xl sm:text-6xl font-bold tracking-tight text-pretty text-black">
+            <span className="relative inline-block">
+              <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
+              Why Choose
+            </span>{' '}
+            Connect2Roots Academy?
+          </h1>
         </div>
         <div className="w-full p-10">
           <div className="-mt-10 top-0 left-0 w-full">
@@ -456,7 +475,7 @@ const Home = () => {
         />
         <div className="relative flex items-center justify-center">
           <div className="max-md:py-20 px-6 md:px-10 text-center">
-            <h2 className="text-4xl sm:text-2xl font-bold tracking-tight text-pretty text-black">
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-pretty text-black">
               <span className="relative inline-block">
                 <span className="hidden md:block absolute bottom-0 left-0 w-full h-3 sm:h-3 bg-[#4ADE80] -z-10 rounded-md"></span>
                 Share your expertise with us
@@ -493,7 +512,7 @@ const Home = () => {
           <div>
             <p className="text-green-600 text-sm font-medium">FAQ's</p>
             {/* <h1 className="text-3xl font-semibold">Looking for answer?</h1> */}
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-pretty text-black">
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-pretty text-black">
               <span className="relative inline-block">
                 <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
                 Looking for answer?

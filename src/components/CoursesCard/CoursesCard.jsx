@@ -18,7 +18,7 @@ export const CoursesCard = ({
       className={cn('container relative mt-30 py-10 mx-auto px-4', className)}
     >
       {/* Title */}
-      <h1 className="mb-12 text-4xl text-center font-bold text-black sm:text-5xl lg:text-6xl">
+      <h1 className="mb-12 text-5xl text-center font-bold text-black sm:text-5xl lg:text-6xl">
         <span className="relative inline-block">
           <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
           {title}

@@ -1,0 +1,39 @@
+ .recommended-videos-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.recommended-videos-container::-webkit-scrollbar {
+  display: none; 
+}
+
+.recommended-video-card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  padding: 0 8px;
+}
+
+@media (min-width: 640px) {
+  .recommended-video-card {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .recommended-video-card {
+    flex: 0 0 33.3333%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .recommended-video-card {
+    flex: 0 0 25%;
+  }
+} 
+
+
+
