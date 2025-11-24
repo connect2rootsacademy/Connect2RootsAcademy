@@ -86,14 +86,14 @@ const AccountingAndFinance = () => {
             <nav aria-label="Breadcrumb">
               <ol
                 role="list"
-                className="mx-auto  flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
+                className="mx-auto flex max-w-2xl items-center space-x-2 px-5 sm:px-6 lg:max-w-7xl lg:px-8"
               >
                 {course.breadcrumbs.map((breadcrumb) => (
                   <li key={breadcrumb.id}>
                     <div className="flex items-center">
                       <a
                         href={breadcrumb.href}
-                        className="mr-2 text-sm font-medium text-gray-500"
+                        className="mr-2 text-sm font-regular text-gray-500"
                       >
                         {breadcrumb.name}
                       </a>
@@ -105,7 +105,7 @@ const AccountingAndFinance = () => {
                   <a
                     href={course.href}
                     aria-current="page"
-                    className="font-medium text-gray-900 hover:text-gray-600"
+                    className="font-regular text-sm text-gray-900 hover:text-gray-600"
                   >
                     {course.name}
                   </a>
@@ -116,12 +116,12 @@ const AccountingAndFinance = () => {
             {/* Course info */}
             <div>
               <div class="mx-auto max-w-4xl text-center">
-                <p class="mt-20 text-7xl leading-19 font-extrabold tracking-tight text-balance text-black sm:text-8xl">
+                <p class="mt-20  font-extrabold tracking-tight text-balance text-black text-5xl sm:text-8xl sm:leading-19">
                   <span className="text-green-600">Accounting</span> and
                   Financial Management
                 </p>
               </div>
-              <p class="mx-auto mt-4 max-w-2xl text-center font-light text-pretty text-gray-700 sm:text-xl/8">
+              <p class="mx-auto mt-4 max-w-2xl text-center font-light text-pretty text-gray-700 p-2 text-sm sm:text-xl/8">
                 {course.description}
               </p>
             </div>

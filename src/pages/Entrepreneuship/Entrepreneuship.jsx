@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { enterpreneushipCategories } from '../../data/enterpreneushipData';
 
@@ -27,6 +27,43 @@ const Enterpreneuship = () => {
     'Unleash your creativity with courses on design principles, user experience (UX), and innovative thinking.',
     'Discover the opportunities in rural development and entrepreneurship, from sustainable agriculture to small business management.',
   ];
+  // Per-card component so each card controls its own tilt state
+  const CourseCard = ({ course, index }) => {
+    const [tilt, setTilt] = useState({ x: 0, y: 0 });
+    const threshold = 12;
+
+    const handleMoveLocal = (e) => {
+      const { left, top, width, height } =
+        e.currentTarget.getBoundingClientRect();
+      const x = (e.clientX - left) / width - 0.5;
+      const y = (e.clientY - top) / height - 0.5;
+      setTilt({ x: y * -threshold, y: x * threshold });
+    };
+
+    return (
+      <Link
+        to={`/freecourses?category=${encodeURIComponent(course)}`}
+        className="rounded-xl shadow-xl overflow-hidden transition-transform duration-200 ease-out cursor-pointer max-w-80 bg-white"
+        onMouseMove={handleMoveLocal}
+        onMouseLeave={() => setTilt({ x: 0, y: 0 })}
+        style={{
+          transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+        }}
+      >
+        <img
+          src={cardImages[index]}
+          alt={course}
+          className="w-full h-52 object-cover"
+        />
+        <h3 className="mt-3 px-4 pt-3 mb-1 text-xl font-extrabold text-neutral-800">
+          {course}
+        </h3>
+        <p className="text-sm px-4 pb-6 text-neutral-500 w-5/6">
+          {descriptions[index]}
+        </p>
+      </Link>
+    );
+  };
   return (
     <>
       <section>
@@ -79,6 +116,11 @@ const Enterpreneuship = () => {
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {enterpreneushipCategories.map((category, index) => (
+              <CourseCard course={category} index={index} key={index} />
+            ))}
+          </div>
+          {/* <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {enterpreneushipCategories.map((category, index) => (
               <div className="p-4" key={category}>
                 <Link
                   to={`/freecourses?category=${encodeURIComponent(category)}`}
@@ -102,7 +144,7 @@ const Enterpreneuship = () => {
                 </Link>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </>

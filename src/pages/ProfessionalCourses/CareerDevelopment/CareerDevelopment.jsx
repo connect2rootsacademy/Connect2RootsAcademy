@@ -118,11 +118,11 @@ const CareerDevelopment = () => {
             {/* Course info */}
             <div>
               <div class="mx-auto max-w-4xl text-center">
-                <p class="mt-20 text-7xl leading-19 font-extrabold tracking-tight text-balance text-black sm:text-8xl">
+                <p class="mt-20 font-extrabold tracking-tight text-balance text-black text-5xl sm:text-8xl sm:leading-19">
                   <span className="text-green-600">Career</span> Development
                 </p>
               </div>
-              <p class="mx-auto mt-4 max-w-2xl text-center font-light text-pretty text-gray-700 sm:text-xl/8">
+              <p class="mx-auto mt-4 max-w-2xl text-center font-light text-pretty text-gray-700 p-2 text-sm sm:text-xl/8">
                 {course.description}
               </p>
             </div>

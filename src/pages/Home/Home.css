@@ -218,3 +218,68 @@
     z-index: 10; /* bring text above the underline */
     display: inline-block;
 }
+
+#applybtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    #applybtn {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+#applybtn .apply-now-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 21rem;
+    padding: 0.95rem 2.5rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #fff;
+    background-image: linear-gradient(120deg, #4ade80, #22c55e, #16a34a);
+    background-size: 200% auto;
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.35);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background-position 0.35s ease;
+    animation: applybtnGradient 6s ease infinite;
+}
+
+#applybtn .apply-now-btn:hover,
+#applybtn .apply-now-btn:focus-visible {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 18px 30px rgba(34, 197, 94, 0.4);
+    background-position: 100% center;
+}
+
+#applybtn .apply-now-btn svg {
+    transition: transform 0.35s ease;
+}
+
+#applybtn .apply-now-btn:hover svg,
+#applybtn .apply-now-btn:focus-visible svg {
+    transform: translateX(4px);
+}
+
+@keyframes applybtnGradient {
+    0% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+    100% {
+        background-position: 0% center;
+    }
+}

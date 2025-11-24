@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { professionalCourses } from '../../data/videoData';
 
@@ -30,6 +30,42 @@ const Professional = () => {
     }
   };
 
+  const CourseCard = ({ course }) => {
+    const [tilt, setTilt] = useState({ x: 0, y: 0 });
+    const threshold = 12;
+
+    const handleMoveLocal = (e) => {
+      const { left, top, width, height } =
+        e.currentTarget.getBoundingClientRect();
+      const x = (e.clientX - left) / width - 0.5;
+      const y = (e.clientY - top) / height - 0.5;
+      setTilt({ x: y * -threshold, y: x * threshold });
+    };
+
+    return (
+      <Link
+        to={getCourseLink(course.category)}
+        className="rounded-xl shadow-xl overflow-hidden transition-transform duration-200 ease-out cursor-pointer max-w-80 bg-white"
+        onMouseMove={handleMoveLocal}
+        onMouseLeave={() => setTilt({ x: 0, y: 0 })}
+        style={{
+          transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+        }}
+      >
+        <img
+          src={course.image}
+          alt={course.category}
+          className="w-full h-52 object-cover"
+        />
+        <h3 className="mt-3 px-4 pt-3 mb-1 text-xl font-extrabold text-neutral-800">
+          {course.category}
+        </h3>
+        <p className="text-sm px-4 pb-6 text-neutral-500 w-5/6">
+          {course.description}
+        </p>
+      </Link>
+    );
+  };
   return (
     <>
       <section>
@@ -82,28 +118,7 @@ const Professional = () => {
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {professionalCourses.map((course) => (
-              <div className="p-4" key={course.category}>
-                <Link
-                  to={getCourseLink(course.category)}
-                  className="no-underline"
-                >
-                  <div className="flex flex-wrap items-center justify-center gap-8 pt-12">
-                    <div className="max-w-72 w-full hover:-translate-y-1  transition duration-300">
-                      <img
-                        className="rounded-xl max-h-40 w-full object-cover"
-                        src={course.image}
-                        alt=""
-                      />
-                      <h3 className=" text-slate-900 font-semibold text-lg mt-3">
-                        {course.category}
-                      </h3>
-                      <p className="text-xs text-neutral-600 font-medium mt-1">
-                        {course.description}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </div>
+              <CourseCard course={course} key={course.category} />
             ))}
           </div>
         </div>

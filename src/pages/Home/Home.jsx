@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import './Home.css';
-import RecommendedVideos from '../../ui/RecommendedVideos/RecommendedVideos';
 import { Link } from 'react-router-dom';
 import heroimg from '../../assets/hero-img.png';
 import FeaturesCard from '../../ui/FeaturesCard/FeaturesCard';
@@ -284,7 +283,7 @@ const Home = () => {
             <Link
               key={c.href}
               to={c.href}
-              className="group relative rounded-lg overflow-hidden block shadow-sm"
+              className="group relative rounded-3xl overflow-hidden block shadow-sm"
             >
               <div className="w-full h-40 sm:h-44 md:h-48 lg:aspect-square lg:h-auto">
                 <img
@@ -332,23 +331,10 @@ const Home = () => {
               </div>
             </Link>
           ))}
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-          >
-            <div
-              style={{
-                clipPath:
-                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-              }}
-              className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-10 bg-linear-to-tr from-[#efb16a] to-[#eb7c72] opacity-50 sm:left-[calc(50%-30rem)] sm:w-288.75"
-            />
-          </div>
         </div>
 
         <div className="h-6 md:hidden" />
       </section>
-      {/* <RecommendedVideos /> */}
 
       {/* 4th SECTION - FEATURES SECTION */}
       <section>
@@ -463,12 +449,16 @@ const Home = () => {
       </section>
 
       {/* 7TH SECTION - APPLY AS A TARINER CTA  SECTION*/}
-      <section className="bg-[#046528] p-8 md:grid md:grid-cols-2 max-w-5xl mx-4 md:mx-auto rounded-xl mt-10 mb-30">
+      <section className="bg-[#046528] p-1 sm:p-5 md:grid md:grid-cols-[1fr_auto_1fr] max-w-5xl mx-4 md:mx-auto rounded-2xl mt-10 mb-30">
         <img
           src={heroimg}
           alt="trainer"
           className="hidden md:block w-full max-w-lg rounded-l-xl"
         />
+        <div
+          aria-hidden="true"
+          className="hidden md:block w-px bg-white/40 rounded-full mx-6 my-6"
+        ></div>
         <div className="relative flex items-center justify-center">
           <div className="max-md:py-20 px-6 md:px-10 text-center">
             <h2 className="text-4xl sm:text-5xl font-regular tracking-tight text-pretty text-neutral-100">
@@ -481,14 +471,14 @@ const Home = () => {
               you’re shaping communities, inspiring change, and empowering
               others. <br />
             </p>
-            <div className="mt-10">
+            <div className="mt-10  flex flex-col items-center gap-4 text-center sm:gap-5">
               <Link
                 to="/applyastrainer"
-                className="rounded-lg bg-green-500 hover:bg-green-600 text-sm px-14 py-3 text-white"
+                className=" bg-green-600 cursour-pointer px-8 py-3 rounded-lg text-white font-regular text-md"
               >
-                Apply Now as a Trainer
+                <span>Apply Now as a Trainer</span>
               </Link>
-              <h2 className="px-8 py-3 mt-4 text-sm text-neutral-300">
+              <h2 className="px-8 py-3 text-sm text-neutral-300 sm:text-base">
                 Send us your resume: <span>xyz@gmail.com</span>
               </h2>
             </div>
@@ -506,7 +496,6 @@ const Home = () => {
           />
           <div>
             <p className="text-green-600 text-sm font-medium">FAQ's</p>
-            {/* <h1 className="text-3xl font-semibold">Looking for answer?</h1> */}
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-pretty text-black">
               <span className="relative inline-block">
                 <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
