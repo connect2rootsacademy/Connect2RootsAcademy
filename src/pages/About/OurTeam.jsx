@@ -31,7 +31,7 @@ export default function OurTeam() {
           <div className="sm:w-2/5">
             <h2 className="text-3xl font-bold sm:text-4xl">
               <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
+                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
                 Our Dream
               </span>{' '}
               Team

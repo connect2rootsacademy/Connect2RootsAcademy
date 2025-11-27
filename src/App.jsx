@@ -16,6 +16,7 @@ import NotFound from './pages/404NotFound/NotFound';
 import { ToastContainer } from 'react-toastify';
 import Entrepreneuship from './pages/Entrepreneuship/Entrepreneuship';
 import Professional from './pages/Professional/Professional';
+import ViksitBharat from './pages/ViksitBharat2047/ViksitBharat';
 import Institutional from './pages/Partnership/Institutional';
 import Corporate from './pages/Partnership/Corporate';
 import OurTeam from './pages/About/OurTeam';
@@ -67,6 +68,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/entrepreneuship" element={<Entrepreneuship />} />
           <Route path="/professional" element={<Professional />} />
+          <Route path="/viksitbharat2047" element={<ViksitBharat />} />
           <Route path="/institutional" element={<Institutional />} />
           <Route path="/corporate" element={<Corporate />} />
           <Route path="/termsconditions" element={<TermsAndCondition />} />

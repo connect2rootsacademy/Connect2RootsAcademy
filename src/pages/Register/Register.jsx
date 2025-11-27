@@ -54,7 +54,7 @@ const Register = () => {
           <div className="sm:mx-auto sm:w-full sm:max-w-sm -mt-60 sm:mt-5">
             <h1 className="text-4xl font-light text-black sm:text-4xl lg:text-5xl mb-8">
               <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 bg-green-400 -z-10 rounded-md"></span>
+                <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
                 Create Account
               </span>{' '}
             </h1>

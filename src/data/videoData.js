@@ -625,7 +625,7 @@ export const professionalCourses = [
     description:
       'Learn the fundamentals of financial systems, investments, and modern banking practices to strengthen your professional skills.',
     image:
-      'https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmFua2luZ3xlbnwwfHwwfHx8MA%3D%3D',
+      'https://plus.unsplash.com/premium_photo-1682317744745-8ab468afe342?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwbm90ZXN8ZW58MHx8MHx8fDA%3D',
     level: 'Beginner',
     videos: 13,
     language: 'Bilingual',
@@ -645,7 +645,7 @@ export const professionalCourses = [
     description:
       'Understand the principles of cloud computing and IT infrastructure, including services from AWS, Azure, and Google Cloud.',
     image:
-      'https://plus.unsplash.com/premium_photo-1661758351472-52ed02e99496?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGNsb3VkJTIwY29tcHV0aW5nfGVufDB8fDB8fHww',
+      'https://images.unsplash.com/flagged/photo-1579274216947-86eaa4b00475?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2VydmVyfGVufDB8fDB8fHww',
     level: 'Beginner',
     videos: 7,
     language: 'Bilingual',
@@ -665,7 +665,7 @@ export const professionalCourses = [
     description:
       'Enhance your professional skills with courses on resume building, interview preparation, and workplace communication.',
     image:
-      'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FyZWVyJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D',
+      'https://plus.unsplash.com/premium_photo-1661766274143-20501b749ca2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGluZGlhbiUyMG9mZmljZSUyMGdyb3VwfGVufDB8fDB8fHww',
     level: 'Beginner',
     videos: 4,
     language: 'Bilingual',
@@ -675,7 +675,7 @@ export const professionalCourses = [
     description:
       'Improve your communication and process management skills for a successful career in the BPO sector.',
     image:
-      'https://plus.unsplash.com/premium_photo-1661299251279-117a49a32548?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FsbCUyMGNlbnRlcnxlbnwwfHwwfHx8MA%3D%3D',
+      'https://plus.unsplash.com/premium_photo-1681483561994-e91bc8ce5a23?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwY2FsbCUyMGNlbnRlcnxlbnwwfHwwfHx8MA%3D%3D',
     level: 'Beginner',
     videos: 3,
     language: 'Bilingual',
@@ -685,7 +685,7 @@ export const professionalCourses = [
     description:
       'Learn the strategies behind effective sales and marketing, from digital marketing to customer relationship management.',
     image:
-      'https://plus.unsplash.com/premium_photo-1701192908221-d0ae92edb257?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2FsZXMlMjBhbmQlMjBtYXJla3Rpbmd8ZW58MHx8MHx8fDA%3D',
+      'https://plus.unsplash.com/premium_photo-1726750901882-e57ac9a14981?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwc2FsZXxlbnwwfHwwfHx8MA%3D%3D',
     level: 'Intermediate',
     videos: 7,
     language: 'Bilingual',
@@ -695,7 +695,7 @@ export const professionalCourses = [
     description:
       'Get a solid foundation in accounting and financial management, including bookkeeping and financial analysis.',
     image:
-      'https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YWNjb3VudGluZ3xlbnwwfHwwfHx8MA%3D%3D',
+      'https://images.unsplash.com/photo-1748335353691-126cf893de28?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGluZGlhbiUyMGZpbmFuY2V8ZW58MHx8MHx8fDA%3D',
     level: 'Beginner',
     videos: 5,
     language: 'Bilingual',
@@ -705,7 +705,7 @@ export const professionalCourses = [
     description:
       'Unleash your creativity with courses on design principles, user experience (UX), and innovative thinking.',
     image:
-      'https://plus.unsplash.com/premium_photo-1661770132071-026114fffb61?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGVzaWdufGVufDB8fDB8fHww',
+      'https://images.unsplash.com/photo-1681164315362-af89775190a1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGluZGlhbiUyMHdlYiUyMGRlc2lnbmVyfGVufDB8fDB8fHww',
     level: 'Beginner',
     videos: 4,
     language: 'Bilingual',
@@ -715,7 +715,7 @@ export const professionalCourses = [
     description:
       'Discover the opportunities in rural development and entrepreneurship, from sustainable agriculture to small business management.',
     image:
-      'https://plus.unsplash.com/premium_photo-1661811677567-6f14477aa1fa?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmFybXxlbnwwfHwwfHx8MA%3D%3D',
+      'https://plus.unsplash.com/premium_photo-1682092796955-536268eebc4c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5kaWFuJTIwcnVyYWwlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D',
     level: 'Beginner',
     videos: 4,
     language: 'Bilingual',

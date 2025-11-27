@@ -68,40 +68,7 @@ const Professional = () => {
   };
   return (
     <>
-      <section>
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <svg
-            aria-hidden="true"
-            className="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200"
-          >
-            <defs>
-              <pattern
-                x="50%"
-                y={-1}
-                id="e813992c-7d03-4cc4-a2bd-151760b470a0"
-                width={200}
-                height={200}
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M100 200V.5M.5 .5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-100">
-              <path
-                d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-                strokeWidth={0}
-              />
-            </svg>
-            <rect
-              fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
-              width="100%"
-              height="100%"
-              strokeWidth={0}
-            />
-          </svg>
-        </div>
-      </section>
-      <div className=" py-10 sm:py-8">
+      <section className=" py-10 sm:py-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="mb-5 mt-3 text-center text-base/5 font-semibold text-gray-600">
@@ -111,7 +78,7 @@ const Professional = () => {
             <h1 className="text-4xl text-center font-bold text-black sm:text-5xl lg:text-5xl">
               Choose a Sector to Discover
               <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
+                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
                 Professional Courses
               </span>{' '}
             </h1>
@@ -122,7 +89,7 @@ const Professional = () => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

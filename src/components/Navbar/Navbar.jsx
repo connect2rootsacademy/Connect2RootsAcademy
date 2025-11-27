@@ -18,6 +18,7 @@ import {
   MonitorSpeakerIcon,
   ChevronRightIcon,
   User,
+  Globe2Icon,
 } from 'lucide-react';
 import './Navbar.css';
 import AuthProvider from '../../context/AuthContext';
@@ -160,18 +161,18 @@ const Navbar = () => {
               {/* Dropdown items */}
               <div className="p-2.5">
                 <NavLink
-                  to="/professional"
+                  to="/viksitbharat2047"
                   className="flex items-center gap-3 px-4 py-3.5 rounded-lg text-gray-700 hover:bg-gradient-to-r hover:from-green-50/80 hover:to-emerald-50/60 hover:text-green-700 transition-all duration-200 group border border-transparent hover:border-green-100/60"
                   onClick={() => {
                     setCoursesDropdownOpen(false);
                   }}
                 >
                   <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-green-100 to-emerald-100 group-hover:from-green-200 group-hover:to-emerald-200 transition-all duration-200">
-                    <LandmarkIcon className="size-5 text-green-700" />
+                    <Globe2Icon className="size-5 text-green-700" />
                   </div>
                   <div className="flex-1">
                     <p className="font-semibold text-gray-800 text-sm group-hover:text-green-800">
-                      Professional Courses
+                      Viksit Bharat 2047
                     </p>
                     <p className="text-xs text-gray-500 mt-0.5 group-hover:text-green-600/80">
                       Boost your career with expert-led programs
@@ -180,6 +181,40 @@ const Navbar = () => {
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                     <svg
                       className="w-4 h-4 text-green-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </NavLink>
+                <NavLink
+                  to="/professional"
+                  className="flex items-center gap-3 px-4 py-3.5 rounded-lg text-gray-700 hover:bg-gradient-to-r hover:from-blue-50/80 hover:to-blue-50/60 hover:text-blue-700 transition-all duration-200 group border border-transparent hover:border-blue-100/60"
+                  onClick={() => {
+                    setCoursesDropdownOpen(false);
+                  }}
+                >
+                  <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-blue-100 to-blue-100 group-hover:from-blue-200 group-hover:to-blue-200 transition-all duration-200">
+                    <LandmarkIcon className="size-5 text-blue-700" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-800 text-sm group-hover:text-blue-800">
+                      Professional Courses
+                    </p>
+                    <p className="text-xs text-gray-500 mt-0.5 group-hover:text-blue-600/80">
+                      Boost your career with expert-led programs
+                    </p>
+                  </div>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <svg
+                      className="w-4 h-4 text-blue-500"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

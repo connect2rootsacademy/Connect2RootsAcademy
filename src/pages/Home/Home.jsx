@@ -150,7 +150,7 @@ const Home = () => {
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black">
                 Building Strong Skills for a{' '}
                 <div className="relative inline-flex mt-2 sm:mt-0">
-                  <span className="absolute rounded-sm inset-x-0 bottom-0 border-b-[12px] border-[#4ADE80] sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px]"></span>
+                  <span className="absolute rounded-sm inset-x-0 bottom-0 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px]"></span>
                   <span className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black">
                     Stronger Future
                   </span>
@@ -233,7 +233,7 @@ const Home = () => {
               title: 'Master In-Demand Professional Skills',
               category: 'Professional Courses',
               imageUrl:
-                'https://images.unsplash.com/photo-1425421669292-0c3da3b8f529?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2Zlc3Npb25hbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900',
+                'https://plus.unsplash.com/premium_photo-1676666379051-383ed1b005e8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8am9iJTIwaW50ZXJ2aWV3fGVufDB8fDB8fHww',
               views: 2180,
               totalCourse: 10,
               rating: 5,
@@ -244,7 +244,7 @@ const Home = () => {
               title: 'Turn Ideas into Successful Ventures',
               category: 'Entrepreneurship Courses',
               imageUrl:
-                'https://images.unsplash.com/photo-1709715357520-5e1047a2b691?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZW50cmVwcmVuZXVyc2hpcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900',
+                'https://images.unsplash.com/photo-1565882694798-4c9d004e65b7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGluZGlhbiUyMHNvZnR3YXJlJTIwZGV2ZWxvcGVyJTIwdGVhbXxlbnwwfHwwfHx8MA%3D%3D',
               views: 1456,
               totalCourse: 12,
               rating: 4,
@@ -255,7 +255,7 @@ const Home = () => {
               title: 'Get Certified. Get Ahead.',
               category: 'Certificate Courses',
               imageUrl:
-                'https://plus.unsplash.com/premium_photo-1661475855862-3f61f5b580e6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGhpcmluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900',
+                'https://plus.unsplash.com/premium_photo-1754269207770-c8e32e26860e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzJ8fGluZGlhbiUyMGVudHJlcHJlbmV1cnxlbnwwfHwwfHx8MA%3D%3D',
               views: 987,
               totalCourse: 6,
               rating: 4,
@@ -269,7 +269,7 @@ const Home = () => {
       <section className="relative py-12 mb-30 px-4 sm:px-6 lg:px-0">
         <h1 className="text-5xl sm:text-6xl p-2 text-center font-semibold tracking-tight mb-20 text-black max-w-3xl mx-auto">
           <span className="relative inline-block">
-            <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 bg-[#4ADE80] -z-10 rounded-md" />
+            <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md" />
             Master the Skills
           </span>{' '}
           That Matter
@@ -341,7 +341,7 @@ const Home = () => {
         <div className="first-page -mb-10">
           <h1 className="text-center text-5xl sm:text-6xl font-bold tracking-tight text-pretty text-black">
             <span className="relative inline-block">
-              <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
+              <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
               Why Choose
             </span>{' '}
             Connect2Roots Academy?
@@ -358,28 +358,28 @@ const Home = () => {
       <section className="bg-[#046528] p-8 flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4 -mt-10 mb-10 md:mb-20">
         <div className="relative shadow-2xl shadow-green-600/40 rounded-2xl overflow-hidden shrink-0">
           <img
-            className="max-w-md w-full object-cover rounded-2xl"
-            src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=451&h=451&auto=format&fit=crop"
+            className="max-w-xl object-cover w-full rounded-2xl"
+            src="https://plus.unsplash.com/premium_photo-1747889461984-ecf42eab7d80?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5kaWFuJTIwY29ycG9yYXRlfGVufDB8fDB8fHww"
             alt=""
           />
           <div className="flex items-center gap-1 max-w-72 absolute bottom-8 left-8 bg-white p-4 rounded-xl">
             <div className="flex -space-x-4 shrink-0">
               <img
-                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"
+                src="https://images.unsplash.com/photo-1602492314031-f35f1b450677?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGluZGlhbiUyMGZhY2V8ZW58MHx8MHx8fDA%3D"
                 alt="image"
-                className="size-9 rounded-full border-[3px] border-white hover:-translate-y-1 transition z-1"
+                className="size-9 object-cover  rounded-full border-[3px] border-white hover:-translate-y-1 transition z-1"
               />
               <img
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
+                src="https://plus.unsplash.com/premium_photo-1708271598513-d30915fcfbb4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGluZGlhbiUyMGZhY2V8ZW58MHx8MHx8fDA%3D"
                 alt="image"
-                className="size-9 rounded-full border-[3px] border-white hover:-translate-y-1 transition z-[2]"
+                className="size-9 object-cover rounded-full border-[3px] border-white hover:-translate-y-1 transition z-[2]"
               />
               <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop"
+                src="https://plus.unsplash.com/premium_photo-1722889134304-544e46f55deb?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGluZGlhbiUyMGZhY2V8ZW58MHx8MHx8fDA%3D"
                 alt="image"
-                className="size-9 rounded-full border-[3px] border-white hover:-translate-y-1 transition z-[3]"
+                className="size-9 object-cover rounded-full border-[3px] border-white hover:-translate-y-1 transition z-[3]"
               />
-              <div className="flex items-center justify-center text-xs  text-white size-9 rounded-full border-[3px] border-white bg-green-600 hover:-translate-y-1 transition z-[4]">
+              <div className="flex items-center justify-center text-xs  text-white size-9 rounded-full border-[3px] border-white bg-orange-400 hover:-translate-y-1 transition z-[4]">
                 50+
               </div>
             </div>
@@ -413,7 +413,7 @@ const Home = () => {
           </p>
           <Link
             to="/about"
-            className="group inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-green-500 to-green-400 py-3.5 px-8 rounded-full text-white font-semibold transition-all duration-500 hover:from-green-400 hover:to-green-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-400/40"
+            className="group inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-green-500 to-green-400 py-3.5 px-8 rounded-full text-white font-semibold transition-all duration-500 hover:from-orange-400 hover:to-orange-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-orange-400/40"
           >
             <span className="relative overflow-hidden">
               <span className="inline-block transition-transform duration-500 group-hover:-translate-y-6 group-hover:opacity-0">
@@ -461,7 +461,7 @@ const Home = () => {
         ></div>
         <div className="relative flex items-center justify-center">
           <div className="max-md:py-20 px-6 md:px-10 text-center">
-            <h2 className="text-4xl sm:text-5xl font-regular tracking-tight text-pretty text-neutral-100">
+            <h2 className="text-4xl mt-2 sm:text-5xl font-regular tracking-tight text-pretty text-neutral-100">
               Share your{' '}
               <span className="text-neutral-100 font-bold">expertise</span> with
               us
@@ -474,12 +474,12 @@ const Home = () => {
             <div className="mt-10  flex flex-col items-center gap-4 text-center sm:gap-5">
               <Link
                 to="/applyastrainer"
-                className=" bg-green-600 cursour-pointer px-8 py-3 rounded-lg text-white font-regular text-md"
+                className=" bg-green-600 hover:bg-green-700 cursour-pointer px-8 py-3 rounded-lg text-white font-regular text-md"
               >
                 <span>Apply Now as a Trainer</span>
               </Link>
               <h2 className="px-8 py-3 text-sm text-neutral-300 sm:text-base">
-                Send us your resume: <span>xyz@gmail.com</span>
+                Send us your resume: <span>connect2rootsacademy@gmail.com</span>
               </h2>
             </div>
           </div>
@@ -498,7 +498,7 @@ const Home = () => {
             <p className="text-green-600 text-sm font-medium">FAQ's</p>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-pretty text-black">
               <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
+                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
                 Looking for answer?
               </span>{' '}
             </h2>

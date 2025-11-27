@@ -41,7 +41,7 @@ const Webinar = () => {
             <h1 className="text-4xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
               Expland Your Horizon With{' '}
               <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
+                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
                 Our Live Webinars
               </span>{' '}
             </h1>

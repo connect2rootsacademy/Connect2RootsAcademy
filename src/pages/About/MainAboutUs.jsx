@@ -200,9 +200,9 @@ export default function MainAboutUs() {
             <Zap className="w-4 h-4" />
             DISCOVER OUR STORY
           </motion.span>
-          <h1 className="text-4xl text-center font-bold text-black sm:text-5xl lg:text-5xl">
+          <h1 className="text-4xl text-center font-bold text-black sm:text-5xl lg:text-6xl">
             <span className="relative inline-block">
-              <span className="hidden sm:block absolute bottom-0 left-0 w-full h-3 sm:h-4 bg-[#4ADE80] -z-10 rounded-md"></span>
+              <span className="hidden sm:block absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
               The Connect2Roots Academy
             </span>{' '}
           </h1>
