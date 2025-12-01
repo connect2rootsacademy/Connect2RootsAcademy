@@ -59,17 +59,17 @@ const VisionandMission = () => {
     <section className="relative p-5">
       <div>
         <h1 className="text-4xl text-center font-regular text-black sm:text-5xl lg:text-5xl">
-          Guided by
+          Guided by{' '}
           <span className="relative inline-block">
-            <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
-            "Vision"
+            <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[16px] -z-10 rounded-md"></span>
+            Vision
           </span>{' '}
         </h1>
         <h1 className="text-4xl text-center font-regular text-black sm:text-5xl lg:text-5xl">
-          Driven by
+          Driven by{' '}
           <span className="relative inline-block">
-            <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
-            "Mission"
+            <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[15px] -z-10 rounded-md"></span>
+            Mission
           </span>{' '}
         </h1>
       </div>

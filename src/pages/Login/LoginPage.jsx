@@ -16,7 +16,7 @@ const TestimonialCard = ({ testimonial, delay }) => (
   >
     <img
       src={testimonial.avatarSrc}
-      className="h-10 w-10 object-cover rounded-2xl"
+      className="h-10 w-10 object-cover rounded-full"
       alt="avatar"
     />
     <div className="text-sm leading-snug">

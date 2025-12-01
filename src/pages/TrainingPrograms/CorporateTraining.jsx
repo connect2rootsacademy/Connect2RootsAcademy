@@ -86,7 +86,7 @@ const CorporateTraining = () => {
     <section>
       <section className="w-full">
         <div className="container mx-auto">
-          <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="hidden sm:block absolute inset-0 -z-10 overflow-hidden">
             <svg
               aria-hidden="true"
               className="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200"

@@ -71,14 +71,9 @@ const Professional = () => {
       <section className=" py-10 sm:py-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="mb-5 mt-3 text-center text-base/5 font-semibold text-gray-600">
-              “The roots of education are bitter, but the fruit is sweet –
-              Aristotle"
-            </h2>
-            <h1 className="text-4xl text-center font-bold text-black sm:text-5xl lg:text-5xl">
-              Choose a Sector to Discover
+            <h1 className="text-2xl text-center font-bold text-black sm:text-5xl lg:text-5xl">
               <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
+                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 md:h-5 lg:h-6 border-b-[12px] border-orange-300 sm:border-b-[15px] md:border-b-[15px] lg:border-b-[15px] -z-10 rounded-md"></span>
                 Professional Courses
               </span>{' '}
             </h1>

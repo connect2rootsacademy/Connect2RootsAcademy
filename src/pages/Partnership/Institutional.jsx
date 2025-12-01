@@ -7,7 +7,7 @@ const Institutional = () => {
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg
             aria-hidden="true"
-            className="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200"
+            className="hidden sm:block absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200"
           >
             <defs>
               <pattern
@@ -38,7 +38,7 @@ const Institutional = () => {
         </div>
         <div className="mt-10 text-4xl text-center font-regular text-black sm:text-4xl lg:text-5xl">
           <span className="relative inline-block">
-            <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
+            <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 border-b-[12px] border-orange-300 sm:border-b-[15px] md:border-b-[15px] lg:border-b-[15px] -z-10 rounded-md"></span>
             Institutional Partnership
           </span>{' '}
         </div>

@@ -972,6 +972,19 @@ const Navbar = () => {
                           className="ml-16 mr-4 mt-1 space-y-1"
                         >
                           <NavLink
+                            to="/viksitbharat2047"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                          >
+                            <div className="text-sm font-medium text-gray-900">
+                              Viksit Bharat 2047
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              Stay conected with the growth
+                            </div>
+                          </NavLink>
+
+                          <NavLink
                             to="/professional"
                             onClick={() => setMobileMenuOpen(false)}
                             className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"

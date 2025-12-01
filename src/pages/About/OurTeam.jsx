@@ -9,12 +9,12 @@ const members = [
     avatar: rajeevranjan,
     link: '#',
   },
-  {
-    name: 'Rajeev Ranjan',
-    role: 'Co-Founder - CTO',
-    avatar: rajeevranjan,
-    link: '#',
-  },
+  // {
+  //   name: 'Rajeev Ranjan',
+  //   role: 'Co-Founder - CTO',
+  //   avatar: rajeevranjan,
+  //   link: '#',
+  // },
   {
     name: 'Ayush Raj',
     role: 'Web Developer',

@@ -200,9 +200,12 @@ const Home = () => {
                   </Link>
                 </div>
 
-                <button className="text-sm font-semibold text-gray-900 hover:text-green-600 sm:text-sm/6">
+                <Link
+                  to="/about"
+                  className="text-sm font-semibold text-gray-900 hover:text-green-600 sm:text-sm/6"
+                >
                   Learn more <span aria-hidden="true">→</span>
-                </button>
+                </Link>
               </div>
 
               <Link to="/login">
@@ -240,7 +243,7 @@ const Home = () => {
             },
             {
               id: 2,
-              href: '/professional',
+              href: '/entrepreneuship',
               title: 'Turn Ideas into Successful Ventures',
               category: 'Entrepreneurship Courses',
               imageUrl:
@@ -251,11 +254,11 @@ const Home = () => {
             },
             {
               id: 3,
-              href: '/professional',
-              title: 'Get Certified. Get Ahead.',
-              category: 'Certificate Courses',
+              href: '/viksitbharat2047',
+              title: 'India 2047: The Road to Development',
+              category: 'Viksit Bharat 2047',
               imageUrl:
-                'https://plus.unsplash.com/premium_photo-1754269207770-c8e32e26860e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzJ8fGluZGlhbiUyMGVudHJlcHJlbmV1cnxlbnwwfHwwfHx8MA%3D%3D',
+                'https://plus.unsplash.com/premium_photo-1674588218207-474f9ca6d3d8?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
               views: 987,
               totalCourse: 6,
               rating: 4,
