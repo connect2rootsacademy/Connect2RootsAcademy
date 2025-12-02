@@ -42,7 +42,7 @@ const Enterpreneuship = () => {
     return (
       <Link
         to={`/freecourses?category=${encodeURIComponent(course)}`}
-        className="rounded-xl shadow-xl overflow-hidden transition-transform duration-200 ease-out cursor-pointer max-w-80 bg-white"
+        className="rounded-xl shadow-xl overflow-hidden transition-transform duration-200 ease-out cursor-pointer w-full max-w-xs sm:max-w-sm bg-white mx-auto"
         onMouseMove={handleMoveLocal}
         onMouseLeave={() => setTilt({ x: 0, y: 0 })}
         style={{
@@ -57,7 +57,7 @@ const Enterpreneuship = () => {
         <h3 className="mt-3 px-4 pt-3 mb-1 text-xl font-extrabold text-neutral-800">
           {course}
         </h3>
-        <p className="text-sm px-4 pb-6 text-neutral-500 w-5/6">
+        <p className="text-sm px-4 pb-6 text-neutral-500">
           {descriptions[index]}
         </p>
       </Link>
@@ -77,7 +77,7 @@ const Enterpreneuship = () => {
               </span>
             </h1>
           </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center px-2 sm:px-6">
             {enterpreneushipCategories.map((category, index) => (
               <CourseCard course={category} index={index} key={index} />
             ))}
