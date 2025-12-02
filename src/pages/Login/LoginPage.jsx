@@ -62,14 +62,14 @@ const LoginPage = ({
   return (
     <section className="h-[100dvh] flex flex-col md:flex-row font-geist w-[100dvw]">
       {/* Left column: sign-in form */}
-      <div className="flex-1 flex items-center justify-center -mt-30 sm:mt-10 p-8">
+      <div className="flex-1 flex items-center justify-center -mt-12 sm:mt-10 p-4 sm:p-8">
         <div className="w-full max-w-md">
           <div className="flex flex-col gap-6">
             <div className="animate-element animate-delay-100 text-center md:text-left">
               {React.isValidElement(title) ? (
                 title
               ) : (
-                <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold leading-tight break-words">
                   {title}
                 </h1>
               )}

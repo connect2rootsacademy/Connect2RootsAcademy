@@ -1020,7 +1020,7 @@ const Navbar = () => {
                             </div>
                             <div>
                               <div className="text-sm font-medium text-gray-900">
-                                Entrepreneurship
+                                Entrepreneurship Courses
                               </div>
                               <div className="text-xs text-gray-500 mt-0.5">
                                 Start and grow a business
