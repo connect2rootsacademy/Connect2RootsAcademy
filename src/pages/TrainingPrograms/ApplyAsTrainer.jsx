@@ -65,19 +65,28 @@ const ApplyAsTrainer = () => {
                 development.
               </p>
             </div>
-            <div className="flex flex-row gap-3">
+            <div
+              id="button"
+              className="flex flex-col sm:flex-row gap-3 p-5 items-center justify-center"
+            >
               <button
                 onClick={handleScroll}
                 size="lg"
-                className="gap-4 px-4 py-2 border border-neutral-600 text-slate-600  rounded-xl inline-flex items-center justify-center hover:bg-neutral-100 sm:h-9 sm:px-3 lg:h-11 lg:px-8"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 border border-neutral-600 text-slate-600 rounded-xl hover:bg-neutral-100 text-sm sm:text-base whitespace-normal text-center sm:h-9 sm:px-3 lg:h-11 lg:px-8"
               >
-                Apply Here <Library className="w-4 h-4" />
+                <span className="leading-tight max-w-[220px] sm:max-w-none">
+                  Apply Here
+                </span>
+                <Library className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <button
                 size="lg"
-                className="gap-4 border px-4 py-2  border-neutral-600 text-neutral-100 bg-neutral-800 rounded-xl inline-flex items-center justify-center sm:h-9 sm:px-3 lg:h-11 lg:px-8"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 border border-neutral-600 text-neutral-100 bg-neutral-800 rounded-xl text-sm sm:text-base whitespace-normal text-center sm:h-9 sm:px-3 lg:h-11 lg:px-8"
               >
-                Submit Your Details <MoveRight className="w-4 h-4" />
+                <span className="leading-tight max-w-[220px] sm:max-w-none">
+                  Submit Your Details
+                </span>
+                <MoveRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>

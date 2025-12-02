@@ -136,30 +136,37 @@ const CorporateTraining = () => {
                 seamlessly with business goals.
               </p>
             </div>
-            <div className="flex flex-row gap-3 p-5">
+            <div className="flex flex-col sm:flex-row gap-3 p-5 items-center justify-center">
               <button
                 onClick={handleScroll}
                 size="lg"
-                className="gap-4 px-4 py-2 border border-neutral-600 text-slate-600  rounded-xl inline-flex items-center justify-center hover:bg-neutral-100 sm:h-9 sm:px-3 lg:h-11 lg:px-8"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 border border-neutral-600 text-slate-600 rounded-xl hover:bg-neutral-100 text-sm sm:text-base lg:text-base whitespace-normal text-center sm:h-9 sm:px-3 lg:h-11 lg:px-8"
               >
-                Explore Industries We Serve <Building className="w-4 h-4" />
+                <span className="leading-tight max-w-[220px] sm:max-w-none">
+                  Explore Industries We Serve
+                </span>
+                <Building className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
+
               <button
                 size="lg"
-                className="gap-4 border px-4 py-2  border-neutral-600 text-neutral-100 bg-neutral-800 rounded-xl inline-flex items-center justify-center sm:h-9 sm:px-3 lg:h-11 lg:px-8"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 border border-neutral-600 text-neutral-100 bg-neutral-800 rounded-xl text-sm sm:text-base whitespace-normal text-center sm:h-9 sm:px-3 lg:h-11 lg:px-8"
               >
-                Discover Our Impact <MoveRight className="w-4 h-4" />
+                <span className="leading-tight max-w-[220px] sm:max-w-none">
+                  Discover Our Impact
+                </span>
+                <MoveRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      <section>
+      <section id="industry">
         <div>
           <div
             ref={nextSectionRef}
-            className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
+            className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8"
           >
             <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter font-regular">
               <span className="relative inline-block">
@@ -169,7 +176,7 @@ const CorporateTraining = () => {
               We Serve
             </h1>
 
-            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8">
+            <div className="mt-6 grid grid-cols-2 gap-4 sm:gap-x-6 sm:gap-y-10 md:grid-cols-3 lg:grid-cols-5 xl:gap-x-8">
               {products.map((product) => {
                 const slug = product.name
                   .toLowerCase()
@@ -177,7 +184,7 @@ const CorporateTraining = () => {
                   .replace(/(^-|-$)/g, '');
 
                 return (
-                  <div key={product.id} className="group relative">
+                  <div key={product.id} className="group relative p-2">
                     <Link
                       to={`/coptraining/industry/${slug}`}
                       className="block"
@@ -185,11 +192,11 @@ const CorporateTraining = () => {
                       <img
                         alt={product.imageAlt || product.name}
                         src={product.imageSrc}
-                        className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-80 lg:aspect-auto lg:h-80 group-hover:scale-105 transition duration-500"
+                        className="w-full rounded-md bg-gray-200 object-cover h-44 sm:h-56 lg:h-80 group-hover:opacity-80 group-hover:scale-105 transition duration-500"
                       />
                     </Link>
 
-                    <div className="mt-4 flex justify-between">
+                    <div className="mt-3 flex justify-between items-start px-1">
                       <div>
                         <h3 className="text-sm text-gray-700">
                           <Link

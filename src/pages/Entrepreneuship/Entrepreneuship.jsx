@@ -67,12 +67,14 @@ const Enterpreneuship = () => {
     <>
       <section className=" py-10 sm:py-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h1 className="text-2xl text-center font-bold text-black sm:text-5xl lg:text-5xl">
-              <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 md:h-5 lg:h-6 border-b-[12px] border-orange-300 sm:border-b-[15px] md:border-b-[15px] lg:border-b-[15px] -z-10 rounded-md"></span>
-                Entrepreneurial Learning
-              </span>{' '}
+          <div className="mx-auto max-w-2xl flex justify-center">
+            <h1 className="text-2xl text-center font-bold text-black sm:text-4xl md:text-5xl lg:text-5xl">
+              <span className="relative inline-block mx-auto">
+                <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 md:h-5 lg:h-6 border-b-[8px] sm:border-b-[12px] md:border-b-[15px] lg:border-b-[15px] border-orange-300 -z-10 rounded-md"></span>
+                <span className="whitespace-nowrap inline-block">
+                  Entrepreneurship Courses
+                </span>
+              </span>
             </h1>
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

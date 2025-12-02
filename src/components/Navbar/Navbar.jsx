@@ -153,8 +153,9 @@ const Navbar = () => {
                 <h3 className="text-sm font-semibold text-gray-700">
                   Learning Paths
                 </h3>
-                <p className="text-xs text-gray-500 mt-0.5">
-                  Choose your career direction
+                <p className="text-xs text-gray-500 mt-0.5 flex items-center gap-2">
+                  <Globe2Icon className="h-3 w-3 text-gray-400" />
+                  <span>Choose your career direction</span>
                 </p>
               </div>
 
@@ -338,8 +339,9 @@ const Navbar = () => {
                 <h3 className="text-sm font-semibold text-gray-800">
                   Training Solutions
                 </h3>
-                <p className="text-xs text-gray-500 mt-0.5">
-                  Empower your team with expert-led sessions
+                <p className="text-xs text-gray-500 mt-0.5 flex items-center gap-2">
+                  <AwardIcon className="h-3 w-3 text-gray-400" />
+                  <span>Empower your team with expert-led sessions</span>
                 </p>
               </div>
 
@@ -586,8 +588,9 @@ const Navbar = () => {
                 <h3 className="text-sm font-semibold text-gray-800">
                   Partnership Programs
                 </h3>
-                <p className="text-xs text-gray-500 mt-0.5">
-                  Collaborate for mutual growth and success
+                <p className="text-xs text-gray-500 mt-0.5 flex items-center gap-2">
+                  <HandshakeIcon className="h-3 w-3 text-gray-400" />
+                  <span>Collaborate for mutual growth and success</span>
                 </p>
               </div>
 
@@ -969,44 +972,59 @@ const Navbar = () => {
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="ml-16 mr-4 mt-1 space-y-1"
+                          className="mt-1 space-y-1 px-4"
                         >
                           <NavLink
                             to="/viksitbharat2047"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                            className="flex items-center gap-3 py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >
-                            <div className="text-sm font-medium text-gray-900">
-                              Viksit Bharat 2047
+                            <div className="flex-none p-2.5 rounded-xl bg-green-100">
+                              <Globe2Icon className="h-5 w-5 text-green-700" />
                             </div>
-                            <div className="text-xs text-gray-500 mt-0.5">
-                              Stay conected with the growth
+                            <div>
+                              <div className="text-sm font-medium text-gray-900">
+                                Viksit Bharat 2047
+                              </div>
+                              <div className="text-xs text-gray-500 mt-0.5">
+                                Stay connected with the growth
+                              </div>
                             </div>
                           </NavLink>
 
                           <NavLink
                             to="/professional"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                            className="flex items-center gap-3 py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >
-                            <div className="text-sm font-medium text-gray-900">
-                              Professional Courses
+                            <div className="flex-none p-2.5 rounded-xl bg-blue-100">
+                              <LandmarkIcon className="h-5 w-5 text-blue-700" />
                             </div>
-                            <div className="text-xs text-gray-500 mt-0.5">
-                              In-depth career tracks
+                            <div>
+                              <div className="text-sm font-medium text-gray-900">
+                                Professional Courses
+                              </div>
+                              <div className="text-xs text-gray-500 mt-0.5">
+                                In-depth career tracks
+                              </div>
                             </div>
                           </NavLink>
 
                           <NavLink
                             to="/entrepreneuship"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                            className="flex items-center gap-3 py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >
-                            <div className="text-sm font-medium text-gray-900">
-                              Entrepreneurship
+                            <div className="flex-none p-2.5 rounded-xl bg-amber-100">
+                              <HandCoinsIcon className="h-5 w-5 text-amber-700" />
                             </div>
-                            <div className="text-xs text-gray-500 mt-0.5">
-                              Start and grow a business
+                            <div>
+                              <div className="text-sm font-medium text-gray-900">
+                                Entrepreneurship
+                              </div>
+                              <div className="text-xs text-gray-500 mt-0.5">
+                                Start and grow a business
+                              </div>
                             </div>
                           </NavLink>
                         </motion.div>
@@ -1068,57 +1086,77 @@ const Navbar = () => {
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="ml-16 mr-4 mt-1 space-y-1"
+                          className="mt-1 space-y-1 px-4"
                         >
                           <NavLink
                             to="/coptraining"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                            className="flex items-center gap-3 py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >
-                            <div className="text-sm font-medium text-gray-900">
-                              Corporate Training
+                            <div className="flex-none p-2.5 rounded-xl bg-green-100">
+                              <PencilRulerIcon className="h-5 w-5 text-green-700" />
                             </div>
-                            <div className="text-xs text-gray-500 mt-0.5">
-                              Custom programs for teams
+                            <div>
+                              <div className="text-sm font-medium text-gray-900">
+                                Corporate Training
+                              </div>
+                              <div className="text-xs text-gray-500 mt-0.5">
+                                Custom programs for teams
+                              </div>
                             </div>
                           </NavLink>
 
                           <NavLink
                             to="/workshops"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                            className="flex items-center gap-3 py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >
-                            <div className="text-sm font-medium text-gray-900">
-                              Workshops
+                            <div className="flex-none p-2.5 rounded-xl bg-blue-100">
+                              <ProjectorIcon className="h-5 w-5 text-blue-700" />
                             </div>
-                            <div className="text-xs text-gray-500 mt-0.5">
-                              Hands-on project sessions
+                            <div>
+                              <div className="text-sm font-medium text-gray-900">
+                                Workshops
+                              </div>
+                              <div className="text-xs text-gray-500 mt-0.5">
+                                Hands-on project sessions
+                              </div>
                             </div>
                           </NavLink>
 
                           <NavLink
                             to="/webinar"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                            className="flex items-center gap-3 py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >
-                            <div className="text-sm font-medium text-gray-900">
-                              Webinars
+                            <div className="flex-none p-2.5 rounded-xl bg-purple-100">
+                              <VideoIcon className="h-5 w-5 text-purple-700" />
                             </div>
-                            <div className="text-xs text-gray-500 mt-0.5">
-                              Live talks with experts
+                            <div>
+                              <div className="text-sm font-medium text-gray-900">
+                                Webinars
+                              </div>
+                              <div className="text-xs text-gray-500 mt-0.5">
+                                Live talks with experts
+                              </div>
                             </div>
                           </NavLink>
 
                           <NavLink
                             to="/applyastrainer"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                            className="flex items-center gap-3 py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >
-                            <div className="text-sm font-medium text-gray-900">
-                              Apply as a trainer
+                            <div className="flex-none p-2.5 rounded-xl bg-amber-100">
+                              <MonitorSpeakerIcon className="h-5 w-5 text-amber-700" />
                             </div>
-                            <div className="text-xs text-gray-500 mt-0.5">
-                              Share expertise with our community
+                            <div>
+                              <div className="text-sm font-medium text-gray-900">
+                                Apply as a trainer
+                              </div>
+                              <div className="text-xs text-gray-500 mt-0.5">
+                                Share expertise with our community
+                              </div>
                             </div>
                           </NavLink>
                         </motion.div>
@@ -1180,31 +1218,41 @@ const Navbar = () => {
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="ml-16 mr-4 mt-1 space-y-1"
+                          className="mt-1 space-y-1 px-4"
                         >
                           <NavLink
                             to="/corporate"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                            className="flex items-center gap-3 py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >
-                            <div className="text-sm font-medium text-gray-900">
-                              Corporate Partnership
+                            <div className="flex-none p-2.5 rounded-xl bg-blue-100">
+                              <BuildingIcon className="h-5 w-5 text-blue-700" />
                             </div>
-                            <div className="text-xs text-gray-500 mt-0.5">
-                              Enterprise skilling and hiring
+                            <div>
+                              <div className="text-sm font-medium text-gray-900">
+                                Corporate Partnership
+                              </div>
+                              <div className="text-xs text-gray-500 mt-0.5">
+                                Enterprise skilling and hiring
+                              </div>
                             </div>
                           </NavLink>
 
                           <NavLink
                             to="/institutional"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                            className="flex items-center gap-3 py-2.5 px-3 rounded-xl hover:bg-gray-50 active:bg-gray-100 transition-colors"
                           >
-                            <div className="text-sm font-medium text-gray-900">
-                              Institutional Partnership
+                            <div className="flex-none p-2.5 rounded-xl bg-emerald-100">
+                              <GraduationCapIcon className="h-5 w-5 text-emerald-700" />
                             </div>
-                            <div className="text-xs text-gray-500 mt-0.5">
-                              Work with colleges and NGOs
+                            <div>
+                              <div className="text-sm font-medium text-gray-900">
+                                Institutional Partnership
+                              </div>
+                              <div className="text-xs text-gray-500 mt-0.5">
+                                Work with colleges and NGOs
+                              </div>
                             </div>
                           </NavLink>
                         </motion.div>
@@ -1229,7 +1277,10 @@ const Navbar = () => {
                       className="flex-1 flex items-center justify-center gap-3 px-4 py-3 rounded-2xl hover:bg-gray-50/80 active:bg-gray-100 transition-colors border border-gray-200/60"
                     >
                       <div className="flex-none p-2 rounded-xl bg-neutral-200">
-                        <User className="h-4 w-4 text-gray-700" />
+                        <User
+                          className="h-4 w-4 text-gray-700"
+                          aria-hidden="true"
+                        />
                       </div>
                       <div className="text-sm font-medium text-gray-900 whitespace-nowrap">
                         About Us
@@ -1242,7 +1293,10 @@ const Navbar = () => {
                       className="flex-1 flex items-center justify-center gap-3 px-4 py-3 rounded-2xl hover:bg-gray-50/80 active:bg-gray-100 transition-colors border border-gray-200/60"
                     >
                       <div className="flex-none p-2 rounded-xl bg-neutral-200">
-                        <HeadsetIcon className="h-4 w-4 text-neutral-700" />
+                        <HeadsetIcon
+                          className="h-4 w-4 text-neutral-700"
+                          aria-hidden="true"
+                        />
                       </div>
                       <div className="text-sm font-medium text-gray-900 whitespace-nowrap">
                         Contact Us

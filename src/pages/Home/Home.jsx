@@ -270,7 +270,7 @@ const Home = () => {
 
       {/* 3rd SECTION- RECOMMENDED COURSES & RECOMMENDED VIDEOS SECTION  */}
       <section className="relative py-12 mb-30 px-4 sm:px-6 lg:px-0">
-        <h1 className="text-5xl sm:text-6xl p-2 text-center font-semibold tracking-tight mb-20 text-black max-w-3xl mx-auto">
+        <h1 className="text-4xl sm:text-6xl p-2 text-center font-semibold tracking-tight mb-20 text-black max-w-3xl mx-auto">
           <span className="relative inline-block">
             <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md" />
             Master the Skills

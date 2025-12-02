@@ -71,10 +71,12 @@ const Professional = () => {
       <section className=" py-10 sm:py-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h1 className="text-2xl text-center font-bold text-black sm:text-5xl lg:text-5xl">
+            <h1 className="text-3xl text-center font-bold text-black sm:text-5xl lg:text-5xl">
               <span className="relative inline-block">
                 <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 md:h-5 lg:h-6 border-b-[12px] border-orange-300 sm:border-b-[15px] md:border-b-[15px] lg:border-b-[15px] -z-10 rounded-md"></span>
-                Professional Courses
+                <span className="whitespace-nowrap inline-block">
+                  Professional Courses
+                </span>
               </span>{' '}
             </h1>
           </div>

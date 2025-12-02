@@ -36,7 +36,7 @@ const Institutional = () => {
             />
           </svg>
         </div>
-        <div className="mt-10 text-4xl text-center font-regular text-black sm:text-4xl lg:text-5xl">
+        <div className="mt-10 text-3xl text-center font-regular text-black sm:text-4xl lg:text-5xl">
           <span className="relative inline-block">
             <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 border-b-[12px] border-orange-300 sm:border-b-[15px] md:border-b-[15px] lg:border-b-[15px] -z-10 rounded-md"></span>
             Institutional Partnership

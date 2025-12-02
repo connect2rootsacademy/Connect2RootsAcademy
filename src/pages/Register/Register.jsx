@@ -51,7 +51,7 @@ const Register = () => {
     <section>
       <div className="h-[100dvh] flex flex-col md:flex-row w-[100dvw]">
         <div className="w-full lg:w-1/2 flex-1 flex flex-col justify-center items-center p-8">
-          <div className="sm:mx-auto sm:w-full sm:max-w-sm -mt-60 sm:mt-5">
+          <div className="sm:mx-auto sm:w-full sm:max-w-sm -mt-60 sm:mt-5 text-center md:text-left">
             <h1 className="text-4xl mt-20 sm:mt-1 font-light text-black sm:text-4xl lg:text-5xl mb-8">
               <span className="relative inline-block">
                 <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 border-b-[12px] border-orange-300 sm:border-b-[15px] md:border-b-[15px] lg:border-b-[15px] -z-10 rounded-md"></span>
