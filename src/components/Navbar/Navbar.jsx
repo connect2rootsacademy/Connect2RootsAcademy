@@ -708,7 +708,6 @@ const Navbar = () => {
               </span>
             </NavLink>
           </section>
-
           {/* =============== SEARCHBAR =============== */}
           <section>
             <SearchBar />
