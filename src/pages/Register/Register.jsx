@@ -209,7 +209,7 @@ const Register = () => {
         </div>
         <div className="hidden lg:block flex-1 lg:w-1/2 relative p-4">
           <img
-            src="https://images.unsplash.com/photo-1720447974523-18fdc4f5a37d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTV8fGdsYXNzfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500"
+            src="https://plus.unsplash.com/premium_photo-1691031428167-6d67ac34445d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjF8fGluZGlhfGVufDB8fDB8fHww"
             alt="Login Banner"
             className="animate-slide-right w-full h-screen object-cover object-center animate-delay-300 absolute inset-0 overflow-hidden"
           />

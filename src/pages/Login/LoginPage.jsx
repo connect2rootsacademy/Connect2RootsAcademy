@@ -74,7 +74,7 @@ const LoginPage = ({
                 </h1>
               )}
             </div>
-            <p className="animate-element animate-delay-200 text-muted-foreground -mt-2 text-center md:text-left">
+            <p className="animate-element animate-delay-200 text-muted-foreground -mt-2 text-left md:text-left">
               {description}
             </p>
             <form className="space-y-5" onSubmit={handleSubmit}>

@@ -61,7 +61,7 @@ const Login = () => {
     <div>
       <LoginPage
         title={
-          <h1 className="text-4xl mt-10 sm:mt-1  font-light text-black sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl mt-10 sm:mt-1 font-light text-black text-left break-words">
             <span className="relative inline-block">
               <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
               Welcome Back
@@ -69,7 +69,7 @@ const Login = () => {
           </h1>
         }
         description="Sign in to continue your learning journey"
-        heroImageSrc="https://plus.unsplash.com/premium_photo-1674478156466-2d7fda374d9c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z2xhc3MlMjB0ZXh0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900"
+        heroImageSrc="https://images.unsplash.com/photo-1561202450-21ccc6fbd210?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTR8fGluZGlhfGVufDB8fDB8fHww"
         testimonials={sampleTestimonials}
         onSignIn={handleSignIn}
         onResetPassword={handleResetPassword}

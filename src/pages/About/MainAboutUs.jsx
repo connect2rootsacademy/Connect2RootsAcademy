@@ -1,9 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  Award,
   Users,
-  Calendar,
   CheckCircle,
   Sparkles,
   Star,
@@ -266,9 +264,8 @@ export default function MainAboutUs() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Link to="/about/our-vision-and-mission">
-                      Our Vision & Mission{' '}
-                      <ArrowRight className="w-4 h-4 inline" />
+                    <Link to="/contact">
+                      Connect with us <ArrowRight className="w-4 h-4 inline" />
                     </Link>
                   </motion.button>
                 </motion.div>

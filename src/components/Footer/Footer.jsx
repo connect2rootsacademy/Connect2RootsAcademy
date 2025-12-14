@@ -1,13 +1,12 @@
 import React from 'react';
-// import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { Linkedin, Instagram, Youtube, Facebook } from 'lucide-react';
+import { Linkedin, Youtube, Facebook, Globe, Twitter } from 'lucide-react';
 import icon from '../../assets/c2r-course-thumbnail.png';
 
 const defaultSections = [
   {
     title: 'Product',
     links: [
-      { name: 'Overview', href: '/' },
+      { name: 'Connect2Roots Foundation', href: 'https://connect2roots.org/' },
       { name: 'Professional', href: '/professional' },
       { name: 'Certificated', href: '/certified' },
       { name: 'Entrepreneurship', href: '/entrepreneuship' },
@@ -35,8 +34,8 @@ const defaultSections = [
 
 const defaultSocialLinks = [
   {
-    icon: <Instagram className="size-5" />,
-    href: 'https://connect2roots.org/',
+    icon: <Twitter className="size-5" />,
+    href: 'https://x.com/Connect2Roots?s=09',
     label: 'Instagram',
   },
   {
@@ -54,6 +53,11 @@ const defaultSocialLinks = [
     href: 'https://www.linkedin.com/company/connect2roots-academy/',
     label: 'LinkedIn',
   },
+  {
+    icon: <Globe className="size-5" />,
+    href: 'https://connect2roots.org/',
+    label: 'Connect2Roots Foundation',
+  },
 ];
 
 const defaultLegalLinks = [
@@ -64,13 +68,12 @@ const defaultLegalLinks = [
 export const Footer = ({
   logo = {
     url: '/',
-    // src: 'https://www.shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg',
     src: icon,
     alt: 'logo',
     title: 'Connect2Roots Academy',
   },
   sections = defaultSections,
-  description = 'Join Connect2Roots Academy and take the next step toward personal growth, career advancement, and lifelong learning',
+  description = 'Join Connect2Roots Academy and take the next step toward personal growth, career advancement, and lifelong learning.',
   socialLinks = defaultSocialLinks,
   copyright = '© 2025 Connect2Roots Academy. All rights reserved.',
   legalLinks = defaultLegalLinks,

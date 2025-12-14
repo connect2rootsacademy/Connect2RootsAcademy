@@ -19,7 +19,7 @@ const members = [
     name: 'Ayush Raj',
     role: 'Web Developer',
     avatar: ayushraj,
-    link: '#',
+    link: 'https://www.linkedin.com/in/ayushrajfrontenddev/',
   },
 ];
 
@@ -72,11 +72,11 @@ export default function OurTeam() {
                       {member.role}
                     </span>
                     <Link
-                      href={member.link}
+                      to={member.link}
                       className="group-hover:text-primary-600 dark:group-hover:text-primary-400 inline-block translate-y-8 text-sm tracking-wide opacity-0 transition-all duration-500 hover:underline group-hover:translate-y-0 group-hover:opacity-100"
                     >
                       {' '}
-                      Linktree
+                      Linkedin &rarr;
                     </Link>
                   </div>
                 </div>

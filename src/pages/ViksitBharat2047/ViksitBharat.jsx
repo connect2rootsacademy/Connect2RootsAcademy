@@ -1,41 +1,27 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ViksitBharat = () => {
-  const navigate = useNavigate();
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white py-16">
-      <div className="w-full max-w-3xl bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-orange-500">
-          Coming Soon
+    <div className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+      <div className="text-center">
+        <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
+          Coming soon!
         </h1>
-
-        <h2 className="text-xl md:text-2xl font-semibold text-orange-300">
-          Stay tuned
-        </h2>
-
-        <p className="mt-6 text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-          We're building a dedicated page with upcoming job-ready skills, short
-          professional courses, and hands-on projects to help you land your next
-          role. Expect curated content on web development, data fundamentals,
-          cloud essentials, and career support — launching soon.
+        <p className="mt-6 text-lg max-w-2xl text-center font-medium text-pretty text-gray-500 sm:text-xl/8">
+          Our Viksit Bharat 2047 page is under construction. We're working hard
+          to bring you an amazing experience. Stay tuned for updates!
         </p>
-
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <button
-            onClick={() => navigate('/')}
-            className="inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold text-white shadow-md transform transition hover:scale-[1.01] bg-gradient-to-r from-orange-500 to-yellow-400"
+        <div className="mt-10 flex items-center justify-center gap-x-6">
+          <Link
+            to="/"
+            className="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-orange-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
           >
-            Go Back to Home
-          </button>
-
-          <button
-            onClick={() => navigate('/contact')}
-            className="inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold text-orange-600 border-2 border-orange-200 bg-white/70 shadow-sm hover:bg-orange-50 transition"
-          >
-            Contact Us
-          </button>
+            Go back home
+          </Link>
+          <Link to="/contact" className="text-sm font-semibold text-gray-900">
+            Contact support <span aria-hidden="true">&rarr;</span>
+          </Link>
         </div>
       </div>
     </div>

@@ -51,7 +51,7 @@ const CourseQuickview = ({ course, onClose }) => {
                 .replace(/\s+/g, '-')}/?category=${encodeURIComponent(
                 course.name
               )}`}
-              className="enroll-now-btn w-full text-center"
+              className="enroll-now-btn bg-neutral-400 w-full text-center"
             >
               Go to course
             </Link>
