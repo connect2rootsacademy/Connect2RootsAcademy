@@ -2,7 +2,6 @@
 @import "tw-animate-css";
 
 
-/* @custom-variant dark (&:is(.dark *)); */
 
 :root {
   --background: oklch(1 0 0);
@@ -140,7 +139,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  /* overflow-x: hidden; */
 }
 
 * {

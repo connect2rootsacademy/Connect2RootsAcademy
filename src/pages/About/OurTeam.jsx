@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import rajeevranjan from '../../assets/rajeevranjan.jpg';
-import ayushraj from '../../assets/ayushraj.jpg';
 
 const members = [
   {
@@ -9,17 +8,17 @@ const members = [
     avatar: rajeevranjan,
     link: '#',
   },
-  // {
-  //   name: 'Rajeev Ranjan',
-  //   role: 'Co-Founder - CTO',
-  //   avatar: rajeevranjan,
-  //   link: '#',
-  // },
   {
-    name: 'Ayush Raj',
-    role: 'Web Developer',
-    avatar: ayushraj,
-    link: 'https://www.linkedin.com/in/ayushrajfrontenddev/',
+    name: 'Rajeev Ranjan',
+    role: 'Founder - CEO',
+    avatar: rajeevranjan,
+    link: '#',
+  },
+  {
+    name: 'Rajeev Ranjan',
+    role: 'Founder - CEO',
+    avatar: rajeevranjan,
+    link: '#',
   },
 ];
 
@@ -27,7 +26,7 @@ export default function OurTeam() {
   return (
     <section className="bg-gray-50 -mt-30 py-16 md:py-32 dark:bg-transparent">
       <div className="mx-auto max-w-5xl  px-6">
-        <div className="mt-12 gap-4 sm:grid sm:grid-cols-2 md:mt-24">
+        {/* <div className="mt-12 gap-4 sm:grid sm:grid-cols-2 md:mt-24">
           <div className="sm:w-2/5">
             <h2 className="text-3xl font-bold sm:text-4xl">
               <span className="relative inline-block">
@@ -48,7 +47,7 @@ export default function OurTeam() {
               future.
             </p>
           </div>
-        </div>
+        </div> */}
         <div className="mt-12 md:mt-24">
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {members.map((member, index) => (

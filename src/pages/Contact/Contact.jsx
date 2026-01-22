@@ -29,7 +29,7 @@ const Contact = () => {
               <h1 className="text-4xl mt-10 md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
                 Connect With Us For{' '}
                 <span className="relative inline-block">
-                  <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-green-600/50 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
                   Guidance And Support
                 </span>{' '}
               </h1>

@@ -63,7 +63,7 @@ const Login = () => {
         title={
           <h1 className="text-4xl sm:text-5xl lg:text-6xl mt-10 sm:mt-1 font-light text-black text-left break-words">
             <span className="relative inline-block">
-              <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
+              <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-green-600/50 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
               Welcome Back
             </span>{' '}
           </h1>

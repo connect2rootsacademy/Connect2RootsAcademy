@@ -7,7 +7,22 @@ import FeaturesCard from '../../ui/FeaturesCard/FeaturesCard';
 import Testimonials from '../../ui/Testmonials/Testmonials';
 import 'aos/dist/aos.css';
 import ShuffleHero from '../../ui/ShuffleHero';
-import CoursesCard from '../../components/CoursesCard/CoursesCard';
+import MainAboutUs from '../About/MainAboutUs';
+import OurTeam from '../About/OurTeam';
+import {
+  BadgeCheck,
+  BarChart3,
+  Briefcase,
+  Flag,
+  GripVertical,
+  HelpCircle,
+  Rocket,
+  ShieldCheck,
+  TrendingUp,
+  User,
+  Video,
+  Zap,
+} from 'lucide-react';
 
 const Home = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -103,6 +118,38 @@ const Home = () => {
       alt: 'Design and Creative Arts Course',
     },
   ];
+  const stats = [
+    { icon: <Video />, value: '100+', label: 'Videos' },
+    { icon: <Zap />, value: '50+', label: 'Specializations' },
+    { icon: <User />, value: '20+', label: 'Crew' },
+    { icon: <TrendingUp />, value: '98%', label: 'Satisfaction Rate' },
+  ];
+  function StatCard({ icon, value, label }) {
+    return (
+      <div className="bg-neutral-100 p-6 rounded-xl flex flex-col items-center text-center">
+        <div className="w-14 h-14 rounded-full bg-green-600/20 flex items-center justify-center mb-4">
+          {icon}
+        </div>
+        <div className="text-3xl font-bold text-neutral-900">{value}</div>
+        <p className="text-neutral-600 text-sm mt-1">{label}</p>
+        <div className="w-10 h-0.5 bg-green-600 mt-3" />
+      </div>
+    );
+  }
+
+  const [inset, setInset] = useState(50);
+  const [dragging, setDragging] = useState(false);
+  const handleMove = (e) => {
+    if (!dragging) return;
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clientX =
+      e.touches && e.touches.length ? e.touches[0].clientX : e.clientX;
+
+    let percentage = ((clientX - rect.left) / rect.width) * 100;
+    percentage = Math.max(0, Math.min(100, percentage));
+    setInset(percentage);
+  };
 
   return (
     <>
@@ -143,23 +190,25 @@ const Home = () => {
         <div className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-6">
           <div className="grid items-center grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2 pt-8 sm:pt-12 md:pt-16">
             <div className="text-center lg:text-left">
-              <p className="mb-3 text-green-600 font-semibold tracking-tight leading-snug text-base sm:text-lg md:mb-4 md:text-lg">
+              <div className="inline-flex uppercase items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium mb-4">
+                <BarChart3 className="w-4 h-4" />
                 Level Up Your Future
-              </p>
+              </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black">
-                Building Strong Skills for a{' '}
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black">
+                Building Business Ready Skills for{' '}
                 <div className="relative inline-flex mt-2 sm:mt-0">
-                  <span className="absolute rounded-sm inset-x-0 bottom-0 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px]"></span>
-                  <span className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black">
-                    Stronger Future
+                  <span className="absolute rounded-sm inset-x-0 bottom-0 border-b-[12px] border-green-600/50 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px]"></span>
+                  <span className="relative text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black">
+                    Scalable Growth
                   </span>
                 </div>
               </h1>
 
-              <p className="mt-6 text-sm text-black sm:text-base md:mt-8 md:text-lg lg:text-xl max-w-2xl mx-auto lg:mx-0">
-                At Connect2Roots Academy, we guide learners to unlock their true
-                potential with world-class courses and practical learning
+              <p className="mt-6 text-sm text-neutral-700 sm:text-base md:mt-8 md:text-lg lg:text-lg max-w-2xl mx-auto lg:mx-0 leading-5">
+                At Connect2Roots Academy, we partner with organizations to build
+                job ready talent through industry aligned programs and practical
+                learning.
               </p>
 
               <div className="mt-8 flex items-center justify-center lg:justify-start space-x-4">
@@ -175,7 +224,7 @@ const Home = () => {
                     title="Start learning"
                     rel="noopener noreferrer"
                   >
-                    <span className="relative z-10">Start Learning</span>
+                    <span className="relative z-10">Explore Programs</span>
 
                     {/* Animated arrow icon */}
                     <svg
@@ -204,7 +253,7 @@ const Home = () => {
                   to="/about"
                   className="text-sm font-semibold text-gray-900 hover:text-green-600 sm:text-sm/6"
                 >
-                  Learn more <span aria-hidden="true">→</span>
+                  Our Approach <span aria-hidden="true">→</span>
                 </Link>
               </div>
 
@@ -222,8 +271,17 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Number section */}
+      <section className=" px-15">
+        <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, idx) => (
+            <StatCard key={idx} {...stat} />
+          ))}
+        </div>
+      </section>
+
       {/* 2nd SECTION - COURSES WE PROVIDE SECTION - CARDS */}
-      <section>
+      {/* <section>
         <CoursesCard
           title="Build Your Future"
           description="Discover the most engaging content from our amazing community of developers and designers"
@@ -266,17 +324,88 @@ const Home = () => {
           ]}
           className="mb-16"
         />
-      </section>
+      </section> */}
 
       {/* 3rd SECTION- RECOMMENDED COURSES & RECOMMENDED VIDEOS SECTION  */}
-      <section className="relative py-12 mb-30 px-4 sm:px-6 lg:px-0">
-        <h1 className="text-4xl sm:text-6xl p-2 text-center font-semibold tracking-tight mb-20 text-black max-w-3xl mx-auto">
-          <span className="relative inline-block">
-            <span className="absolute bottom-0 left-0 w-full h-2 sm:h-3 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md" />
-            Master the Skills
-          </span>{' '}
-          That Matter
-        </h1>
+      <section className="relative py-16 mt-5 mb-30 px-4 sm:px-6 lg:px-0">
+        <div className="flex flex-col mx-auto items-center -mb-20">
+          <div className="inline-flex uppercase items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium mb-4">
+            <BadgeCheck className="w-4 h-4" />
+            Recommended
+          </div>
+        </div>
+
+        <div className="w-full flex justify-center py-24">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter text-neutral-900 max-w-7xl mx-auto text-center leading-[1.15]">
+            <span className="relative inline-block tracking-tight font-bold z-10">
+              Building Skills
+              <span className="absolute -bottom-1 left-0 w-full h-full -z-10 flex items-end opacity-80 text-green-500">
+                <svg
+                  className="w-full h-auto"
+                  viewBox="0 0 280 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M3 18C17.6 18 33.4 14.8 47.6 12.8C61.2 10.9 75.1 9.9 88.8 10.4C101.1 10.8 113.3 13 125.6 14.8C139.9 16.9 154.3 18.8 168.8 19.4C184.9 20.1 201 19.1 217.1 17.2C228.9 15.8 240.8 13.7 252.4 11.8C260.7 10.4 271.6 9.39999 277 13"
+                    stroke="currentColor"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M6 19C34.7 17.4 63.3 12.5 92.3 13.2C119.2 13.8 145.8 20.4 172.8 21.2C199.6 22 226.4 17.1 253 16C261 15.7 269.1 15.4 274 17"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    opacity="0.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </span>{' '}
+            That Drive Business Impact
+          </h1>
+        </div>
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4 -mt-12 mb-10">
+          {[
+            {
+              icon: Flag,
+              label: 'Viksit Bharat 2047',
+              color: 'text-green-600',
+            },
+            {
+              icon: Briefcase,
+              label: 'Professional Programs',
+              color: 'text-purple-600',
+            },
+            {
+              icon: Rocket,
+              label: 'Entrepreneurship Courses',
+              color: 'text-orange-600',
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className={`
+        flex items-center cursor-pointer gap-2.5 px-3 py-2 rounded-md
+        border border-neutral-200 bg-neutral-50/50 text-neutral-500
+        transition-all hover:bg-white hover:border-neutral-300 hover:text-neutral-900
+        ${index === 2 ? 'col-span-2 justify-center sm:col-span-1' : ''}
+      `}
+            >
+              <div
+                className={`p-1 rounded-md bg-white border border-neutral-100 shadow-sm ${item.color}`}
+              >
+                <item.icon className="w-3 h-3" />
+              </div>
+              <span className="text-xs uppercase tracking-wide font-semibold pr-1">
+                {item.label}
+              </span>
+            </div>
+          ))}
+        </div>
 
         <div className="max-w-5xl mx-auto grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4 items-stretch">
           {cards.map((c) => (
@@ -338,18 +467,164 @@ const Home = () => {
 
       {/* 4th SECTION - FEATURES SECTION */}
       <section>
-        <div className="first-page -mb-10">
-          <h1 className="text-center text-5xl sm:text-6xl font-bold tracking-tight text-pretty text-black">
-            <span className="relative inline-block">
-              <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
-              Why Choose
-            </span>{' '}
-            Connect2Roots Academy?
-          </h1>
+        <div className="-mb-10">
+          <div className="flex flex-col mx-auto items-center">
+            <div className="inline-flex uppercase items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium mb-4">
+              <ShieldCheck className="w-4 h-4" />
+              Our Advantage
+            </div>
+          </div>
+          <div className="w-full flex justify-center ">
+            <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold tracking-tighter text-neutral-900 max-w-7xl mx-auto text-center leading-[1.15]">
+              Why Organizations Choose{' '}
+              <span className="relative inline-block tracking-tight font-bold z-10">
+                Connect2Roots Academy
+                <span className="absolute -bottom-1 left-0 w-full h-full -z-10 flex items-end opacity-80 text-green-500">
+                  <svg
+                    className="w-full h-auto"
+                    viewBox="0 0 280 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M3 18C17.6 18 33.4 14.8 47.6 12.8C61.2 10.9 75.1 9.9 88.8 10.4C101.1 10.8 113.3 13 125.6 14.8C139.9 16.9 154.3 18.8 168.8 19.4C184.9 20.1 201 19.1 217.1 17.2C228.9 15.8 240.8 13.7 252.4 11.8C260.7 10.4 271.6 9.39999 277 13"
+                      stroke="currentColor"
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M6 19C34.7 17.4 63.3 12.5 92.3 13.2C119.2 13.8 145.8 20.4 172.8 21.2C199.6 22 226.4 17.1 253 16C261 15.7 269.1 15.4 274 17"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      opacity="0.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </span>{' '}
+            </h1>
+          </div>
         </div>
         <div className="w-full p-10">
           <div className="-mt-10 top-0 left-0 w-full">
             <FeaturesCard />
+          </div>
+        </div>
+      </section>
+
+      {/* new section */}
+      <section className="py-10 px-4 text-center -mt-20 mb-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex items-center uppercase gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium mb-4">
+            <Briefcase className="w-4 h-4" />
+            Participation Framework
+          </div>
+          <div className="w-full flex justify-center ">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter text-neutral-900 max-w-7xl mx-auto text-center leading-[1.15]">
+              Opportunities for Collaboration and{' '}
+              <span className="relative inline-block tracking-tight font-bold z-10">
+                Engagement
+                <span className="absolute -bottom-1 left-0 w-full h-full -z-10 flex items-end opacity-80 text-green-500">
+                  <svg
+                    className="w-full h-auto"
+                    viewBox="0 0 280 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M3 18C17.6 18 33.4 14.8 47.6 12.8C61.2 10.9 75.1 9.9 88.8 10.4C101.1 10.8 113.3 13 125.6 14.8C139.9 16.9 154.3 18.8 168.8 19.4C184.9 20.1 201 19.1 217.1 17.2C228.9 15.8 240.8 13.7 252.4 11.8C260.7 10.4 271.6 9.39999 277 13"
+                      stroke="currentColor"
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M6 19C34.7 17.4 63.3 12.5 92.3 13.2C119.2 13.8 145.8 20.4 172.8 21.2C199.6 22 226.4 17.1 253 16C261 15.7 269.1 15.4 274 17"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      opacity="0.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </span>{' '}
+            </h1>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-6 h-100 w-full max-w-5xl mt-20 mx-auto">
+          <div className="relative group grow transition-all w-56 h-100 duration-500 hover:w-full">
+            <img
+              className="h-full w-full rounded-xl object-cover object-center"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29ycG9yYXRlfGVufDB8fDB8fHww"
+              alt="image"
+            />
+            <div className="absolute inset-0 rounded-xl items-start  flex flex-col justify-end p-10 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <h1 className="text-5xl mb-3 font-medium">
+                Corporate Training Programs
+              </h1>
+              <p className="text-sm">
+                Customized, industry aligned training solutions designed to
+                upskill teams, close capability gaps, and drive measurable
+                business performance across organizations.
+              </p>
+            </div>
+          </div>
+          <div className="relative group grow transition-all w-56 h-100 duration-500 hover:w-full">
+            <img
+              className="h-full w-full rounded-xl object-cover object-right"
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdvcmtzaG9wfGVufDB8fDB8fHww"
+              alt="image"
+            />
+            <div className="absolute rounded-xl  inset-0 flex flex-col items-start justify-end p-10 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <h1 className="text-5xl mb-3 font-medium">
+                Webinars & Workshops
+              </h1>
+              <p className="text-sm">
+                Expert led webinars and hands-on workshops focused on emerging
+                skills, practical insights, and real-world business challenges
+                for professionals and teams.
+              </p>
+            </div>
+          </div>
+          <div className="relative group grow transition-all w-56 h-100 duration-500 hover:w-full">
+            <img
+              className="h-full w-full rounded-xl  object-cover object-center"
+              src="https://plus.unsplash.com/premium_photo-1664910070114-33ab91630e46?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29ycG9yYXRlJTIwcGFydG5lcnNoaXB8ZW58MHx8MHx8fDA%3D"
+              alt="image"
+            />
+            <div className="absolute rounded-xl inset-0 flex flex-col items-start justify-end  p-10 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <h1 className="text-5xl mb-3 font-medium">
+                Corporate Partnerships
+              </h1>
+              <p className="text-sm">
+                Collaborate with us to co-create training initiatives, talent
+                pipelines, and workforce development programs aligned with your
+                organizational goals.
+              </p>
+            </div>
+          </div>
+          <div className="relative group grow transition-all w-56 h-100 duration-500 hover:w-full">
+            <img
+              className="h-full w-full rounded-xl  object-cover object-center"
+              src="https://plus.unsplash.com/premium_photo-1682787495095-134403f5196d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5zdGl0dXRpb258ZW58MHx8MHx8fDA%3D"
+              alt="image"
+            />
+            <div className="absolute inset-0 rounded-xl flex flex-col items-start justify-end p-10 text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <h1 className="text-5xl mb-3 font-medium">
+                Institutional Training
+              </h1>
+              <p className="text-sm">
+                Structured training programs for colleges, universities, and
+                institutions aimed at enhancing employability, industry
+                readiness, and outcome driven skill development.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -390,7 +665,7 @@ const Home = () => {
         </div>
         <div className="text-sm  text-neutral-300 max-w-lg">
           <h1 className="text-5xl font-bold text-neutral-100 sm:text-4xl lg:text-6xl tracking-tight">
-            Enspiring Growth Building Tomorrow
+            Inspiring Growth Building Tomorrow
           </h1>
           <p className="mt-8">
             We are committed to empowering graduates through a journey of
@@ -444,7 +719,7 @@ const Home = () => {
       </section>
 
       {/* CONNECT2ROOTS FOUNDATION SECTION */}
-      <section
+      {/* <section
         className="flex flex-col items-center justify-center mb-6 md:mb-30 my-10 md:mx-auto max-w-5xl w-full text-center md:rounded-2xl  px-4 md:px-8 py-12 md:py-24 bg-[url('https://images.unsplash.com/photo-1569653402334-2e98fbaa80ee?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGluZGlhbiUyMGVkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D')] bg-cover bg-center bg-no-repeat relative overflow-hidden"
         style={{
           backgroundBlendMode: 'multiply',
@@ -474,6 +749,128 @@ const Home = () => {
             →
           </span>
         </Link>
+      </section> */}
+
+      {/* ABOUT US C2R ACADEMY */}
+      <MainAboutUs />
+      <OurTeam />
+
+      {/* new section */}
+      <section className="w-full py-20 lg:py-32 ">
+        <div className="mx-auto max-w-7xl px-6 bg-[#046528] p-10 md:p-16 rounded-xl">
+          <div className="inline-flex uppercase items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium mb-4">
+            <TrendingUp className="w-4 h-4" />
+            IMPACT & PROGRESS
+          </div>
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            {/* LEFT CONTENT */}
+            <div className="flex flex-col gap-6 max-w-xl">
+              <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-neutral-100">
+                Transforming Lives Through Skills That Create Opportunity
+              </h2>
+
+              <p className="text-base leading-relaxed text-neutral-100">
+                By equipping individuals with practical, industry relevant
+                skills, we enable meaningful career progression and long-term
+                economic mobility. Our skill first approach bridges gaps between
+                potential and performance empowering people to navigate changing
+                workforce demands, unlock new opportunities, and contribute
+                effectively in professional environments.
+              </p>
+
+              {/* <button className="w-fit rounded-lg border border-neutral-900 px-6 py-3 text-sm font-medium text-white bg-neutral-800 hover:bg-neutral-900 transition">
+                Read more
+              </button> */}
+              <div className=" mt-8 flex items-center justify-center lg:justify-start space-x-4">
+                <div className="relative inline-flex items-center justify-center group">
+                  {/* Animated gradient background */}
+                  <div className="absolute inset-0 opacity-60 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-lg blur-lg filter transition-all duration-1000 group-hover:opacity-100 group-hover:duration-300 animate-gradient-x"></div>
+
+                  {/* Main button */}
+                  <Link
+                    to="/professional"
+                    role="button"
+                    className="relative inline-flex items-center justify-center bg-neutral-900 px-6 py-3 sm:px-8 sm:py-3 rounded-lg text-neutral-100 font-semibold text-base sm:text-lg transition-all duration-300 hover:bg-neutral-900 hover:shadow-2xl hover:-translate-y-1 hover:shadow-indigo-500/25 border border-neutral-900 hover:border-gray-600 group/btn w-full sm:w-auto"
+                    title="Start learning"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="relative z-10">Read More</span>
+
+                    {/* Animated arrow icon */}
+                    <svg
+                      viewBox="0 0 20 20"
+                      height="18"
+                      width="18"
+                      fill="none"
+                      className="ml-2 transition-all duration-300 transform group-hover/btn:translate-x-1"
+                    >
+                      <path
+                        d="M4 10h12"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className="opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100"
+                      />
+                      <path
+                        d="M10 4l6 6-6 6"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT COMPARISON BOX */}
+            <div className="w-full max-w-lg ml-auto">
+              <div
+                className="relative aspect-video w-full overflow-hidden rounded-xl select-none"
+                onMouseMove={handleMove}
+                onMouseUp={() => setDragging(false)}
+                onMouseLeave={() => setDragging(false)}
+                onTouchMove={handleMove}
+                onTouchEnd={() => setDragging(false)}
+              >
+                {/* Divider line */}
+                <div
+                  className="absolute top-0 z-20 h-full w-0.5 bg-green-500"
+                  style={{ left: `${inset}%` }}
+                >
+                  <button
+                    className="absolute top-1/2 -translate-y-1/2 -ml-3 flex h-10 w-6 items-center justify-center rounded-md bg-white shadow border cursor-ew-resize hover:scale-110 transition"
+                    onMouseDown={(e) => {
+                      setDragging(true);
+                      handleMove(e);
+                    }}
+                    onTouchStart={(e) => {
+                      setDragging(true);
+                      handleMove(e);
+                    }}
+                  >
+                    <GripVertical className="h-4 w-4 text-green-600" />
+                  </button>
+                </div>
+
+                {/* Top image */}
+                <img
+                  src="https://images.unsplash.com/photo-1650954224577-5086da8f3599?w=900&auto=format&fit=crop&q=60"
+                  alt="Before"
+                  className="absolute inset-0 z-10 h-full w-full object-cover rounded-2xl border border-neutral-400"
+                  style={{ clipPath: `inset(0 0 0 ${inset}%)` }}
+                  draggable={false}
+                />
+
+                {/* Bottom image */}
+                <img
+                  src="https://images.unsplash.com/photo-1635002249922-272946a8b677?w=900&auto=format&fit=crop&q=60"
+                  alt="After"
+                  className="absolute inset-0 h-full w-full object-cover rounded-2xl border-2 border-neutral-400"
+                  draggable={false}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 6TH SECTION - TESTMONIALS SECTION */}
@@ -482,7 +879,7 @@ const Home = () => {
       </section>
 
       {/* 7TH SECTION - APPLY AS A TARINER CTA  SECTION*/}
-      <section className="bg-[#046528] p-1 sm:p-5 md:grid md:grid-cols-[1fr_auto_1fr] max-w-5xl mx-4 md:mx-auto rounded-2xl mt-10 mb-30">
+      <section className="bg-[#046528] p-1 sm:p-5 md:grid md:grid-cols-[1fr_auto_1fr] max-w-6xl mx-4 md:mx-auto rounded-2xl mt-10 mb-30">
         <img
           src={heroimg}
           alt="trainer"
@@ -521,20 +918,57 @@ const Home = () => {
 
       {/* 8TH SECTION - FREQUENTLY ASKED QUESTIONS SECTION */}
       <section>
-        <div className="max-w-4xl mx-auto mb-10 flex flex-col md:flex-row items-start justify-center gap-8 px-4 md:px-0">
+        <div className="max-w-6xl mx-auto mb-10 flex flex-col md:flex-row items-start justify-center gap-10 px-4 md:px-0">
           <img
             className="max-w-sm w-full rounded-xl h-full object-cover"
             src="https://images.unsplash.com/photo-1544535830-9df3f56fff6a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YW5zd2VyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900"
             alt=""
           />
           <div>
-            <p className="text-green-600 text-sm font-medium">FAQ's</p>
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-pretty text-black">
-              <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
-                Looking for answer?
-              </span>{' '}
-            </h2>
+            {/* <div className="flex mb-5 flex-col uppercase items-start">
+              <span className="text-green-600 font-semibold text-md -mb-5 flex items-center gap-2">
+                <HelpCircle className="w-5 h-5" />
+                FAQ's
+              </span>
+            </div> */}
+            <div className="flex flex-col mx-auto items-start">
+              <div className="inline-flex uppercase items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium mb-4">
+                <HelpCircle className="w-4 h-4" />
+                FAQ's
+              </div>
+            </div>
+            <div className="flex flex-col items-start justify-center w-full">
+              <h1 className="text-4xl sm:text-5xl md:text-4xl font-semibold tracking-tighter text-neutral-900 max-w-5xl text-left leading-[1.15]">
+                <span className="relative inline-block tracking-tight font-bold z-10">
+                  Looking for answer?
+                  <span className="absolute -bottom-1 left-0 w-full h-full -z-10 flex items-end opacity-80 text-green-500">
+                    <svg
+                      className="w-full h-auto"
+                      viewBox="0 0 280 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M3 18C17.6 18 33.4 14.8 47.6 12.8C61.2 10.9 75.1 9.9 88.8 10.4C101.1 10.8 113.3 13 125.6 14.8C139.9 16.9 154.3 18.8 168.8 19.4C184.9 20.1 201 19.1 217.1 17.2C228.9 15.8 240.8 13.7 252.4 11.8C260.7 10.4 271.6 9.39999 277 13"
+                        stroke="currentColor"
+                        strokeWidth="6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M6 19C34.7 17.4 63.3 12.5 92.3 13.2C119.2 13.8 145.8 20.4 172.8 21.2C199.6 22 226.4 17.1 253 16C261 15.7 269.1 15.4 274 17"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        opacity="0.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </span>{' '}
+              </h1>
+            </div>
             <p className="text-sm text-slate-500 mt-2 pb-4">
               Find quick answers to common questions and start your learning
               journey confidently.
@@ -545,8 +979,10 @@ const Home = () => {
                 key={index}
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <div className="flex items-center justify-between">
-                  <h3 className="text-base font-medium">{faq.question}</h3>
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-base font-medium leading-6">
+                    {faq.question}
+                  </h3>
                   <svg
                     width="18"
                     height="18"
@@ -555,7 +991,7 @@ const Home = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     className={`${
                       openIndex === index ? 'rotate-180' : ''
-                    } transition-all duration-500 ease-in-out`}
+                    } transition-all duration-500 ease-in-out w-4 h-4 flex-shrink-0 mt-1`}
                   >
                     <path
                       d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"

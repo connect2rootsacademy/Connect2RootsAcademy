@@ -7,7 +7,6 @@ import {
   GraduationCapIcon,
   HeadsetIcon,
   HandshakeIcon,
-  CircleUserIcon,
   EarthIcon,
   LandmarkIcon,
   HandCoinsIcon,
@@ -19,6 +18,7 @@ import {
   ChevronRightIcon,
   User,
   Globe2Icon,
+  TreeDeciduous,
 } from 'lucide-react';
 import './Navbar.css';
 import AuthProvider from '../../context/AuthContext';
@@ -31,21 +31,9 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [partnershipDropdownOpen, setPartnershipDropdownOpen] = useState(false);
   const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
-  // const [aboutUsDropdownOpen, setAboutUsDropdownOpen] = useState(false);
   const [trainingDropdownOpen, setTrainingDropdownOpen] = useState(false);
   const [timer, setTimer] = useState(null);
   const location = useLocation();
-
-  // useEffect(() => {
-  //   if (mobileMenuOpen) {
-  //     document.body.style.overflow = 'hidden';
-  //   } else {
-  //     document.body.style.overflow = 'unset';
-  //   }
-  //   return () => {
-  //     document.body.style.overflow = 'unset';
-  //   };
-  // }, [mobileMenuOpen]);
 
   const getNavLinkClass = (paths) => {
     return paths.some((path) => location.pathname.startsWith(path))
@@ -111,16 +99,16 @@ const Navbar = () => {
           >
             <button
               type="button"
-              className={`nav-link flex items-center gap-x-2 font-medium transition-all duration-200 ${
+              className={`nav-link flex items-center gap-x-2 font-medium transition-all duration-100 ${
                 coursesDropdownOpen
                   ? 'text-green-600'
                   : 'text-gray-700 hover:text-green-600'
               } ${getNavLinkClass(['/entrepreneuship', '/professional'])}`}
             >
-              <span className="text-sm font-semibold tracking-normal text-neutral-600 hover:text-neutral-900">
-                Explore Courses
+              <span className="text-sm font-semibold tracking-normal text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 px-3  py-1 rounded-md">
+                Programs
               </span>
-              <svg
+              {/* <svg
                 viewBox="0 0 20 20"
                 fill="currentColor"
                 aria-hidden="true"
@@ -133,12 +121,17 @@ const Navbar = () => {
                   clipRule="evenodd"
                   fillRule="evenodd"
                 />
-              </svg>
+              </svg> */}
             </button>
+
+            {/* Add invisible bridge */}
+            {coursesDropdownOpen && (
+              <div className="absolute left-0 top-full h-3 w-80 pointer-events-auto" />
+            )}
 
             {/* ======= Dropdown Panel ======= */}
             <section
-              className={`absolute left-0 mt-3 w-80 bg-white/95 backdrop-blur-xl shadow-2xl rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 ease-out transform origin-top z-50 ${
+              className={`absolute left-0  w-80 bg-white/95 backdrop-blur-xl shadow-2xl rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 ease-out transform origin-top z-50 ${
                 coursesDropdownOpen
                   ? 'opacity-100 scale-100 translate-y-0 visible'
                   : 'opacity-0 scale-95 -translate-y-2 invisible'
@@ -293,7 +286,7 @@ const Navbar = () => {
           >
             <button
               type="button"
-              className={`nav-link flex items-center gap-x-2 font-medium transition-all duration-300 ${
+              className={`nav-link flex items-center font-medium transition-all duration-100 ${
                 trainingDropdownOpen
                   ? 'text-green-600'
                   : 'text-gray-700 hover:text-green-600'
@@ -303,10 +296,10 @@ const Navbar = () => {
                 '/corporatetraining',
               ])}`}
             >
-              <span className="text-sm font-semibold tracking-normal text-neutral-600 hover:text-neutral-900">
-                Training Programs
+              <span className="text-sm font-semibold tracking-normal text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 px-3  py-1 rounded-md">
+                Corporate Training
               </span>
-              <svg
+              {/* <svg
                 viewBox="0 0 20 20"
                 fill="currentColor"
                 aria-hidden="true"
@@ -319,12 +312,12 @@ const Navbar = () => {
                   clipRule="evenodd"
                   fillRule="evenodd"
                 />
-              </svg>
+              </svg> */}
             </button>
 
             {/* ===== Dropdown Panel ===== */}
             <section
-              className={`absolute left-0 mt-3 w-72 bg-white/95 backdrop-blur-xl shadow-2xl rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 ease-out transform origin-top z-50 ${
+              className={`absolute left-0 w-72 bg-white/95 backdrop-blur-xl shadow-2xl rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 ease-out transform origin-top z-50 ${
                 trainingDropdownOpen
                   ? 'opacity-100 scale-100 translate-y-0 visible'
                   : 'opacity-0 scale-95 -translate-y-2 invisible'
@@ -546,16 +539,16 @@ const Navbar = () => {
           >
             <button
               type="button"
-              className={`nav-link flex items-center gap-x-2 font-medium transition-all duration-300 ${
+              className={`nav-link flex items-center gap-x-2 font-medium transition-all duration-100 ${
                 partnershipDropdownOpen
                   ? 'text-green-600'
                   : 'text-gray-700 hover:text-green-600'
               } ${getNavLinkClass(['/corporate', '/institutional'])}`}
             >
-              <span className="text-sm font-semibold tracking-normal text-neutral-600 hover:text-neutral-900">
-                Partnership
+              <span className="text-sm font-semibold tracking-normal text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 px-3 py-1 rounded-md">
+                Partnerships
               </span>
-              <svg
+              {/* <svg
                 viewBox="0 0 20 20"
                 fill="currentColor"
                 aria-hidden="true"
@@ -568,12 +561,12 @@ const Navbar = () => {
                   clipRule="evenodd"
                   fillRule="evenodd"
                 />
-              </svg>
+              </svg> */}
             </button>
 
             {/* ======= Dropdown Panel ======= */}
             <section
-              className={`absolute left-0 mt-3 w-72 bg-white/95 backdrop-blur-xl shadow-2xl rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 ease-out transform origin-top z-50 ${
+              className={`absolute left-0 w-72 bg-white/95 backdrop-blur-xl shadow-2xl rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 ease-out transform origin-top z-50 ${
                 partnershipDropdownOpen
                   ? 'opacity-100 scale-100 translate-y-0 visible'
                   : 'opacity-0 scale-95 -translate-y-2 invisible'
@@ -691,23 +684,26 @@ const Navbar = () => {
             </section>
           </section>
 
-          {/* =============== ABOUT US TAB DESKTOP =============== */}
+          {/* =============== CONTACT US TAB DESKTOP =============== */}
           <section>
-            <NavLink to="/about">
-              <span className="text-sm mr-5 font-semibold tracking-normal text-neutral-600 hover:text-neutral-900">
-                About Us
+            <NavLink to="/contact">
+              <span className="text-sm mr-5 font-semibold tracking-normal text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 px-3  py-1 rounded-md">
+                Contact
               </span>
             </NavLink>
           </section>
 
-          {/* =============== CONTACT US TAB DESKTOP =============== */}
+          {/* =============== c2r TAB DESKTOP =============== */}
           <section>
-            <NavLink to="/contact">
-              <span className="text-sm mr-5 font-semibold tracking-normal text-neutral-600 hover:text-neutral-900">
-                Contact Us
-              </span>
-            </NavLink>
+            <a
+              target="_blank"
+              className="text-sm mr-5 font-semibold tracking-normal text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 px-3  py-1 rounded-md"
+              href="https://connect2roots.org/"
+            >
+              C2R Foundation
+            </a>
           </section>
+
           {/* =============== SEARCHBAR =============== */}
           <section>
             <SearchBar />
@@ -941,7 +937,7 @@ const Navbar = () => {
                         </div>
                         <div className="text-left">
                           <div className="text-base font-medium text-gray-900">
-                            Explore Courses
+                            Programs
                           </div>
                           <div className="text-sm text-gray-500 mt-0.5">
                             Browse curated courses
@@ -1055,7 +1051,7 @@ const Navbar = () => {
                         </div>
                         <div className="text-left">
                           <div className="text-base font-medium text-gray-900">
-                            Training Programs
+                            Corporate Training
                           </div>
                           <div className="text-sm text-gray-500 mt-0.5">
                             Workshops and corporate training
@@ -1187,7 +1183,7 @@ const Navbar = () => {
                         </div>
                         <div className="text-left">
                           <div className="text-base font-medium text-gray-900">
-                            Partnership
+                            Partnerships
                           </div>
                           <div className="text-sm text-gray-500 mt-0.5">
                             Collaborate with us
@@ -1301,6 +1297,27 @@ const Navbar = () => {
                         Contact Us
                       </div>
                     </NavLink>
+                  </motion.div>
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 6 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    className="mt-2 flex gap-2 px-4 "
+                  >
+                    <a
+                      href="https://connect2roots.org/"
+                      target="_blank"
+                      className="flex-1 flex items-center justify-center gap-3 px-4 py-3 rounded-2xl bg-green-800/50 text-neutral-900 transition-colors border border-gray-200/60"
+                    >
+                      <div className="flex-none p-2 rounded-xl bg-neutral-200">
+                        <TreeDeciduous
+                          className="h-4 w-4 text-neutral-700"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      Connect2Roots Foundation
+                    </a>
                   </motion.div>
                 </motion.div>
               </div>
