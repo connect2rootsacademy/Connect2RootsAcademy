@@ -89,7 +89,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="relative w-45 lg:w-75">
+    <div className="relative w-45 lg:w-70">
       <div className="flex items-center bg-gray-100 rounded-md px-3 py-2">
         <SearchIcon className="size-5 text-gray-400 mr-2 " />
         <input
@@ -116,9 +116,8 @@ const SearchBar = () => {
           {searchResults.map((video, idx) => (
             <li
               key={video.id}
-              className={`px-4 py-2 cursor-pointer hover:bg-green-100 ${
-                highlightedIndex === idx ? 'bg-green-100' : ''
-              }`}
+              className={`px-4 py-2 cursor-pointer hover:bg-green-100 ${highlightedIndex === idx ? 'bg-green-100' : ''
+                }`}
               onMouseDown={() => handleResultClick(video)}
             >
               <span className="font-semibold">{video.title}</span>
