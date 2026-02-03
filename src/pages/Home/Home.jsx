@@ -8,7 +8,6 @@ import Testimonials from '../../ui/Testmonials/Testmonials';
 import 'aos/dist/aos.css';
 import ShuffleHero from '../../ui/ShuffleHero';
 import MainAboutUs from '../About/MainAboutUs';
-import OurTeam from '../About/OurTeam';
 import {
   BadgeCheck,
   BarChart3,
@@ -155,38 +154,6 @@ const Home = () => {
     <>
       {/* 1st SECTION - HERO SECTION */}
       <section className="relative flex items-center">
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <svg
-            aria-hidden="true"
-            className="absolute top-0 left-[max(50%,25rem)] h-64 w-full max-w-[100rem] -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200 sm:h-192 sm:max-w-[120rem] lg:h-256 lg:w-512"
-          >
-            <defs>
-              <pattern
-                x="50%"
-                y={-1}
-                id="e813992c-7d03-4cc4-a2bd-151760b470a0"
-                width={200}
-                height={200}
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M100 200V.5M.5 .5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-              <path
-                d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-                strokeWidth={0}
-              />
-            </svg>
-            <rect
-              fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
-              width="100%"
-              height="100%"
-              strokeWidth={0}
-            />
-          </svg>
-        </div>
-
         <div className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-6">
           <div className="grid items-center grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-2 pt-8 sm:pt-12 md:pt-16">
             <div className="text-center lg:text-left">
@@ -218,13 +185,13 @@ const Home = () => {
 
                   {/* Main button */}
                   <Link
-                    to="/professional"
+                    to="/explore-courses"
                     role="button"
                     className="relative inline-flex items-center justify-center bg-neutral-900 px-6 py-3 sm:px-8 sm:py-3 rounded-lg text-neutral-100 font-semibold text-base sm:text-lg transition-all duration-300 hover:bg-neutral-900 hover:shadow-2xl hover:-translate-y-1 hover:shadow-indigo-500/25 border border-neutral-200 hover:border-gray-600 group/btn w-full sm:w-auto"
                     title="Start learning"
                     rel="noopener noreferrer"
                   >
-                    <span className="relative z-10">Explore Programs</span>
+                    <span className="relative z-10">Explore Courses</span>
 
                     {/* Animated arrow icon */}
                     <svg
@@ -272,7 +239,7 @@ const Home = () => {
       </section>
 
       {/* Number section */}
-      <section className=" px-15">
+      <section className="relative px-15">
         <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, idx) => (
             <StatCard key={idx} {...stat} />
@@ -280,51 +247,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 2nd SECTION - COURSES WE PROVIDE SECTION - CARDS */}
-      {/* <section>
-        <CoursesCard
-          title="Build Your Future"
-          description="Discover the most engaging content from our amazing community of developers and designers"
-          backgroundLabel="Courses"
-          backgroundPosition="left"
-          posts={[
-            {
-              id: 1,
-              href: '/professional',
-              title: 'Master In-Demand Professional Skills',
-              category: 'Professional Courses',
-              imageUrl:
-                'https://plus.unsplash.com/premium_photo-1676666379051-383ed1b005e8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8am9iJTIwaW50ZXJ2aWV3fGVufDB8fDB8fHww',
-              views: 2180,
-              totalCourse: 10,
-              rating: 5,
-            },
-            {
-              id: 2,
-              href: '/entrepreneuship',
-              title: 'Turn Ideas into Successful Ventures',
-              category: 'Entrepreneurship Courses',
-              imageUrl:
-                'https://images.unsplash.com/photo-1565882694798-4c9d004e65b7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGluZGlhbiUyMHNvZnR3YXJlJTIwZGV2ZWxvcGVyJTIwdGVhbXxlbnwwfHwwfHx8MA%3D%3D',
-              views: 1456,
-              totalCourse: 12,
-              rating: 4,
-            },
-            {
-              id: 3,
-              href: '/viksitbharat2047',
-              title: 'India 2047: The Road to Development',
-              category: 'Viksit Bharat 2047',
-              imageUrl:
-                'https://plus.unsplash.com/premium_photo-1674588218207-474f9ca6d3d8?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-              views: 987,
-              totalCourse: 6,
-              rating: 4,
-            },
-          ]}
-          className="mb-16"
-        />
-      </section> */}
+
+
 
       {/* 3rd SECTION- RECOMMENDED COURSES & RECOMMENDED VIDEOS SECTION  */}
       <section className="relative py-16 mt-5 mb-30 px-4 sm:px-6 lg:px-0">
@@ -516,7 +440,7 @@ const Home = () => {
       </section>
 
       {/* new section */}
-      <section className="py-10 px-4 text-center -mt-20 mb-20">
+      {/* <section className="py-10 px-4 text-center -mt-20 mb-20">
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center uppercase gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium mb-4">
             <Briefcase className="w-4 h-4" />
@@ -627,7 +551,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 5TH SECTION - OUR MISSION SECTION */}
       <section className="bg-[#046528] p-8 flex flex-col md:flex-row items-center justify-center gap-10 max-md:px-4 -mt-10 mb-10 md:mb-20">
@@ -753,9 +677,8 @@ const Home = () => {
 
       {/* ABOUT US C2R ACADEMY */}
       <MainAboutUs />
-      <OurTeam />
 
-      {/* new section */}
+      {/* Compare yourself with other */}
       <section className="w-full py-20 lg:py-32 ">
         <div className="mx-auto max-w-7xl px-6 bg-[#046528] p-10 md:p-16 rounded-xl">
           <div className="inline-flex uppercase items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium mb-4">
@@ -989,9 +912,8 @@ const Home = () => {
                     viewBox="0 0 18 18"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={`${
-                      openIndex === index ? 'rotate-180' : ''
-                    } transition-all duration-500 ease-in-out w-4 h-4 flex-shrink-0 mt-1`}
+                    className={`${openIndex === index ? 'rotate-180' : ''
+                      } transition-all duration-500 ease-in-out w-4 h-4 flex-shrink-0 mt-1`}
                   >
                     <path
                       d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
@@ -1003,11 +925,10 @@ const Home = () => {
                   </svg>
                 </div>
                 <p
-                  className={`text-sm text-slate-500 transition-all duration-500 ease-in-out max-w-md ${
-                    openIndex === index
-                      ? 'opacity-100 max-h-[300px] translate-y-0 pt-4'
-                      : 'opacity-0 max-h-0 -translate-y-2'
-                  }`}
+                  className={`text-sm text-slate-500 transition-all duration-500 ease-in-out max-w-md ${openIndex === index
+                    ? 'opacity-100 max-h-[300px] translate-y-0 pt-4'
+                    : 'opacity-0 max-h-0 -translate-y-2'
+                    }`}
                 >
                   {faq.answer}
                 </p>

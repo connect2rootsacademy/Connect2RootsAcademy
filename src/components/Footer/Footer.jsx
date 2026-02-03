@@ -4,21 +4,21 @@ import icon from '../../assets/c2r-course-thumbnail.png';
 
 const defaultSections = [
   {
-    title: 'Product',
+    title: 'Services',
     links: [
-      { name: 'Connect2Roots Foundation', href: 'https://connect2roots.org/' },
-      { name: 'Professional', href: '/professional' },
-      { name: 'Certificated', href: '/certified' },
-      { name: 'Entrepreneurship', href: '/entrepreneuship' },
+      { name: 'Coaching', href: '/certified' },
+      { name: 'Corporate Training', href: '/coptraining' },
+      { name: 'Psychometric Assessment', href: '/entrepreneuship' },
+      { name: 'Competencies and skill management', href: '/professional' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { name: 'About', href: '/ourmembers' },
-      { name: 'Team', href: '/ourteam' },
-      { name: 'Contact', href: '/contact' },
-      { name: 'Apply for Trainer', href: '/applyastrainer' },
+      { name: 'Partnership', href: '/corporate' },
+      { name: 'About Us', href: '/about' },
+      { name: 'Contact Us', href: '/contact' },
+      { name: 'Apply as Trainer', href: '/applyastrainer' },
     ],
   },
   {
@@ -26,8 +26,6 @@ const defaultSections = [
     links: [
       { name: 'Webinars', href: '/webinar' },
       { name: 'Workshops', href: '/workshops' },
-      { name: 'Partnerships', href: '/corporate' },
-      { name: 'Coporate Training', href: '/coptraining' },
     ],
   },
 ];
@@ -75,12 +73,19 @@ export const Footer = ({
   sections = defaultSections,
   description = 'Join Connect2Roots Academy and take the next step toward personal growth, career advancement, and lifelong learning.',
   socialLinks = defaultSocialLinks,
-  copyright = '© 2025 Connect2Roots Academy. All rights reserved.',
+  copyright = `© ${new Date().getFullYear()} Connect2Roots Academy. All rights reserved.`,
   legalLinks = defaultLegalLinks,
 }) => {
   return (
-    <section className="py-10 border-t border-gray-200 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-10 border-t border-gray-200 relative overflow-hidden">
+      {/* Background Text */}
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-full pointer-events-none select-none z-0 flex justify-center opacity-20">
+        <h1 className="text-[12vw] font-bold text-neutral-300 uppercase tracking-wide whitespace-nowrap leading-none">
+          Connect2Roots
+        </h1>
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
             {/* Logo */}
@@ -137,9 +142,9 @@ export const Footer = ({
             ))}
           </div>
         </div>
-        <div className="mt-8 flex flex-col-reverse items-center justify-between gap-4 border-t pt-8 text-xs font-medium text-muted-foreground sm:flex-row sm:items-center sm:text-left">
-          <p className="text-center sm:text-left">{copyright}</p>
-          <ul className="flex flex-col gap-2 sm:flex-row sm:gap-4">
+        <div className="mt-8 flex flex-col-reverse items-center justify-between gap-4 pt-8 text-xs font-medium text-neutral-200 sm:flex-row sm:items-center sm:text-left">
+          <p className="text-center sm:text-left text-neutral-700">{copyright}</p>
+          <ul className="flex flex-col gap-2 sm:flex-row sm:gap-4 text-neutral-700">
             {legalLinks.map((link, idx) => (
               <li key={idx} className="hover:text-primary">
                 <a href={link.href}> {link.name}</a>

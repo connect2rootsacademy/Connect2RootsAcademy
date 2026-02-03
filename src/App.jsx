@@ -39,25 +39,18 @@ import Design from './pages/ProfessionalCourses/DesignAndCreativeArts/Design';
 import RuralDevelopment from './pages/ProfessionalCourses/RuralDevelopmentAndEntrepreneurship/RuralDevelopment';
 import VisionandMission from './pages/About/VisionandMission';
 import ProfessionalCoursePage from './pages/Courses/ProfessionalCoursePage';
+import ExploreCourses from './pages/ExploreCourses/explore-courses';
 // ENTREPRENEURSHIP COURSES
 
 function App() {
-  // const [showModal, setShowModal] = useState(false);
-  // useEffect(() => {
-  //   const timer = setTimeout(() => setShowModal(true), 1500); // 1.5 seconds
-  //   return () => clearTimeout(timer);
-  // }, []);
   return (
     <>
       <ScrollToTop />
-      {/* <ApplyAsATrainerModal
-        open={showModal}
-        onClose={() => setShowModal(false)}
-      /> */}
       <Navbar />
       <main className="min-h-screen overflow-hidden max-w-[100vw]">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/explore-courses" element={<ExploreCourses />} />
           <Route path="/about" element={<About />} />
           <Route path="/ourteam" element={<OurTeam />} />
           <Route path="/mainAboutUs" element={<MainAboutUs />} />

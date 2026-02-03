@@ -56,7 +56,6 @@ const ApplyAsTrainer = () => {
               </div>
               <div className="w-full flex justify-center ">
                 <h1 className="text-4xl sm:text-5xl md:text-5xl font-semibold tracking-tighter text-neutral-900 max-w-7xl mx-auto text-center leading-[1.15]">
-                  Share Your Knowledge <br />
                   <span className="relative inline-block tracking-tight font-bold z-10">
                     Share Your Knowledge{' '}
                     <span className="absolute -bottom-1 left-0 w-full h-full -z-10 flex items-end opacity-80 text-green-500">
