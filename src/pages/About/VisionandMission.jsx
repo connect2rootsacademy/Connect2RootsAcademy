@@ -61,14 +61,14 @@ const VisionandMission = () => {
         <h1 className="text-4xl text-center font-regular text-black sm:text-5xl lg:text-5xl">
           Guided by{' '}
           <span className="relative inline-block">
-            <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[16px] -z-10 rounded-md"></span>
+            <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-green-400 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[16px] -z-10 rounded-md"></span>
             Vision
           </span>{' '}
         </h1>
         <h1 className="text-4xl text-center font-regular text-black sm:text-5xl lg:text-5xl">
           Driven by{' '}
           <span className="relative inline-block">
-            <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[15px] -z-10 rounded-md"></span>
+            <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-green-500 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[15px] -z-10 rounded-md"></span>
             Mission
           </span>{' '}
         </h1>
@@ -76,7 +76,7 @@ const VisionandMission = () => {
       <div className="w-full py-20 lg:py-40">
         <div className="container mx-auto">
           <div className="flex flex-col-reverse lg:flex-row gap-10 lg:items-center">
-            <div className="bg-muted rounded-md py-5 px-2 flex gap-4 pl-0 lg:pl-10 flex-col flex-1">
+            <div className="bg-neutral-600/80 rounded-md py-5 px-2 flex gap-4 pl-0 lg:pl-10 flex-col flex-1">
               <div>
                 <div className="text-neutral-900 bg-neutral-100 inline-flex items-center rounded-full px-2.5 py-0.5 m-2 text-xs font-regular">
                   Vision
@@ -89,11 +89,11 @@ const VisionandMission = () => {
                 <p className="text-white/80 text-lg max-w-xl lg:max-w-sm leading-relaxed tracking-tight text-muted-foreground text-left">
                   To create a world where learning never stops, empowering
                   individuals through continuous growth, innovation, and
-                  opportunities that bridge education with real-world impact.
+                  opportunities that bridge education with real world impact.
                 </p>
               </div>
             </div>
-            <div className="flex gap-4 pl-0 lg:pl-20 flex-col flex-1">
+            <div className="flex gap-4 pl-0 lg:pl-20 flex-col flex-1 text-neutral-900 ">
               <div>
                 <div className="bg-neutral-900 text-neutral-100 inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-regular ">
                   Mission
@@ -105,7 +105,7 @@ const VisionandMission = () => {
                 </h2>
                 <p className="text-lg max-w-xl lg:max-w-sm leading-relaxed tracking-tight text-muted-foreground text-left">
                   To make quality education and skill development accessible to
-                  all by providing practical, engaging, and future-ready
+                  all by providing practical, engaging, and future ready
                   learning experiences that inspire lifelong growth.
                 </p>
               </div>

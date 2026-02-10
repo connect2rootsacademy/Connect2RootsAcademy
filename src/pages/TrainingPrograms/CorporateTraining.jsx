@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { MoveRight, Building } from 'lucide-react';
+import { MoveRight, Building, Building2 } from 'lucide-react';
 
 const products = [
   {
@@ -84,56 +84,58 @@ const CorporateTraining = () => {
   };
   return (
     <section>
-      <section className="w-full">
+      <div className="w-full">
         <div className="container mx-auto">
-          <div className="hidden sm:block absolute inset-0 -z-10 overflow-hidden">
-            <svg
-              aria-hidden="true"
-              className="absolute top-0 left-[max(50%,25rem)] h-256 w-512 -translate-x-1/2 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)] stroke-gray-200"
-            >
-              <defs>
-                <pattern
-                  x="50%"
-                  y={-1}
-                  id="e813992c-7d03-4cc4-a2bd-151760b470a0"
-                  width={200}
-                  height={200}
-                  patternUnits="userSpaceOnUse"
-                >
-                  <path d="M100 200V.5M.5 .5H200" fill="none" />
-                </pattern>
-              </defs>
-              <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-                <path
-                  d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-                  strokeWidth={0}
-                />
-              </svg>
-              <rect
-                fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
-                width="100%"
-                height="100%"
-                strokeWidth={0}
-              />
-            </svg>
-          </div>
-          <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
+          <div className="flex gap-8 py-20  items-center justify-center flex-col">
             <div className="flex gap-4 flex-col">
-              <h1 className="text-4xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
-                Empowering Workforces{' '}
-                <span className="relative inline-block">
-                  <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
-                  Enhancing Performance
-                </span>{' '}
-              </h1>
+              <div className="flex flex-col mx-auto items-center">
+                <div className="inline-flex uppercase items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium mb-4">
+                  <Building2 className="w-4 h-4" />
+                  Corporate Training
+                </div>
+              </div>
+              <div className="w-full flex justify-center ">
+                <h1 className="text-4xl sm:text-5xl md:text-5xl font-semibold tracking-tighter text-neutral-900 max-w-7xl mx-auto text-center leading-[1.15]">
+                  Empowering Workforces <br />
+                  <span className="relative inline-block tracking-tight font-bold z-10">
+                    Enhancing Performance
+                    <span className="absolute -bottom-1 left-0 w-full h-full -z-10 flex items-end opacity-80 text-green-500">
+                      <svg
+                        className="w-full h-auto"
+                        viewBox="0 0 280 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="none"
+                      >
+                        <path
+                          d="M3 18C17.6 18 33.4 14.8 47.6 12.8C61.2 10.9 75.1 9.9 88.8 10.4C101.1 10.8 113.3 13 125.6 14.8C139.9 16.9 154.3 18.8 168.8 19.4C184.9 20.1 201 19.1 217.1 17.2C228.9 15.8 240.8 13.7 252.4 11.8C260.7 10.4 271.6 9.39999 277 13"
+                          stroke="currentColor"
+                          strokeWidth="6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M6 19C34.7 17.4 63.3 12.5 92.3 13.2C119.2 13.8 145.8 20.4 172.8 21.2C199.6 22 226.4 17.1 253 16C261 15.7 269.1 15.4 274 17"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          opacity="0.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </span>{' '}
+                </h1>
+              </div>
               <p className="text-lg p-2 md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
-                Connect2Roots Academy collaborates with organizations to provide
-                tailored corporate training programs that enhance workforce
-                skills and drive growth. Our industry-aligned modules focus on
-                upskilling, boosting productivity, and fostering continuous
-                learning. From technical expertise to leadership and
-                communication, we help teams perform with confidence and align
-                seamlessly with business goals.
+                Connect2Roots Academy partners with organizations to deliver
+                tailored corporate training programs that strengthen workforce
+                capabilities and accelerate business growth. Our industry
+                aligned modules focus on upskilling teams, improving
+                productivity, and fostering a culture of continuous learning.
+                From technical expertise to leadership and communication
+                development, we empower professionals to perform with confidence
+                and align seamlessly with organizational goals.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 p-5 items-center justify-center">
@@ -160,7 +162,7 @@ const CorporateTraining = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <section id="industry">
         <div>
@@ -170,7 +172,7 @@ const CorporateTraining = () => {
           >
             <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter font-regular">
               <span className="relative inline-block">
-                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-orange-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
+                <span className="absolute bottom-0 left-0 w-full h-3 sm:h-4 border-b-[12px] border-green-300 sm:border-b-[16px] md:border-b-[20px] lg:border-b-[24px] -z-10 rounded-md"></span>
                 Industries
               </span>{' '}
               We Serve

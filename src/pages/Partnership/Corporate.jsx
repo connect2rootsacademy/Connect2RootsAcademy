@@ -79,7 +79,7 @@ const Corporate = () => {
           At Connect2Roots Academy, we welcome collaborations with organizations
           that share our commitment to advancing education and skill
           development. Through strategic partnerships, we aim to design
-          impactful programs that create long-term value for learners and
+          impactful programs that create long term value for learners and
           institutions alike. Please fill out the form to share your
           organization’s goals and explore how we can work together to make a
           meaningful difference.

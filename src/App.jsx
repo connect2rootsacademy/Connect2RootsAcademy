@@ -41,7 +41,13 @@ import VisionandMission from './pages/About/VisionandMission';
 import ProfessionalCoursePage from './pages/Courses/ProfessionalCoursePage';
 import ExploreCourses from './pages/ExploreCourses/explore-courses';
 // ENTREPRENEURSHIP COURSES
-
+// COACHING PAGES IMPORTING
+import CorporateCoaching from './pages/Coaching/CorporateCoaching';
+import GroupCoaching from './pages/Coaching/GroupCoaching';
+import LeadershipCoaching from './pages/Coaching/LeadershipCoaching';
+import IndividualCoaching from './pages/Coaching/IndividualCoaching';
+import PsychometricAssessment from './components/Footer/Services/PsychometricAssessment';
+import ComAndSkillManagement from './components/Footer/Services/ComAndSkillManagement';
 function App() {
   return (
     <>
@@ -95,6 +101,18 @@ function App() {
           />
           <Route path="/design" element={<Design />} />
           <Route path="/ruraldevelopment" element={<RuralDevelopment />} />
+          <Route path="/corporatecoaching" element={<CorporateCoaching />} />
+          <Route path="/groupcoaching" element={<GroupCoaching />} />
+          <Route path="/leadershipcoaching" element={<LeadershipCoaching />} />
+          <Route path="/individualcoaching" element={<IndividualCoaching />} />
+          <Route
+            path="/psychometricassessment"
+            element={<PsychometricAssessment />}
+          />
+          <Route
+            path="/comandskillmanagement"
+            element={<ComAndSkillManagement />}
+          />
         </Routes>
       </main>
       <ToastContainer />

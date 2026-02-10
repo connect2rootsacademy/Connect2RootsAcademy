@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { MoveRight, PhoneCall } from 'lucide-react';
+import { MoveRight, Phone, PhoneCall } from 'lucide-react';
 
 const Contact = () => {
   const nextSectionRef = useRef(null);
@@ -25,6 +25,10 @@ const Contact = () => {
         </div>
         <div className="container mx-auto -mt-20">
           <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
+            <div className="inline-flex uppercase items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium -mb-10 -mt-10 z-10">
+              <Phone className="w-4 h-4" />
+              Contact Us
+            </div>
             <div className="flex gap-4 flex-col">
               <h1 className="text-4xl mt-10 md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
                 Connect With Us For{' '}
@@ -34,18 +38,19 @@ const Contact = () => {
                 </span>{' '}
               </h1>
               <p className="text-lg p-2 md:text-xl leading-tight tracking-tight text-muted-foreground max-w-2xl text-center">
-                At Connect2Roots Academy, we believe in the power of
-                collaboration to create meaningful change. We invite passionate
-                individuals, professionals, and partners to join us in our
-                mission of empowering graduates and strengthening communities.
-                Whether you are looking to contribute your expertise,
-                collaborate as an organization, or volunteer your time, there is
-                a place for you in the C2R family. Our volunteers play a vital
-                role in extending our reach, offering guidance, mentorship, and
-                support to learners across diverse backgrounds. By working with
-                us, you not only help shape the future of students but also
-                become part of a movement dedicated to building a stronger and
-                more prosperous India.
+                At Connect2Roots Academy, we believe collaboration is key to
+                driving meaningful impact. We invite businesses, industry
+                professionals, and strategic partners to join us in
+                strengthening workforce capability and building future ready
+                talent. Whether you are looking to contribute expertise,
+                collaborate on corporate training initiatives, or support skill
+                development programs, there is a place for you in the
+                Connect2Roots ecosystem. Our partners play a vital role in
+                expanding access to industry relevant learning, offering
+                mentorship, guidance, and real world insights. By working with
+                us, organizations not only invest in the growth of professionals
+                but also become part of a mission dedicated to building a
+                stronger, more skilled, and more prosperous India.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 p-5 items-center justify-center">

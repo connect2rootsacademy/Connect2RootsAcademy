@@ -7,11 +7,9 @@ import {
   Star,
   ArrowRight,
   Zap,
-  TrendingUp,
   Target,
   Lightbulb,
   Globe,
-  Video,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +22,7 @@ export default function MainAboutUs() {
       ),
       title: 'Inspiration',
       description:
-        'Born from a vision to bridge the gap between learning and opportunity, Connect2Roots Academy inspires individuals to grow, adapt, and thrive in an evolving world.',
+        'Born from a vision to bridge the gap between learning and business impact, Connect2Roots Academy empowers organizations to build skilled, adaptable, and future ready teams in an evolving industry landscape.',
       position: 'left',
     },
     {
@@ -34,38 +32,8 @@ export default function MainAboutUs() {
       ),
       title: 'Mission',
       description:
-        'Our mission is to make quality education accessible to all by delivering skill-based, practical, and transformative learning experiences.',
+        'Our mission is to empower businesses through high quality, skill based training and transformative learning solutions that enhance workforce capability, drive performance, and support long term organizational growth.',
       position: 'left',
-    },
-    {
-      icon: <Lightbulb className="w-6 h-6" />,
-      secondaryIcon: (
-        <Star className="w-4 h-4 absolute -top-1 -right-1 text-neutral-400" />
-      ),
-      title: 'Innovation',
-      description:
-        'We embrace innovative teaching methods and digital platforms to foster creativity, curiosity, and problem-solving.',
-      position: 'left',
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      secondaryIcon: (
-        <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-neutral-400" />
-      ),
-      title: 'Community',
-      description:
-        'A supportive ecosystem of learners, educators, and professionals sharing growth and inspiration.',
-      position: 'right',
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      secondaryIcon: (
-        <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-neutral-400" />
-      ),
-      title: 'Empowerment',
-      description:
-        'Equipping learners with confidence, tools, and skills for lifelong success.',
-      position: 'right',
     },
     {
       icon: <Globe className="w-6 h-6" />,
@@ -74,7 +42,38 @@ export default function MainAboutUs() {
       ),
       title: 'Impact',
       description:
-        'Creating long-term social and professional impact through accessible education.',
+        'Driving long term business and societal impact through accessible, industry relevant learning and workforce development solutions.',
+      position: 'right',
+    },
+
+    {
+      icon: <Users className="w-6 h-6" />,
+      secondaryIcon: (
+        <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-neutral-400" />
+      ),
+      title: 'Community',
+      description:
+        'We build a collaborative ecosystem of organizations, industry experts, and professionals dedicated to shared growth, knowledge exchange, and long term success.',
+      position: 'right',
+    },
+    {
+      icon: <Lightbulb className="w-6 h-6" />,
+      secondaryIcon: (
+        <Star className="w-4 h-4 absolute -top-1 -right-1 text-neutral-400" />
+      ),
+      title: 'Innovation',
+      description:
+        'We embrace innovative learning methods and digital platforms to help organizations foster creativity, strategic thinking, and problem solving capabilities across their teams.',
+      position: 'left',
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      secondaryIcon: (
+        <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-neutral-400" />
+      ),
+      title: 'Empowerment',
+      description:
+        'Equipping organizations and teams with the skills, confidence, and tools needed to achieve sustained performance and long term success.',
       position: 'right',
     },
   ];
@@ -131,9 +130,9 @@ export default function MainAboutUs() {
           </div>
         </div>
         <p className="text-center max-w-2xl mx-auto mb-16 text-neutral-600">
-          Connect2Roots Academy empowers graduates through structured courses,
-          expert mentorship, and skill-based programs bridging academics and
-          industry.
+          Connect2Roots Academy empowers businesses through industry aligned
+          training, expert mentorship, and skill based programs that strengthen
+          workforce capability.
         </p>
 
         {/* Services Grid */}
@@ -178,13 +177,6 @@ export default function MainAboutUs() {
               ))}
           </div>
         </div>
-
-        {/* Stats */}
-        {/* <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, idx) => (
-            <StatCard key={idx} {...stat} />
-          ))}
-        </div> */}
       </div>
     </section>
   );

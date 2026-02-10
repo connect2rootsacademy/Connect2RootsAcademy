@@ -6,10 +6,13 @@ const defaultSections = [
   {
     title: 'Services',
     links: [
-      { name: 'Coaching', href: '/certified' },
+      { name: 'Coaching', href: '/' },
       { name: 'Corporate Training', href: '/coptraining' },
-      { name: 'Psychometric Assessment', href: '/entrepreneuship' },
-      { name: 'Competencies and skill management', href: '/professional' },
+      { name: 'Psychometric Assessment', href: '/psychometricassessment' },
+      {
+        name: 'Competencies and skill management',
+        href: '/comandskillmanagement',
+      },
     ],
   },
   {
@@ -77,9 +80,9 @@ export const Footer = ({
   legalLinks = defaultLegalLinks,
 }) => {
   return (
-    <section className="py-10 border-t border-gray-200 relative overflow-hidden">
+    <section className="py-10 border-t border-gray-200 bg-white relative overflow-hidden">
       {/* Background Text */}
-      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-full pointer-events-none select-none z-0 flex justify-center opacity-20">
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-full pointer-events-none select-none z-0 flex justify-center opacity-20 overflow-x-hidden">
         <h1 className="text-[12vw] font-bold text-neutral-300 uppercase tracking-wide whitespace-nowrap leading-none">
           Connect2Roots
         </h1>
@@ -98,7 +101,7 @@ export const Footer = ({
                   className="h-12 sm:h-15"
                 />
               </a>
-              <h1 className="text-lg font-bold text-black sm:text-xl lg:text-2xl">
+              <h1 className="text-xl font-bold text-black sm:text-xl lg:text-2xl">
                 <span className="relative inline-block">
                   <span className="absolute bottom-[-1px] left-0 w-full h-2 sm:h-3 bg-[#4ADE80] -z-10 rounded-full"></span>
                   {logo.title}
@@ -143,8 +146,10 @@ export const Footer = ({
           </div>
         </div>
         <div className="mt-8 flex flex-col-reverse items-center justify-between gap-4 pt-8 text-xs font-medium text-neutral-200 sm:flex-row sm:items-center sm:text-left">
-          <p className="text-center sm:text-left text-neutral-700">{copyright}</p>
-          <ul className="flex flex-col gap-2 sm:flex-row sm:gap-4 text-neutral-700">
+          <p className="text-center sm:text-left text-neutral-700">
+            {copyright}
+          </p>
+          <ul className="flex flex-row items-center gap-4 text-neutral-700">
             {legalLinks.map((link, idx) => (
               <li key={idx} className="hover:text-primary">
                 <a href={link.href}> {link.name}</a>

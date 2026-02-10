@@ -1,156 +1,183 @@
-"use client";
-
-import React, { useState, useEffect, useRef } from "react";
-import { Zap, X, ChevronDown, MonitorSpeaker, Projector, Video, Building, GraduationCap, Globe2, Landmark, HandCoins, User2, Users, Star, UserCheck, Cpu, AlignJustify } from "lucide-react";
+'use client';
+import React, { useState, useEffect, useRef } from 'react';
+import {
+  Zap,
+  X,
+  ChevronDown,
+  MonitorSpeaker,
+  Projector,
+  Video,
+  Building,
+  GraduationCap,
+  Globe2,
+  Landmark,
+  HandCoins,
+  User2,
+  Users,
+  Star,
+  UserCheck,
+  Cpu,
+  AlignJustify,
+} from 'lucide-react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import navlogo from "../../assets/c2r-course-thumbnail.png"
+import navlogo from '../../assets/c2r-course-thumbnail.png';
 import AuthProvider from '../../context/AuthContext';
 
-const cn = (...classes) => classes.filter(Boolean).join(" ");
+const cn = (...classes) => classes.filter(Boolean).join(' ');
 
 const defaultLogo = {
-  url: "/",
+  url: '/',
   src: navlogo,
-  alt: "logo",
-  title: "Connect2Roots Academy",
+  alt: 'logo',
+  title: 'Connect2Roots Academy',
 };
 
 const defaultMenu = [
   {
-    title: "Corporate Training",
-    url: "#",
+    title: 'Corporate Training',
+    url: '#',
     items: [
       {
-        title: "Corporate Training",
-        description: "Customized learning programs designed to upskill teams and organizations.",
+        title: 'Corporate Training',
+        description:
+          'Customized learning programs designed to upskill teams and organizations.',
         icon: <Zap className="size-5 shrink-0" />,
-        url: "/coptraining",
+        url: '/coptraining',
       },
       {
-        title: "Workshops",
-        description: "Hands on, interactive sessions focused on real world skill development.",
+        title: 'Workshops',
+        description:
+          'Hands on, interactive sessions focused on real world skill development.',
         icon: <Projector className="size-5 shrink-0" />,
-        url: "/workshops",
+        url: '/workshops',
       },
       {
-        title: "Webinars",
-        description: "Expert led online sessions covering industry trends and practical insights.",
+        title: 'Webinars',
+        description:
+          'Expert led online sessions covering industry trends and practical insights.',
         icon: <Video className="size-5 shrink-0" />,
-        url: "/webinar",
+        url: '/webinar',
       },
       {
-        title: "Trainer Registration",
-        description: "Join our network to teach, mentor, and impact learners.",
+        title: 'Trainer Registration',
+        description: 'Join our network to teach, mentor, and impact learners.',
         icon: <MonitorSpeaker className="size-5 shrink-0" />,
-        url: "/applyastrainer",
+        url: '/applyastrainer',
       },
     ],
   },
   {
-    title: "Coaching",
-    url: "#",
+    title: 'Coaching',
+    url: '#',
     items: [
       {
-        title: "1 on 1 Corporate Coaching",
-        description: "Personalized coaching to enhance performance and workplace effectiveness.",
-        icon: < User2 className="size-5 shrink-0" />,
-        url: "/coptraining",
+        title: '1 on 1 Corporate Coaching',
+        description:
+          'Personalized coaching to enhance performance and workplace effectiveness.',
+        icon: <User2 className="size-5 shrink-0" />,
+        url: '/corporatecoaching',
       },
       {
-        title: "Group Coaching",
-        description: "Collaborative coaching sessions driving shared learning and team growth.",
+        title: 'Group Coaching',
+        description:
+          'Collaborative coaching sessions driving shared learning and team growth.',
         icon: <Users className="size-5 shrink-0" />,
-        url: "/workshops",
+        url: '/groupcoaching',
       },
       {
-        title: "Leadership Coaching",
-        description: "Develop strategic leadership capabilities for confident, effective decision making.",
+        title: 'Leadership Coaching',
+        description:
+          'Develop strategic leadership capabilities for confident, effective decision making.',
         icon: <Star className="size-5 shrink-0" />,
-        url: "/webinar",
+        url: '/leadershipcoaching',
       },
       {
-        title: "1 on 1 Independent Coaching",
-        description: "Individual coaching focused on personal growth and career clarity.",
+        title: '1 on 1 Individual Coaching',
+        description:
+          'Individual coaching focused on personal growth and career clarity.',
         icon: <UserCheck className="size-5 shrink-0" />,
-        url: "/applyastrainer",
+        url: '/individualcoaching',
       },
     ],
   },
   {
-    title: "Partnership",
-    url: "/partnerships",
+    title: 'Partnership',
+    url: '/partnerships',
     items: [
       {
-        title: "Corporate Partnership",
-        description: "Strategic collaborations to upskill workforce and drive business impact.",
+        title: 'Corporate Partnership',
+        description:
+          'Strategic collaborations to upskill workforce and drive business impact.',
         icon: <Building className="size-5 shrink-0" />,
-        url: "/corporate",
+        url: '/corporate',
       },
       {
-        title: "Institutional Partnership",
-        description: "Collaborate with institutions to deliver scalable, impact driven learning.",
+        title: 'Institutional Partnership',
+        description:
+          'Collaborate with institutions to deliver scalable, impact driven learning.',
         icon: <GraduationCap className="size-5 shrink-0" />,
-        url: "/institutional",
-      }
-    ]
-  },
-  {
-    title: "Courses",
-    url: "#",
-    items: [
-      {
-        title: "Professional Courses",
-        description: "Career focused programs designed to build practical, industry relevant skills.",
-        icon: <Landmark className="size-5 shrink-0" />,
-        url: "/professional",
-      },
-      {
-        title: "Entrepreneurship Courses",
-        description: "Learn startup fundamentals, business strategy, and entrepreneurial mindset.",
-        icon: <HandCoins className="size-5 shrink-0" />,
-        url: "/entrepreneuship",
-      },
-      {
-        title: "Emerging Technologies",
-        description: "Courses covering AI, cloud, and next-generation technology skills.",
-        icon: <Cpu className="size-5 shrink-0" />,
-        url: "/emerging-technologies",
-      },
-      {
-        title: "Viksit Bharat 2047",
-        description: "Learning programs aligned with India’s long-term national development vision.",
-        icon: <Globe2 className="size-5 shrink-0" />,
-        url: "/viksitbharat2047",
+        url: '/institutional',
       },
     ],
   },
   {
-    title: "Apply As a Trainer",
-    url: "/applyastrainer",
+    title: 'Courses',
+    url: '#',
+    items: [
+      {
+        title: 'Professional Courses',
+        description:
+          'Career focused programs designed to build practical, industry relevant skills.',
+        icon: <Landmark className="size-5 shrink-0" />,
+        url: '/professional',
+      },
+      {
+        title: 'Entrepreneurship Courses',
+        description:
+          'Learn startup fundamentals, business strategy, and entrepreneurial mindset.',
+        icon: <HandCoins className="size-5 shrink-0" />,
+        url: '/entrepreneuship',
+      },
+      {
+        title: 'Emerging Technologies',
+        description:
+          'Courses covering AI, cloud, and next-generation technology skills.',
+        icon: <Cpu className="size-5 shrink-0" />,
+        url: '/emerging-technologies',
+      },
+      {
+        title: 'Viksit Bharat 2047',
+        description:
+          'Learning programs aligned with India’s long-term national development vision.',
+        icon: <Globe2 className="size-5 shrink-0" />,
+        url: '/viksitbharat2047',
+      },
+    ],
   },
   {
-    title: "About Us",
-    url: "/about",
+    title: 'Apply As a Trainer',
+    url: '/applyastrainer',
   },
   {
-    title: "Contact Us",
-    url: "/contact",
+    title: 'About Us',
+    url: '/about',
   },
   {
-    title: "C2R Foundation",
-    url: "https://connect2roots.org/",
+    title: 'Contact Us',
+    url: '/contact',
+  },
+  {
+    title: 'C2R Foundation',
+    url: 'https://connect2roots.org/',
     external: true,
   },
 ];
 
 const defaultAuth = {
-
-  signup: { title: "Login", url: "/register" },
+  signup: { title: 'Login', url: '/register' },
 };
 
 // --- Main Navbar Component ---
-
-
 
 const Navbar = ({
   logo = defaultLogo,
@@ -170,23 +197,23 @@ const Navbar = ({
   };
 
   return (
-    <section className={cn("sticky top-0 z-50 py-2 bg-white border-b border-slate-200", className)}>
+    <section
+      className={cn(
+        'sticky top-0 z-50 py-2 bg-white border-b border-slate-200',
+        className,
+      )}
+    >
       <div className="container mx-auto px-4 md:px-6">
         {/* --- Desktop Navigation --- */}
         <nav className="hidden items-center justify-between lg:flex">
           <div className="flex items-center gap-6">
             {/* Logo Section */}
             <Link to={logo.url} className="flex items-center gap-2">
-              <img
-                src={navlogo}
-                className="h-15 w-auto"
-                alt={logo.alt}
-              />
+              <img src={navlogo} className="h-15 w-auto" alt={logo.alt} />
               <span className="text-lg font-semibold tracking-tighter text-slate-900 sm:hidden">
                 {logo.title}
               </span>
             </Link>
-
 
             {/* Desktop Menu Items */}
             <div className="flex items-center">
@@ -238,11 +265,7 @@ const Navbar = ({
           <div className="flex items-center justify-between">
             {/* Mobile Logo */}
             <Link to={logo.url} className="flex items-center gap-2">
-              <img
-                src={logo.src}
-                className="h-10 w-auto"
-                alt={logo.alt}
-              />
+              <img src={logo.src} className="h-10 w-auto" alt={logo.alt} />
               <span className="text-lg font-semibold tracking-tighter text-slate-900">
                 {logo.title}
               </span>
@@ -298,15 +321,15 @@ const DesktopMenuItem = ({ item }) => {
       >
         <button
           className={cn(
-            "group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-            isOpen ? "bg-slate-100 text-slate-900" : "text-slate-500"
+            'group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50',
+            isOpen ? 'bg-slate-100 text-slate-900' : 'text-slate-500',
           )}
         >
           {item.title}
           <ChevronDown
             className={cn(
-              "relative top-[1px] ml-1 h-3 w-3 transition duration-200",
-              isOpen && "rotate-180"
+              'relative top-[1px] ml-1 h-3 w-3 transition duration-200',
+              isOpen && 'rotate-180',
             )}
             aria-hidden="true"
           />
@@ -323,7 +346,9 @@ const DesktopMenuItem = ({ item }) => {
                     className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900"
                   >
                     <div className="flex items-center gap-2 text-sm font-medium leading-none text-slate-900">
-                      {subItem.icon && <span className="text-slate-500">{subItem.icon}</span>}
+                      {subItem.icon && (
+                        <span className="text-slate-500">{subItem.icon}</span>
+                      )}
                       {subItem.title}
                     </div>
                     {subItem.description && (
@@ -370,11 +395,13 @@ const MobileDrawer = ({ isOpen, onClose, logo, menu, auth, currentUser }) => {
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset';
     }
-    return () => { document.body.style.overflow = "unset"; };
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [isOpen]);
 
   if (!isOpen) return null;
@@ -391,7 +418,11 @@ const MobileDrawer = ({ isOpen, onClose, logo, menu, auth, currentUser }) => {
       <div className="relative h-[100dvh] w-full max-w-sm bg-white p-6 shadow-xl transition-transform animate-in slide-in-from-right duration-300 sm:w-3/4 flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between mb-6 shrink-0">
-          <Link to={logo.url} className="flex items-center gap-2" onClick={onClose}>
+          <Link
+            to={logo.url}
+            className="flex items-center gap-2"
+            onClick={onClose}
+          >
             <img src={logo.src} className="h-10 w-auto" alt={logo.alt} />
             <span className="text-lg font-semibold tracking-tighter text-slate-900">
               {logo.title}
@@ -463,8 +494,8 @@ const MobileMenuItem = ({ item, onClose }) => {
           {item.title}
           <ChevronDown
             className={cn(
-              "h-4 w-4 shrink-0 transition-transform duration-200 text-slate-500",
-              isExpanded && "rotate-180"
+              'h-4 w-4 shrink-0 transition-transform duration-200 text-slate-500',
+              isExpanded && 'rotate-180',
             )}
           />
         </button>
@@ -472,8 +503,8 @@ const MobileMenuItem = ({ item, onClose }) => {
         {/* Accordion Content */}
         <div
           className={cn(
-            "overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
-            isExpanded ? "max-h-screen pb-4 opacity-100" : "max-h-0 opacity-0"
+            'overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
+            isExpanded ? 'max-h-screen pb-4 opacity-100' : 'max-h-0 opacity-0',
           )}
         >
           <div className="flex flex-col space-y-2">
@@ -486,7 +517,9 @@ const MobileMenuItem = ({ item, onClose }) => {
               >
                 <span className="text-slate-500 mt-0.5">{subItem.icon}</span>
                 <div>
-                  <div className="font-medium text-slate-900">{subItem.title}</div>
+                  <div className="font-medium text-slate-900">
+                    {subItem.title}
+                  </div>
                   {subItem.description && (
                     <div className="text-slate-500 text-xs mt-0.5">
                       {subItem.description}

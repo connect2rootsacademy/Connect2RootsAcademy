@@ -6,6 +6,8 @@ import heroimg from '../../assets/hero-img.png';
 import FeaturesCard from '../../ui/FeaturesCard/FeaturesCard';
 import Testimonials from '../../ui/Testmonials/Testmonials';
 import 'aos/dist/aos.css';
+import bottompic from '../../assets/before.png';
+import toppic from '../../assets/after.png';
 import ShuffleHero from '../../ui/ShuffleHero';
 import MainAboutUs from '../About/MainAboutUs';
 import {
@@ -29,17 +31,17 @@ const Home = () => {
     {
       question: 'Why should I join Connect2Roots Academy?',
       answer:
-        'We provide skill-based, career-focused learning designed to help you grow personally and professionally.',
+        'We provide skill based, career focused learning designed to help you grow personally and professionally.',
     },
     {
       question: 'What makes Connect2Roots different from other platforms?',
       answer:
-        'Our learning approach combines expert guidance, real-world projects, and community support for complete development.',
+        'Our learning approach combines expert guidance, real world projects, and community support for complete development.',
     },
     {
-      question: 'Are the courses beginner-friendly?',
+      question: 'Are the programs suitable for businesses of all sizes?"?',
       answer:
-        'Yes! Our programs are structured for all levels, from absolute beginners to advanced learners.',
+        'Yes! Our training solutions are designed to support organizations of every scale, from startups to large enterprises, with flexible and industry aligned learning programs.',
     },
     {
       question: 'Will I get a certificate after completing a course?',
@@ -152,6 +154,19 @@ const Home = () => {
 
   return (
     <>
+      {/* <div className="fixed inset-0 -z-10 bg-white">
+        <div
+          className={[
+            'pointer-events-none absolute inset-0',
+            'bg-[radial-gradient(#e5e7eb_1px,transparent_1px)]',
+            '[background-size:16px_16px]',
+            '[mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]',
+            '[-webkit-mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]',
+            '[mask-repeat:no-repeat] [-webkit-mask-repeat:no-repeat]',
+          ].join(' ')}
+        />
+      </div> */}
+
       {/* 1st SECTION - HERO SECTION */}
       <section className="relative flex items-center">
         <div className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-6">
@@ -246,9 +261,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
-
-
 
       {/* 3rd SECTION- RECOMMENDED COURSES & RECOMMENDED VIDEOS SECTION  */}
       <section className="relative py-16 mt-5 mb-30 px-4 sm:px-6 lg:px-0">
@@ -589,26 +601,26 @@ const Home = () => {
         </div>
         <div className="text-sm  text-neutral-300 max-w-lg">
           <h1 className="text-5xl font-bold text-neutral-100 sm:text-4xl lg:text-6xl tracking-tight">
-            Inspiring Growth Building Tomorrow
+            Inspiring Growth, Building Tomorrow
           </h1>
           <p className="mt-8">
-            We are committed to empowering graduates through a journey of
-            continuous learning and professional growth. Our programs are
-            designed to nurture talent, enhance capability, and instill a
-            mindset of lifelong development.
+            We partner with organizations to develop future ready talent through
+            continuous learning and professional upskilling. Our corporate
+            programs are designed to strengthen workforce capability, enhance
+            performance, and support long term business growth.
           </p>
           <p className="mt-4">
-            Through structured courses, hands-on training, and personalized
-            mentorship, we bridge the gap between academic knowledge and
-            real-world industry requirements. Each learner gains practical
-            experience and professional insight to thrive in a competitive
-            environment.
+            Through structured training modules, industry aligned courses, and
+            tailored mentorship, we help bridge the gap between academic
+            foundations and real world organizational demands. Teams gain
+            practical expertise, role specific skills, and the confidence to
+            deliver measurable impact.
           </p>
           <p className="mt-4">
-            Our mission is to cultivate confident, skilled, and purpose-driven
-            individuals ready to make an impact. By empowering learners today,
-            we help shape the professionals who will build a stronger and
-            brighter tomorrow.
+            Our mission is to empower companies by cultivating skilled,
+            adaptable, and purpose driven professionals. By investing in talent
+            development today, we help businesses build stronger leadership,
+            higher productivity, and a brighter tomorrow.
           </p>
           <Link
             to="/about"
@@ -693,23 +705,17 @@ const Home = () => {
               </h2>
 
               <p className="text-base leading-relaxed text-neutral-100">
-                By equipping individuals with practical, industry relevant
-                skills, we enable meaningful career progression and long-term
-                economic mobility. Our skill first approach bridges gaps between
-                potential and performance empowering people to navigate changing
-                workforce demands, unlock new opportunities, and contribute
-                effectively in professional environments.
+                By equipping teams with practical, industry relevant
+                capabilities, we enable stronger performance, sustainable
+                workforce development, and long term business success. Our skill
+                first approach bridges gaps between potential and productivity,
+                empowering organizations to adapt to evolving market demands,
+                unlock new opportunities, and build high impact professionals
+                across every level.
               </p>
-
-              {/* <button className="w-fit rounded-lg border border-neutral-900 px-6 py-3 text-sm font-medium text-white bg-neutral-800 hover:bg-neutral-900 transition">
-                Read more
-              </button> */}
               <div className=" mt-8 flex items-center justify-center lg:justify-start space-x-4">
                 <div className="relative inline-flex items-center justify-center group">
-                  {/* Animated gradient background */}
                   <div className="absolute inset-0 opacity-60 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-lg blur-lg filter transition-all duration-1000 group-hover:opacity-100 group-hover:duration-300 animate-gradient-x"></div>
-
-                  {/* Main button */}
                   <Link
                     to="/professional"
                     role="button"
@@ -718,8 +724,6 @@ const Home = () => {
                     rel="noopener noreferrer"
                   >
                     <span className="relative z-10">Read More</span>
-
-                    {/* Animated arrow icon */}
                     <svg
                       viewBox="0 0 20 20"
                       height="18"
@@ -776,7 +780,7 @@ const Home = () => {
 
                 {/* Top image */}
                 <img
-                  src="https://images.unsplash.com/photo-1650954224577-5086da8f3599?w=900&auto=format&fit=crop&q=60"
+                  src={toppic}
                   alt="Before"
                   className="absolute inset-0 z-10 h-full w-full object-cover rounded-2xl border border-neutral-400"
                   style={{ clipPath: `inset(0 0 0 ${inset}%)` }}
@@ -785,7 +789,7 @@ const Home = () => {
 
                 {/* Bottom image */}
                 <img
-                  src="https://images.unsplash.com/photo-1635002249922-272946a8b677?w=900&auto=format&fit=crop&q=60"
+                  src={bottompic}
                   alt="After"
                   className="absolute inset-0 h-full w-full object-cover rounded-2xl border-2 border-neutral-400"
                   draggable={false}
@@ -848,12 +852,6 @@ const Home = () => {
             alt=""
           />
           <div>
-            {/* <div className="flex mb-5 flex-col uppercase items-start">
-              <span className="text-green-600 font-semibold text-md -mb-5 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5" />
-                FAQ's
-              </span>
-            </div> */}
             <div className="flex flex-col mx-auto items-start">
               <div className="inline-flex uppercase items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium mb-4">
                 <HelpCircle className="w-4 h-4" />
@@ -912,8 +910,9 @@ const Home = () => {
                     viewBox="0 0 18 18"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={`${openIndex === index ? 'rotate-180' : ''
-                      } transition-all duration-500 ease-in-out w-4 h-4 flex-shrink-0 mt-1`}
+                    className={`${
+                      openIndex === index ? 'rotate-180' : ''
+                    } transition-all duration-500 ease-in-out w-4 h-4 flex-shrink-0 mt-1`}
                   >
                     <path
                       d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
@@ -925,10 +924,11 @@ const Home = () => {
                   </svg>
                 </div>
                 <p
-                  className={`text-sm text-slate-500 transition-all duration-500 ease-in-out max-w-md ${openIndex === index
-                    ? 'opacity-100 max-h-[300px] translate-y-0 pt-4'
-                    : 'opacity-0 max-h-0 -translate-y-2'
-                    }`}
+                  className={`text-sm text-slate-500 transition-all duration-500 ease-in-out max-w-md ${
+                    openIndex === index
+                      ? 'opacity-100 max-h-[300px] translate-y-0 pt-4'
+                      : 'opacity-0 max-h-0 -translate-y-2'
+                  }`}
                 >
                   {faq.answer}
                 </p>
